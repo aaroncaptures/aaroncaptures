@@ -3,22 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silent Horizons – Aaron Captures</title>
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
-  <link rel="stylesheet" href="../../style.css" />
+  <title>Nocturne – Aaron Captures</title>
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    /* Masonry Layout */
+    .gallery {
+      column-count: 3;
+      column-gap: 1.5rem;
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity .2s ease;
+      break-inside: avoid;
+    }
+
+    .gallery img:hover {
+      opacity: 0.8;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      z-index: 999;
+      padding: 1rem;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <header>
     <h1>Nocturne</h1>
   </header>
 
-  <div class="gallery-grid">
-    <!-- Replace with real images later -->
-    <img src="https://via.placeholder.com/600x400" alt="Placeholder">
-    <img src="https://via.placeholder.com/600x400" alt="Placeholder">
-    <img src="https://via.placeholder.com/600x400" alt="Placeholder">
+  <div class="gallery">
+
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-1.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-2.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-3.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-4.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-5.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-6.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-7.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-8.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-9.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-10.jpg" alt="">
+
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
 
 </body>
 </html>
