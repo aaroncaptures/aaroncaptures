@@ -29,6 +29,18 @@
 
   <!-- HERO -->
   <section class="hero">
+    <!-- Background slideshow -->
+    <div class="hero-slideshow">
+      <div class="hero-slide is-active" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-3.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-6.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/echo-9.jpg');"></div>
+    </div>
+
+    <!-- Dark overlay for readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Text content -->
     <div class="hero-inner">
       <h1 class="hero-title">Where fleeting moments become lasting art.</h1>
       <a href="/collections/" class="btn-primary">View Collections</a>
@@ -167,8 +179,9 @@
     </div>
   </footer>
 
-  <!-- SMALL NAV SCRIPT -->
+  <!-- NAV + HERO SLIDESHOW SCRIPT -->
   <script>
+    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -178,5 +191,18 @@
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
+
+    // Hero background slideshow
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentHeroIndex = 0;
+
+    if (heroSlides.length > 1) {
+      setInterval(() => {
+        heroSlides[currentHeroIndex].classList.remove('is-active');
+        currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+        heroSlides[currentHeroIndex].classList.add('is-active');
+      }, 7000); // change slide every 7 seconds
+    }
   </script>
 </body>
+

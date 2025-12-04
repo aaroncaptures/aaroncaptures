@@ -320,3 +320,52 @@ body {
   opacity: 0.95;
 }
 
+/* HERO SLIDESHOW BACKGROUND */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* full-bleed slideshow behind the text */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+/* dark overlay to keep text readable */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 1;
+}
+
+/* make sure hero text stays readable on top of photos */
+.hero-title {
+  color: #fff;
+}
+
+.btn-primary {
+  position: relative;
+  z-index: 2;
+}
