@@ -518,3 +518,12 @@ body {
   border-radius: 10px;
   object-fit: contain;
 }
+
+.gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.lightbox-overlay {
+  z-index: 999999 !important;
+}
