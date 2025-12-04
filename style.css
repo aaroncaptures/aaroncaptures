@@ -497,13 +497,17 @@ body {
   margin: 0;
 }
 
+.gallery img {
+  cursor: zoom-in;
+}
+
 /* LIGHTBOX OVERLAY */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
+  display: none;              /* start hidden */
+  justify-content: center;    /* flex alignment */
   align-items: center;
   z-index: 9999;
 }
@@ -513,8 +517,4 @@ body {
   max-height: 90vh;
   border-radius: 10px;
   object-fit: contain;
-}
-
-.gallery img {
-  cursor: zoom-in;
 }
