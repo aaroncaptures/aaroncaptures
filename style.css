@@ -385,3 +385,70 @@ body {
 .back-collections a:hover {
   opacity: 0.7;
 }
+
+/* Collections Landing Page Hero */
+.page-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.75;
+}
+
+/* Collections Landing Page Grid */
+.collections-page .collections-grid {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .collections-page .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.collections-page .collection-card {
+  text-decoration: none;
+  color: #111;
+  display: block;
+}
+
+.collections-page .collection-card h2 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.collections-page .collection-card p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Thumbnail box */
+.collections-page .collection-thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.collections-page .collection-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
