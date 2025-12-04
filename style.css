@@ -314,3 +314,9 @@ body {
 .collection-thumb img {
   object-fit: cover;
 }
+
+/* Make hero title match logo style */
+.hero-title {
+  font-weight: 300;          /* thin like your logo */
+  letter-spacing: 0.02em;    /* subtle spacing */
+}
