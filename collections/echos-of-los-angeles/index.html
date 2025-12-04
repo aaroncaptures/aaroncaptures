@@ -70,7 +70,7 @@
     </div>
   </footer>
 
-  <!-- MOBILE NAV SCRIPT -->
+   <!-- SCRIPT: Mobile Menu -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -82,6 +82,30 @@
       });
     }
   </script>
+
+  <!-- SCRIPT: Lightbox -->
+  <script>
+    const lightboxLinks = document.querySelectorAll('.gallery img');
+    const overlay = document.getElementById('lightboxOverlay');
+    const overlayImage = document.getElementById('lightboxImage');
+
+    lightboxLinks.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImage.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayImage.src = "";
+    });
+  </script>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImage" src="">
+  </div>
 
 </body>
 </html>

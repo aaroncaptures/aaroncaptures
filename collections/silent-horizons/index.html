@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nocturne – Aaron Captures</title>
+  <title>Silent Horizons – Aaron Captures</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
 </head>
@@ -71,7 +71,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- SCRIPT: Mobile Menu -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -83,6 +83,30 @@
       });
     }
   </script>
+
+  <!-- SCRIPT: Lightbox -->
+  <script>
+    const lightboxLinks = document.querySelectorAll('.gallery img');
+    const overlay = document.getElementById('lightboxOverlay');
+    const overlayImage = document.getElementById('lightboxImage');
+
+    lightboxLinks.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImage.src = img.src;
+        overlay.style.display = 'flex';
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayImage.src = "";
+    });
+  </script>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImage" src="">
+  </div>
 
 </body>
 </html>
