@@ -498,7 +498,7 @@ body {
 }
 
 .gallery img {
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 /* LIGHTBOX OVERLAY */

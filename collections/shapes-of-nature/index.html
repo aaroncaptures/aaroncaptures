@@ -13,8 +13,12 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="site-header-inner">
-      <div class="site-title"><a href="/">Aaron Captures</a></div>
-      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
       <nav class="nav-menu">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
@@ -37,21 +41,38 @@
 
   <!-- GALLERY -->
   <div class="gallery">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-1.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-2.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-3.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-4.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-5.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-6.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-7.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-8.jpg" alt="">
-    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-9.jpg" alt="">
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-1.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-1.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-2.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-2.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-3.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-3.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-4.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-4.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-5.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-5.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-6.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-6.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-7.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-7.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-8.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-8.jpg" alt="">
+    </a>
+    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-9.jpg" class="lightbox-link">
+      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-9.jpg" alt="">
+    </a>
   </div>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
-
       <div class="footer-logo-top">
         <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
@@ -70,8 +91,14 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: Mobile Menu -->
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImage" src="">
+  </div>
+
+  <!-- SCRIPTS -->
   <script>
+    // Mobile nav
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -83,15 +110,16 @@
     }
   </script>
 
-  <!-- SCRIPT: Lightbox -->
   <script>
-    const lightboxLinks = document.querySelectorAll('.gallery img');
+    // Lightbox
+    const lightboxLinks = document.querySelectorAll('.lightbox-link');
     const overlay = document.getElementById('lightboxOverlay');
     const overlayImage = document.getElementById('lightboxImage');
 
-    lightboxLinks.forEach(img => {
-      img.addEventListener('click', () => {
-        overlayImage.src = img.src;
+    lightboxLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlayImage.src = link.href;
         overlay.style.display = 'flex';
       });
     });
@@ -101,11 +129,6 @@
       overlayImage.src = "";
     });
   </script>
-
-  <!-- LIGHTBOX OVERLAY -->
-  <div class="lightbox-overlay" id="lightboxOverlay">
-    <img id="lightboxImage" src="">
-  </div>
 
 </body>
 </html>
