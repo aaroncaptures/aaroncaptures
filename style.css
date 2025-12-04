@@ -12,11 +12,6 @@ body {
   background: #eee;
 }
 
-.hero h1 {
-  margin-bottom: 1rem;
-  font-size: 3rem;
-}
-
 .section {
   padding: 4rem 1rem;
   max-width: 900px;
@@ -315,8 +310,8 @@ body {
   object-fit: cover;
 }
 
-/* Make hero title match logo style */
 .hero-title {
-  font-weight: 300;          /* thin like your logo */
-  letter-spacing: 0.02em;    /* subtle spacing */
+  font-weight: 300 !important;
+  letter-spacing: 0.02em;
+  font-family: "bc-alphapipe", sans-serif !important;
 }
