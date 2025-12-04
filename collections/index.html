@@ -1,24 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collections – Aaron Captures</title>
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>Collections</h1>
+  <!-- HEADER (same as homepage) -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/">Prints</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="section collections-grid">
-    <a class="collection-card" href="silent-horizons/index.html">Silent Horizons</a>
-    <a class="collection-card" href="nocturne/index.html">Nocturne</a>
-    <a class="collection-card" href="shapes-of-nature/index.html">Shapes of Nature</a>
-    <a class="collection-card" href="echos-of-los-angeles/index.html">Echos of Los Angeles</a>
-  </div>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1 class="page-title">Collections</h1>
+    <p class="page-subtitle">A curated selection of fine art photography.</p>
+  </section>
+
+  <!-- COLLECTION GRID -->
+  <section class="collections-page">
+    <div class="collections-grid">
+
+      <a href="/collections/silent-horizons/" class="collection-card">
+        <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-1.jpg" alt="Silent Horizons">
+        <h2>Silent Horizons</h2>
+        <p>Solitude only found by being one with nature.</p>
+      </a>
+
+      <a href="/collections/nocturne/" class="collection-card">
+        <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/nocturne-1.jpg" alt="Nocturne">
+        <h2>Nocturne</h2>
+        <p>Night landscapes shaped by space and stillness.</p>
+      </a>
+
+      <a href="/collections/shapes-of-nature/" class="collection-card">
+        <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/son-1.jpg" alt="Shapes of Nature">
+        <h2>Shapes of Nature</h2>
+        <p>Patterns and forms found in the natural world.</p>
+      </a>
+
+      <a href="/collections/echos-of-los-angeles/" class="collection-card">
+        <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/echo-1.jpg" alt="Echos of Los Angeles">
+        <h2>Echos of Los Angeles</h2>
+        <p>Cityscapes after the noise fades.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+      <p><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+      <p class="footer-social">
+        <a href="https://instagram.com/USERNAME">Instagram</a> ·
+        <a href="https://tiktok.com/@USERNAME">TikTok</a> ·
+        <a href="https://facebook.com/USERNAME">Facebook</a>
+      </p>
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT (same as homepage) -->
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('nav-menu-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  </script>
 
 </body>
 </html>

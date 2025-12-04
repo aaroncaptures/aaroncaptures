@@ -73,6 +73,10 @@
     <h1>Silent Horizons</h1>
   </header>
 
+    <div class="back-collections">
+    <a href="/collections/">← Back to Collections</a>
+  </div>
+
   <div class="gallery">
 
     <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-1.jpg" alt="">
@@ -106,6 +110,98 @@
     lightbox.addEventListener("click", () => {
       lightbox.style.display = "none";
     });
+  </script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nocturne – Aaron Captures</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/">Prints</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADING -->
+  <section class="collection-heading">
+    <h1>Silent Horizons</h1>
+  </section>
+
+  <div class="back-collections">
+    <a href="/collections/">← Back to Collections</a>
+  </div>
+
+   <div class="gallery">
+
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-1.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-2.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-3.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-4.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-5.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-6.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-7.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-8.jpg" alt="">
+    <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/silent-horizons-9.jpg" alt="">
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+
+      <p><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/USERNAME">Instagram</a> ·
+        <a href="https://tiktok.com/@USERNAME">TikTok</a> ·
+        <a href="https://facebook.com/USERNAME">Facebook</a>
+      </p>
+
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('nav-menu-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
   </script>
 
 </body>

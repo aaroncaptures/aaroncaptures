@@ -1,77 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Echos of Los Angeles – Aaron Captures</title>
-
-  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="../../style.css">
-
-  <style>
-    /* Masonry Layout */
-    .gallery {
-      column-count: 3;
-      column-gap: 1.5rem;
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      margin-bottom: 1.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: opacity .2s ease;
-      break-inside: avoid;
-    }
-
-    .gallery img:hover {
-      opacity: 0.8;
-    }
-
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.9);
-      z-index: 999;
-      padding: 1rem;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 4px;
-    }
-
-    @media (max-width: 900px) {
-      .gallery {
-        column-count: 2;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        column-count: 1;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Echos of Los Angeles</h1>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/">Prints</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
   </header>
+
+  <!-- PAGE HEADING -->
+  <section class="collection-heading">
+    <h1>Echos of Los Angeles</h1>
+  </section>
+
+  <div class="back-collections">
+    <a href="/collections/">← Back to Collections</a>
+  </div>
 
   <div class="gallery">
 
@@ -87,25 +50,38 @@
 
   </div>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <img id="lightbox-img" src="">
-  </div>
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
 
+      <p><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/USERNAME">Instagram</a> ·
+        <a href="https://tiktok.com/@USERNAME">TikTok</a> ·
+        <a href="https://facebook.com/USERNAME">Facebook</a>
+      </p>
+
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
   <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-    document.querySelectorAll(".gallery img").forEach(img => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = "flex";
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('nav-menu-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-    });
-
-    lightbox.addEventListener("click", () => {
-      lightbox.style.display = "none";
-    });
+    }
   </script>
 
 </body>

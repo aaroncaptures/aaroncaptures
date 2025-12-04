@@ -369,3 +369,19 @@ body {
   position: relative;
   z-index: 2;
 }
+
+.back-collections {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+.back-collections a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #555;
+}
+
+.back-collections a:hover {
+  opacity: 0.7;
+}
