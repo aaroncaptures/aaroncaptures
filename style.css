@@ -277,12 +277,6 @@ body {
   text-decoration: none;
 }
 
-.footer-logo img {
-  max-width: 120px;
-  margin: 1rem auto 0;
-  display: block;
-}
-
 /* Sleek header title styling (matches logo aesthetics) */
 .site-title a {
   font-weight: 300;          /* thin */
@@ -316,9 +310,13 @@ body {
   font-family: "bc-alphapipe", sans-serif !important;
 }
 
+/* Footer top logo size */
 .footer-logo-top img {
-  max-width: 160px;        /* slightly larger than bottom logo */
-  margin: 0 auto 1rem;
+  max-width: 140px;   /* adjust to your preferred size */
+  width: 100%;
+  height: auto;
   display: block;
+  margin: 0 auto 1.5rem;
   opacity: 0.95;
 }
+
