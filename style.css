@@ -315,3 +315,10 @@ body {
   letter-spacing: 0.02em;
   font-family: "bc-alphapipe", sans-serif !important;
 }
+
+.footer-logo-top img {
+  max-width: 160px;        /* slightly larger than bottom logo */
+  margin: 0 auto 1rem;
+  display: block;
+  opacity: 0.95;
+}
