@@ -512,4 +512,9 @@ body {
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 10px;
+  object-fit: contain;
+}
+
+.gallery img {
+  cursor: zoom-in;
 }
