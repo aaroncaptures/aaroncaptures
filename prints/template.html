@@ -9,54 +9,6 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<script>
-async function loadPrint() {
-  // 1. Read SLUG from the URL
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get('print');
-
-  if (!slug) {
-    document.body.innerHTML = '<p style="padding: 40px; text-align: center;">No print selected.</p>';
-    return;
-  }
-
-  // 2. Load prints.json
-  const response = await fetch('/prints/prints.json');
-  const prints = await response.json();
-
-  // 3. Find the matching print
-  const print = prints.find(p => p.slug === slug);
-
-  if (!print) {
-    document.body.innerHTML = '<p style="padding: 40px; text-align: center;">Print not found.</p>';
-    return;
-  }
-
-  // 4. Populate the page
-  document.querySelector('.print-title').textContent = print.title;
-  document.querySelector('.print-collection-label span').textContent = print.collection;
-  document.querySelector('.print-description').textContent = print.description;
-  document.querySelector('.print-detail-image').src = print.image;
-  document.querySelector('.print-detail-image').alt = print.title;
-
-  // 5. Build the sizes list dynamically
-  const sizeList = document.querySelector('.print-sizes ul');
-  sizeList.innerHTML = ''; // clear placeholder content
-
-  print.sizes.forEach(size => {
-    const li = document.createElement('li');
-    li.textContent = `${size.size} – Edition of ${size.edition} – $${size.price}`;
-    sizeList.appendChild(li);
-  });
-
-  // 6. Update inquiry button email subject
-  const inquiryBtn = document.querySelector('.purchase-btn');
-  inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${encodeURIComponent(print.title)}`;
-}
-
-loadPrint();
-</script>
-
 <body>
 
   <!-- HEADER -->
@@ -99,6 +51,13 @@ loadPrint();
 
         <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
         <a href="/prints/" class="back-prints-link">← Back to Prints</a>
+
+        <!-- NEXT / PREVIOUS -->
+        <div class="print-nav">
+          <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
+          <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
+        </div>
+
       </div>
 
     </div>
@@ -130,7 +89,7 @@ loadPrint();
   <script>
     async function loadPrint() {
       const params = new URLSearchParams(window.location.search);
-      const slug = params.get('print'); // e.g. ?print=alpine-escape
+      const slug = params.get('print');
 
       if (!slug) {
         document.querySelector('.print-detail-inner').innerHTML =
@@ -142,7 +101,6 @@ loadPrint();
       const prints = await response.json();
 
       const print = prints.find(p => p.slug === slug);
-
       if (!print) {
         document.querySelector('.print-detail-inner').innerHTML =
           "<p>Print not found.</p>";
@@ -159,6 +117,7 @@ loadPrint();
 
       // Sizes
       const sizesList = document.getElementById('sizesList');
+      sizesList.innerHTML = "";
       print.sizes.forEach(s => {
         const li = document.createElement('li');
         li.textContent = `${s.size} – Edition of ${s.edition} – $${s.price}`;
@@ -167,7 +126,24 @@ loadPrint();
 
       // Email button
       const inquiryBtn = document.getElementById('inquiryButton');
-      inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${print.title}`;
+      inquiryBtn.href =
+        `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${encodeURIComponent(print.title)}`;
+
+      // NEXT / PREVIOUS
+      const index = prints.findIndex(p => p.slug === slug);
+
+      const prevBtn = document.getElementById('prevPrint');
+      const nextBtn = document.getElementById('nextPrint');
+
+      if (index > 0) {
+        prevBtn.href = `/prints/template.html?print=${prints[index - 1].slug}`;
+        prevBtn.style.display = "inline-block";
+      }
+
+      if (index < prints.length - 1) {
+        nextBtn.href = `/prints/template.html?print=${prints[index + 1].slug}`;
+        nextBtn.style.display = "inline-block";
+      }
     }
 
     loadPrint();
