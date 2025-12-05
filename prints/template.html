@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title"></title>
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fine Art Print – Aaron Captures</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="site-header-inner">
-      <div class="site-title"><a href="/">Aaron Captures</a></div>
-      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false">☰</button>
       <nav class="nav-menu">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
@@ -24,32 +28,31 @@
     </div>
   </header>
 
+  <!-- PRINT DETAIL -->
   <section class="print-detail">
     <div class="print-detail-inner">
 
+      <!-- IMAGE -->
       <div class="print-image-wrapper">
-        <img id="print-image" class="print-detail-image">
+        <img id="printImage" class="print-detail-image" alt="">
       </div>
 
+      <!-- TEXT INFO -->
       <div class="print-info">
-        <h1 id="print-title" class="print-title"></h1>
-        <p class="print-collection-label">
-          From the <span id="print-collection"></span> collection
-        </p>
+        <h1 id="printTitle" class="print-title"></h1>
+        <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
 
-        <p id="print-description" class="print-description">
-          <!-- Optional: Add descriptions later -->
-        </p>
+        <p id="printDescription" class="print-description"></p>
 
         <div class="print-sizes">
           <h2>Available Sizes</h2>
-          <ul id="sizes-list"></ul>
+          <ul id="sizesList"></ul>
         </div>
 
-        <a id="inquiry-btn" class="btn-primary purchase-btn">Inquire About This Print</a>
-
+        <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
         <a href="/prints/" class="back-prints-link">← Back to Prints</a>
       </div>
+
     </div>
   </section>
 
@@ -60,14 +63,14 @@
         <img src="/assets/aaron-captures-logo.jpg" alt="">
       </div>
 
-      <p class="footer-email">
-        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
-      </p>
+      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
       <p class="footer-social">
-        <a href="https://instagram.com/aaron.captures">Instagram</a><span>·</span>
-        <a href="https://tiktok.com/@aaron.captures">TikTok</a><span>·</span>
-        <a href="https://facebook.com/aaron.captures">Facebook</a>
+        <a href="https://instagram.com/aaron.captures">Instagram</a>
+        <span>·</span>
+        <a href="https://tiktok.com/@aaron.captures">TikTok</a>
+        <span>·</span>
+        <a href="https://facebook.com/aaron.capture">Facebook</a>
       </p>
 
       <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
@@ -75,42 +78,52 @@
     </div>
   </footer>
 
+  <!-- TEMPLATE SCRIPT -->
+  <script>
+    async function loadPrint() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('print'); // e.g. ?print=alpine-escape
 
-<script>
-  async function loadPrint() {
-    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+      if (!slug) {
+        document.querySelector('.print-detail-inner').innerHTML =
+          "<p>Missing print identifier.</p>";
+        return;
+      }
 
-    const response = await fetch('/prints/prints.json');
-    const prints = await response.json();
+      const response = await fetch('/prints/prints.json');
+      const prints = await response.json();
 
-    const print = prints.find(p => p.slug === slug);
+      const print = prints.find(p => p.slug === slug);
 
-    if (!print) {
-      document.body.innerHTML = '<h1>Print not found</h1>';
-      return;
+      if (!print) {
+        document.querySelector('.print-detail-inner').innerHTML =
+          "<p>Print not found.</p>";
+        return;
+      }
+
+      // Fill content
+      document.title = print.title + " – Fine Art Print";
+      document.getElementById('printTitle').textContent = print.title;
+      document.getElementById('printCollection').textContent = print.collection;
+      document.getElementById('printDescription').textContent = print.description;
+      document.getElementById('printImage').src = print.image;
+      document.getElementById('printImage').alt = print.title;
+
+      // Sizes
+      const sizesList = document.getElementById('sizesList');
+      print.sizes.forEach(s => {
+        const li = document.createElement('li');
+        li.textContent = `${s.size} – Edition of ${s.edition} – $${s.price}`;
+        sizesList.appendChild(li);
+      });
+
+      // Email button
+      const inquiryBtn = document.getElementById('inquiryButton');
+      inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${print.title}`;
     }
 
-    // Insert data
-    document.getElementById('page-title').textContent = print.title + " – Fine Art Print";
-    document.getElementById('print-title').textContent = print.title;
-    document.getElementById('print-collection').textContent = print.collection;
-    document.getElementById('print-image').src = print.image;
-
-    // Sizes
-    const sizeList = document.getElementById('sizes-list');
-    print.sizes.forEach(s => {
-      const li = document.createElement('li');
-      li.textContent = `${s.label} – Edition of ${s.edition}`;
-      sizeList.appendChild(li);
-    });
-
-    // Inquiry button
-    document.getElementById('inquiry-btn').href =
-      `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${print.title}`;
-  }
-
-  loadPrint();
-</script>
+    loadPrint();
+  </script>
 
 </body>
 </html>

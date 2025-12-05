@@ -4,7 +4,8 @@
     "title": "Alpine Escape",
     "collection": "Silent Horizons",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg",
-    "description": "A quiet moment suspended between light and winter air. “Alpine Escape” captures the solitude and calm found only at high elevation, where stillness becomes its own kind of sound, and the world feels paused just long enough to breathe.",
+    "aspect": "2x3",
+    "description": "A quiet moment suspended between light and winter air...",
     "sizes": [
       { "size": "12×18", "edition": 25, "price": 250 },
       { "size": "20×30", "edition": 15, "price": 450 },
