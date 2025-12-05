@@ -29,39 +29,43 @@
   </header>
 
   <!-- PRINT DETAIL -->
-  <section class="print-detail">
-    <div class="print-detail-inner">
+<section class="print-detail">
+  <div class="print-detail-inner">
 
-      <!-- IMAGE -->
-      <div class="print-image-wrapper">
-        <img id="printImage" class="print-detail-image" alt="">
-      </div>
-
-      <!-- TEXT INFO -->
-      <div class="print-info">
-        <h1 id="printTitle" class="print-title"></h1>
-        <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
-
-        <p id="printDescription" class="print-description"></p>
-
-        <div class="print-sizes">
-          <h2>Available Sizes</h2>
-          <ul id="sizesList"></ul>
-        </div>
-
-        <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
-        <a href="/prints/" class="back-prints-link">← Back to Prints</a>
-
-        <!-- NEXT / PREVIOUS -->
-        <div class="print-nav">
-          <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
-          <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
-        </div>
-
-      </div>
-
+    <!-- IMAGE -->
+    <div class="print-image-wrapper">
+      <img id="printImage" class="print-detail-image" alt="">
     </div>
-  </section>
+
+    <!-- TEXT INFO -->
+    <div class="print-info">
+
+      <h1 id="printTitle" class="print-title"></h1>
+      <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
+
+      <p id="printDescription" class="print-description"></p>
+
+      <div class="print-sizes">
+        <h2>Available Sizes</h2>
+        <ul id="sizesList"></ul>
+      </div>
+
+      <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
+
+      <!-- NEXT / PREVIOUS BUTTONS -->
+      <div class="print-nav">
+        <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
+        <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
+      </div>
+
+      <!-- BACK LINK -->
+      <a href="/prints/" class="back-prints-link nav-back">← Back to Prints</a>
+
+    </div> <!-- CLOSE print-info -->
+
+  </div> <!-- CLOSE print-detail-inner -->
+</section>
+
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
