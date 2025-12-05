@@ -5,11 +5,115 @@
     "collection": "Silent Horizons",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg",
     "aspect": "2x3",
-    "description": "A quiet moment suspended between light and winter air...",
+    "description": "A quiet moment suspended between solitude and sky in the basin of Hidden Lake.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 250 },
-      { "size": "20×30", "edition": 15, "price": 450 },
-      { "size": "24×36", "edition": 10, "price": 650 }
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "between-sky-and-shadow",
+    "title": "Between Sky and Shadow",
+    "collection":"Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2.jpg",
+    "aspect": "2x1",
+    "description": "Golden light drapes across Kelso Dunes as the storm-darkend horizon holds its breath.",
+    "sizes": [
+      { "size": "10×20", "edition": 25, "price": 400 },
+      { "size": "15×30", "edition": 15, "price": 850 },
+      { "size": "20×40", "edition": 10, "price": 1700 }
+    ]   
+  },
+  {
+    "slug": "the-quiet-drift",
+    "title": "The Quiet Drift",
+    "collection":"Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-3.jpg",
+    "aspect": "2x3",
+    "description": "A gentle veil of snow and sun drifts through the pines, softening Longs Peak into a moment of pure stillness.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ] 
+  },
+  {
+    "slug": "passing-wings",
+    "title": "Passing Wings",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-4.jpg",
+    "aspect": "2x3",
+    "description": "Birds following their silent path above the winding river valley of Hot Creek.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "pillars-of-spring",
+    "title": "Pillars of Spring",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-5.jpg",
+    "aspect": "2x3",
+    "description": "Morning light pools across the desert floor, illuminating the new growth of an otherwise barren land.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "stillness-in-stone",
+    "title": "Stillness in Stone",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-6.jpg",
+    "aspect": "2x3",
+    "description": "Factory Butte stands against the fading day, a constant shape in a changing world.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "spring-awakening",
+    "title": "Spring Awakening",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-7.jpg",
+    "aspect": "2x3",
+    "description": "Colors spill softly across the desert horizon, transforming an arid expanse into a fleeting tapestry of life.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "evening-ember",
+    "title": "Evening Ember",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-8.jpg",
+    "aspect": "2x3",
+    "description": "Warm light settles on the Joshua trees as the day exhales its final breath into the quiet desert air.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
+    ]
+  },
+  {
+    "slug": "toward-the-quiet",
+    "title": "Toward the Quiet",
+    "collection": "Silent Horizons",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9.jpg",
+    "aspect": "2x3",
+    "description": "A single Joshua tree meets the hush that comes with twilight against the horizons gentle retreat.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 350 },
+      { "size": "20×30", "edition": 15, "price": 750 },
+      { "size": "24×36", "edition": 10, "price": 1500 }
     ]
   }
 ]
