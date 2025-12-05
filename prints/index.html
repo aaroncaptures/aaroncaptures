@@ -10,6 +10,35 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
+<script>
+  async function loadPrints() {
+    const response = await fetch('/prints/prints.json');
+    const prints = await response.json();
+
+    const grid = document.querySelector('.prints-grid');
+
+    prints.forEach(print => {
+      const card = document.createElement('article');
+      card.className = 'print-card';
+
+      card.innerHTML = `
+        <a href="/prints/${print.slug}.html">
+          <div class="print-thumb">
+            <img src="${print.image}" alt="${print.title}">
+          </div>
+          <h3 class="print-title">${print.title}</h3>
+          <p class="print-collection">${print.collection}</p>
+          <span class="print-link">View Print →</span>
+        </a>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+  loadPrints();
+</script>
+
 <body>
 
   <!-- HEADER (matches homepage) -->
@@ -41,27 +70,9 @@
     </div>
   </section>
 
-  <!-- PRINTS GRID -->
   <section class="prints-grid-section">
-    <div class="prints-grid">
-
-      <!-- EXAMPLE PRINT CARD (you will duplicate this later) -->
-      <article class="print-card">
-        <a href="/prints/silent-horizons-1.html">
-          <div class="print-thumb">
-            <img src="https://YOUR-R2-URL/prints/silent-horizons/SH-01.jpg" 
-                 alt="Silent Horizons Print 01">
-          </div>
-          <h3 class="print-title">Silent Horizons No. 1</h3>
-          <p class="print-collection">Silent Horizons</p>
-          <span class="print-link">View Print →</span>
-        </a>
-      </article>
-
-      <!-- Add more print-card blocks here -->
-
-    </div>
-  </section>
+  <div class="prints-grid"></div>
+</section>
 
   <!-- FOOTER (matches homepage) -->
   <footer class="site-footer" id="contact-footer">

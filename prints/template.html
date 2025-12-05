@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title"></title>
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title"><a href="/">Aaron Captures</a></div>
+      <button class="nav-toggle" aria-expanded="false">&#9776;</button>
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/" class="active">Prints</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="print-detail">
+    <div class="print-detail-inner">
+
+      <div class="print-image-wrapper">
+        <img id="print-image" class="print-detail-image">
+      </div>
+
+      <div class="print-info">
+        <h1 id="print-title" class="print-title"></h1>
+        <p class="print-collection-label">
+          From the <span id="print-collection"></span> collection
+        </p>
+
+        <p id="print-description" class="print-description">
+          <!-- Optional: Add descriptions later -->
+        </p>
+
+        <div class="print-sizes">
+          <h2>Available Sizes</h2>
+          <ul id="sizes-list"></ul>
+        </div>
+
+        <a id="inquiry-btn" class="btn-primary purchase-btn">Inquire About This Print</a>
+
+        <a href="/prints/" class="back-prints-link">← Back to Prints</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="">
+      </div>
+
+      <p class="footer-email">
+        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
+      </p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/aaron.captures">Instagram</a><span>·</span>
+        <a href="https://tiktok.com/@aaron.captures">TikTok</a><span>·</span>
+        <a href="https://facebook.com/aaron.captures">Facebook</a>
+      </p>
+
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </footer>
+
+
+<script>
+  async function loadPrint() {
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+
+    const response = await fetch('/prints/prints.json');
+    const prints = await response.json();
+
+    const print = prints.find(p => p.slug === slug);
+
+    if (!print) {
+      document.body.innerHTML = '<h1>Print not found</h1>';
+      return;
+    }
+
+    // Insert data
+    document.getElementById('page-title').textContent = print.title + " – Fine Art Print";
+    document.getElementById('print-title').textContent = print.title;
+    document.getElementById('print-collection').textContent = print.collection;
+    document.getElementById('print-image').src = print.image;
+
+    // Sizes
+    const sizeList = document.getElementById('sizes-list');
+    print.sizes.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = `${s.label} – Edition of ${s.edition}`;
+      sizeList.appendChild(li);
+    });
+
+    // Inquiry button
+    document.getElementById('inquiry-btn').href =
+      `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${print.title}`;
+  }
+
+  loadPrint();
+</script>
+
+</body>
+</html>
