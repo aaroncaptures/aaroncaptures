@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpine Escape – Fine Art Print</title>
+
+  <!-- Adobe Fonts + Main Styles -->
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/" class="active">Prints</a>
+        <a href="/sessions/">Sessions</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRINT DETAIL CONTENT -->
+  <section class="print-detail">
+    <div class="print-detail-inner">
+
+      <!-- IMAGE -->
+      <div class="print-image-wrapper">
+        <img 
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg" 
+          alt="Alpine Escape" 
+          class="print-detail-image"
+        >
+      </div>
+
+      <!-- TEXT INFO -->
+      <div class="print-info">
+
+        <h1 class="print-title">Alpine Escape</h1>
+        <p class="print-collection-label">From the <span>Silent Horizons</span> collection</p>
+
+        <p class="print-description">
+          A quiet moment suspended between light and winter air.  
+          “Alpine Escape” captures the solitude and calm found only at high elevation,  
+          where stillness becomes its own kind of sound, and the world feels paused  
+          just long enough to breathe.
+        </p>
+
+        <!-- SIZES & EDITIONS -->
+        <div class="print-sizes">
+          <h2>Available Sizes</h2>
+          <ul>
+            <li>12 × 18 in – Edition of 25</li>
+            <li>20 × 30 in – Edition of 15</li>
+            <li>24 × 36 in – Edition of 10</li>
+          </ul>
+        </div>
+
+        <!-- CONTACT BUTTON -->
+        <a 
+          href="mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – Alpine Escape"
+          class="btn-primary purchase-btn"
+        >
+          Inquire About This Print
+        </a>
+
+        <!-- BACK LINK -->
+        <a href="/prints/" class="back-prints-link">← Back to Prints</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+
+      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
+        <span>·</span>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank">TikTok</a>
+        <span>·</span>
+        <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
+      </p>
+
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </footer>
+
+  <!-- NAV SCRIPT -->
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('nav-menu-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  </script>
+
+</body>
+</html>
