@@ -703,3 +703,33 @@ body {
   background: #333;
   color: #fff;
 }
+
+/* PRINT NAVIGATION STYLING */
+.print-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.print-nav-btn {
+  padding: 8px 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+.print-nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.nav-back {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+}
