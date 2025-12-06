@@ -5,19 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fine Art Prints – Aaron Captures</title>
 
+  <!-- Fonts + Main Styles -->
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
   <link rel="stylesheet" href="/style.css" />
 
   <script>
-    // Load prints dynamically
+    // Load prints dynamically from prints.json
     async function loadPrints() {
       const response = await fetch('/prints/prints.json');
       const prints = await response.json();
       const grid = document.querySelector('.prints-grid');
 
       prints.forEach(print => {
+        // start hidden so we can animate them in
         const card = document.createElement('article');
-        card.className = 'print-card hidden'; // start hidden for luxury animation
+        card.className = 'print-card hidden';
 
         card.innerHTML = `
           <a href="/prints/template.html?print=${print.slug}">
@@ -46,7 +48,10 @@
       <div class="site-title">
         <a href="/">Aaron Captures</a>
       </div>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
 
       <nav class="nav-menu">
         <a href="/">Home</a>
@@ -58,7 +63,7 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="prints-hero">
     <div class="prints-hero-overlay"></div>
     <div class="prints-hero-content">
@@ -88,11 +93,14 @@
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
+
       <div class="footer-logo-top">
         <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
-      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+      <p class="footer-email">
+        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
+      </p>
 
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
@@ -102,8 +110,12 @@
         <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
       </p>
 
-      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
       <a href="/" class="back-home-link">← Back to Homepage</a>
+
     </div>
   </footer>
 
@@ -120,24 +132,31 @@
     }
   </script>
 
-  <!-- FILTER + ANIMATION SCRIPT -->
+  <!-- FILTER + LUXURY ANIMATION SCRIPT -->
   <script>
     function filterPrints(collection) {
       const cards = Array.from(document.querySelectorAll('.print-card'));
 
-      // Fade out first
+      // Step 1: fade/slide everything out
       cards.forEach(card => card.classList.add('hidden'));
 
+      // Step 2: after fade-out, filter + staggered fade-in
       setTimeout(() => {
-        let index = 0;
+        let visibleIndex = 0;
+
         cards.forEach(card => {
           const match = card.querySelector('.print-collection').textContent.trim();
-          const show = collection === "all" || match === collection;
+          const shouldShow = collection === "all" || match === collection;
 
-          if (show) {
+          if (shouldShow) {
             card.style.display = "block";
-            setTimeout(() => card.classList.remove('hidden'), index * 90);
-            index++;
+
+            // stagger the reveal
+            setTimeout(() => {
+              card.classList.remove('hidden');
+            }, visibleIndex * 90);
+
+            visibleIndex++;
           } else {
             card.style.display = "none";
           }
@@ -145,29 +164,35 @@
       }, 320);
     }
 
-    // Hero button click binding
     document.addEventListener("DOMContentLoaded", () => {
       const buttons = document.querySelectorAll(".hero-btn");
 
+      // hook up hero buttons
       buttons.forEach(btn => {
         btn.addEventListener("click", e => {
           e.preventDefault();
-          filterPrints(btn.dataset.filter);
+          const collection = btn.dataset.filter;
+          filterPrints(collection);
         });
       });
 
-      // Luxury reveal animation on initial load
+      // luxury staggered reveal on initial load
+      const grid = document.querySelector('.prints-grid');
+      if (!grid) return;
+
       const observer = new MutationObserver(() => {
         const cards = document.querySelectorAll('.print-card');
         let delay = 0;
         cards.forEach(card => {
-          setTimeout(() => card.classList.remove('hidden'), delay * 90);
+          setTimeout(() => {
+            card.classList.remove('hidden');
+          }, delay * 90);
           delay++;
         });
         observer.disconnect();
       });
 
-      observer.observe(document.querySelector('.prints-grid'), { childList: true });
+      observer.observe(grid, { childList: true });
     });
   </script>
 
