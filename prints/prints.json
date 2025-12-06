@@ -7,9 +7,9 @@
     "aspect": "2x3",
     "description": "A quiet moment suspended between solitude and sky in the basin of Hidden Lake.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -18,11 +18,11 @@
     "collection":"Silent Horizons",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2.jpg",
     "aspect": "2x1",
-    "description": "Golden light drapes across Kelso Dunes as the storm-darkend horizon holds its breath.",
+    "description": "Golden light drapes across Kelso Dunes as the storm-darkened horizon holds its breath.",
     "sizes": [
-      { "size": "10×20", "edition": 25, "price": 400 },
-      { "size": "15×30", "edition": 15, "price": 850 },
-      { "size": "20×40", "edition": 10, "price": 1700 }
+      { "size": "10×20", "edition": 25, "price": 395 },
+      { "size": "15×30", "edition": 15, "price": 845 },
+      { "size": "20×40", "edition": 10, "price": 1695 }
     ]   
   },
   {
@@ -33,9 +33,9 @@
     "aspect": "2x3",
     "description": "A gentle veil of snow and sun drifts through the pines, softening Longs Peak into a moment of pure stillness.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ] 
   },
   {
@@ -46,9 +46,9 @@
     "aspect": "2x3",
     "description": "Birds following their silent path above the winding river valley of Hot Creek.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -59,9 +59,9 @@
     "aspect": "2x3",
     "description": "Morning light pools across the desert floor, illuminating the new growth of an otherwise barren land.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -72,9 +72,9 @@
     "aspect": "2x3",
     "description": "Factory Butte stands against the fading day, a constant shape in a changing world.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -85,9 +85,9 @@
     "aspect": "2x3",
     "description": "Colors spill softly across the desert horizon, transforming an arid expanse into a fleeting tapestry of life.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -98,9 +98,9 @@
     "aspect": "2x3",
     "description": "Warm light settles on the Joshua trees as the day exhales its final breath into the quiet desert air.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   },
   {
@@ -111,9 +111,140 @@
     "aspect": "2x3",
     "description": "A single Joshua tree meets the hush that comes with twilight against the horizons gentle retreat.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 350 },
-      { "size": "20×30", "edition": 15, "price": 750 },
-      { "size": "24×36", "edition": 10, "price": 1500 }
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+
+  {
+    "slug": "arch-of-the-night",
+    "title": "Arch of the Night",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg",
+    "aspect": "2x1",
+    "description": "Soft starlight settles over arch rock, revealing the beauty of the abyss of the universe.",
+    "sizes": [
+      { "size": "10×20", "edition": 25, "price": 395 },
+      { "size": "15×30", "edition": 15, "price": 845 },
+      { "size": "20×40", "edition": 10, "price": 1695 }
+    ]
+  },
+  {
+    "slug": "a-brief-crossing",
+    "title": "A Brief Crossing",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-2.jpg",
+    "aspect": "2x3",
+    "description": "The comet NEOWISE glides above the still desert, leaving only a momentary trace of light in the night.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "alone-with-the-stars",
+    "title": "Alone With the Stars",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3.jpg",
+    "aspect": "2x3",
+    "description": "A lone Joshua tree stands beneath the vast night sky, rooted in a solitude that feels both ancient and tender.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "eternal-witness",
+    "title": "Eternal Witness",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-4.jpg",
+    "aspect": "2x3",
+    "description": "Tucked back beyond the rocks and bushes, the Joshua tree only surveyer is the glow of the galaxy.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "midnight-reverie",
+    "title": "Midnight Reverie",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-5.jpg",
+    "aspect": "2x3",
+    "description": "In the hushed glow of midnight, the landscape dissolves into a dreamlike tapestry of shadow and starlight.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "desert-wish",
+    "title": "Desert Wish",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-6.jpg",
+    "aspect": "2x3",
+    "description": "A shooting star meets the stillness of the desert, leaving only a sliver of light and a quiet hope for the future.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "rise-with-the-red-rocks",
+    "title": "Rise with the Red Rocks",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-7.jpg",
+    "aspect": "2x3",
+    "description": "The red stones of Goblin Valley emerge from the darkness as silent sentinels beneath the rising moon.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "celestial-drift",
+    "title": "Celestial Drift",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-8.jpg",
+    "aspect": "2x3",
+    "description": "Star trails sweep across the sky in a slow cosmic rythm, tracing time itself over the desert floor.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "nocturnal-bloom",
+    "title": "Nocturnal Bloom",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-9.jpg",
+    "aspect": "2x3",
+    "description": "Moonlit wildflowers rest beneath the evening sky, revealing a fleeting softness within the desert's night.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+    {
+    "slug": "eclipse-of-the-desert",
+    "title": "Eclipse of the Desert",
+    "collection": "Nocturne",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-10.jpg",
+    "aspect": "2x3",
+    "description": "Framed through the Joshua tree's branches, the earth begins casting its shadow against the light of the harvest moon.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
     ]
   }
 ]
