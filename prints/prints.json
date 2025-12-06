@@ -162,7 +162,7 @@
     "collection": "Nocturne",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-4.jpg",
     "aspect": "2x3",
-    "description": "Tucked back beyond the rocks and bushes, the Joshua tree only surveyer is the glow of the galaxy.",
+    "description": "Tucked back beyond the rocks and bushes, the Joshua tree only surveyor is the glow of the galaxy.",
     "sizes": [
       { "size": "12×18", "edition": 25, "price": 345 },
       { "size": "16×24", "edition": 15, "price": 745 },
@@ -241,6 +241,240 @@
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-10.jpg",
     "aspect": "2x3",
     "description": "Framed through the Joshua tree's branches, the earth begins casting its shadow against the light of the harvest moon.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "horizon-of-spines",
+    "title": "Horizon of Spines",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-1.jpg",
+    "aspect": "2x3",
+    "description": "Soft evening light catches the chola's spines, turning a harsh desert form into a quiet line of radiant texture.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "sunrise-chorus",
+    "title": "Sunrise Chorus",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-2.jpg",
+    "aspect": "2x3",
+    "description": "The dew covered blooms awaken in the warm morning light, creating a gentle harmony of color.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "spring-ascending",
+    "title": "Spring Ascending",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-3.jpg",
+    "aspect": "2x3",
+    "description": "Delicate blossoms reach toward the sky, lifting the season's first colors into the open air.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "petal-glow",
+    "title": "Petal Glow",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-4.jpg",
+    "aspect": "2x3",
+    "description": "A single rose gathers the soft light around it, revealing a quiet warmth held within its unfolding layers.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "soft-landing",
+    "title": "Soft Landing",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5.jpg",
+    "aspect": "2x3",
+    "description": "A fallen leaf comes to rest atop another, forming a quiet exchange of balance and stillness in the shadows.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "green-geometry",
+    "title": "Green Geometry",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-6.jpg",
+    "aspect": "2x3",
+    "description": "Light traces along the fern's repeating patterns, revealing the natural architecture hidden within its curves.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "shaded-haven",
+    "title": "Shaded Haven",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-7.jpg",
+    "aspect": "2x3",
+    "description": "Layers of fern fronds settle into the dim forest light, forming a quiet refuge of deep greens and shadows.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "evening-seeds",
+    "title": "Evening Seeds",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-8.jpg",
+    "aspect": "2x3",
+    "description": "Silhouetted grasses catch the last warmth of the day, holding the sunset's glow in their delicate forms.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "aspen-rhythm",
+    "title": "Aspen Rhythm",
+    "collection": "Shapes of Nature",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-9.jpg",
+    "aspect": "2x3",
+    "description": "The repeating lines of the aspen trunks create a gentle cadence, echoing the soft transition of autumn light.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "urban-eye",
+    "title": "Urban Eye",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg",
+    "aspect": "2x3",
+    "description": "The Broad's sculpted facade reveals a single watchin aperture, capturing the city's restless energy.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "the-speed-of-night",
+    "title": "The Speed of Night",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg",
+    "aspect": "2x3",
+    "description": "Lights sweep through downtown in a rush of color, tracing the rhythm of a city that never fully slows.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "grid-lock",
+    "title": "Grid Lock",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg",
+    "aspect": "2x3",
+    "description": "Through the chain-link grid, the skyline echos the tension between distance and desire in urban life.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "bustling-morning",
+    "title": "Bustling Morning",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg",
+    "aspect": "2x3",
+    "description": "City Hall rises into the cool dawn as early commuters fill the streets, ushering in another day of movement.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "evening-edifice",
+    "title": "Evening Edifice",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg",
+    "aspect": "2x3",
+    "description": "The last light settles against the historic tower, shoftening its sharp lines into a soft silhouette.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "the-city-softened",
+    "title": "The City, Softened",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg",
+    "aspect": "2x3",
+    "description": "Branches frame the skyline in the golden hour, lending tenderness to a landscape built of concrete and steel.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "road-to-dusk",
+    "title": "Road to Dusk",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg",
+    "aspect": "2x3",
+    "description": "A path of light guids the city toward nightfall, holding a moment suspended between motion and stillness.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "electric-memory",
+    "title": "Electric Memory",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg",
+    "aspect": "2x3",
+    "description": "Neon light casts a passerby's silhouette, preserving a fleeting moment that lingers after it pases.",
+    "sizes": [
+      { "size": "12×18", "edition": 25, "price": 345 },
+      { "size": "16×24", "edition": 15, "price": 745 },
+      { "size": "20×30", "edition": 10, "price": 1495 }
+    ]
+  },
+  {
+    "slug": "city-of-angels",
+    "title": "City of Angels",
+    "collection": "Echos of Los Angeles",
+    "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg",
+    "aspect": "2x3",
+    "description": "The sun descends over LA, casting the landscape in a quiet haze where brillance and nostalgia briefly meet.",
     "sizes": [
       { "size": "12×18", "edition": 25, "price": 345 },
       { "size": "16×24", "edition": 15, "price": 745 },
