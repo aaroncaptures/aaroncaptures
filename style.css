@@ -62,62 +62,85 @@ body {
    ========================================================= */
 
 /* HEADER / NAV */
+/* HEADER — full-width horizontal navigation */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   background: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.nav-toggle {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
+.site-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title a {
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
   color: #111;
 }
 
+/* Desktop Navigation: horizontal, right-aligned */
 .nav-menu {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  position: absolute;
-  top: 70px;
-  right: 1.5rem;
-  background: #fff;
-  padding: 1.25rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex !important;
+  flex-direction: row;
+  gap: 2.2rem;
+  background: none;
+  position: static;
+  padding: 0;
+  box-shadow: none;
 }
 
 .nav-menu a {
   text-decoration: none;
   color: #111;
   font-size: 1rem;
-  letter-spacing: 0.3px;
+  letter-spacing: .02em;
+  transition: opacity .2s ease;
 }
 
-.nav-menu-open {
-  display: flex;
+.nav-menu a:hover {
+  opacity: .6;
 }
 
-/* Desktop nav */
-@media (min-width: 800px) {
+/* Mobile behavior */
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
   .nav-toggle {
-    display: none;
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
   }
 
   .nav-menu {
+    display: none !important;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 1.5rem;
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-menu.nav-menu-open {
     display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    gap: 2rem;
   }
 }
 
