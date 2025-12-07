@@ -1,3 +1,13 @@
+/* =========================================================
+   GLOBAL BASE STYLES
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "bc-alphapipe", sans-serif;
@@ -6,75 +16,39 @@ body {
   line-height: 1.5;
 }
 
-.hero {
-  padding: 6rem 1rem;
-  text-align: center;
-  background: #eee;
-}
-
-.section {
-  padding: 4rem 1rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* --- Gallery Grid --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
+img {
+  max-width: 100%;
   height: auto;
-  border-radius: 6px;
-  background: #ddd;
-  object-fit: cover;
+  display: block;
 }
 
-/* --- Mobile Adjustments --- */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+a {
+  color: inherit;
+}
 
-  nav a {
-    margin: 0 0.7rem;
-    font-size: 1rem;
-  }
-
-  .section {
-    padding: 3rem 1rem;
-  }
+/* Simple content wrapper utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 /* =========================================================
-   HOMEPAGE UPGRADE STYLES
+   HEADER / NAV
    ========================================================= */
 
-/* HEADER / NAV */
-/* HEADER — full-width horizontal navigation */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   background: #fff;
-  padding: 1rem 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .site-header-inner {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0.85rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,17 +56,18 @@ body {
 
 .site-title a {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   letter-spacing: 0.06em;
   text-decoration: none;
   color: #111;
+  white-space: nowrap;
 }
 
-/* Desktop Navigation: horizontal, right-aligned */
+/* Desktop nav */
 .nav-menu {
-  display: flex !important;
+  display: flex;
   flex-direction: row;
-  gap: 2.2rem;
+  gap: 2.1rem;
   background: none;
   position: static;
   padding: 0;
@@ -102,65 +77,130 @@ body {
 .nav-menu a {
   text-decoration: none;
   color: #111;
-  font-size: 1rem;
-  letter-spacing: .02em;
-  transition: opacity .2s ease;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+  transition: opacity 0.2s ease;
 }
 
 .nav-menu a:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
-/* Mobile behavior */
+.nav-menu a.active {
+  opacity: 0.9;
+}
+
+/* Mobile toggle */
 .nav-toggle {
   display: none;
 }
 
+/* Mobile header behavior */
 @media (max-width: 800px) {
+  .site-header-inner {
+    padding: 0.85rem 1.25rem;
+  }
+
   .nav-toggle {
     display: block;
     font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.25rem;
+    padding: 0.15rem 0.25rem;
+    margin-left: auto;
   }
 
   .nav-menu {
-    display: none !important;
+    display: none;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     position: absolute;
-    top: 70px;
-    right: 1.5rem;
+    top: 60px;
+    right: 1.25rem;
     background: #fff;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.3rem;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
   }
 
   .nav-menu.nav-menu-open {
-    display: flex !important;
+    display: flex;
+  }
+
+  .nav-menu a {
+    font-size: 0.95rem;
   }
 }
 
-/* HERO */
+/* =========================================================
+   HOMEPAGE HERO (SLIDESHOW)
+   ========================================================= */
+
 .hero {
-  min-height: 65vh;
+  position: relative;
+  min-height: 70vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.5rem;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: 4rem 1.5rem;
-  background: #eee;
+  max-width: 720px;
 }
 
 .hero-title {
   font-size: 2.8rem;
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem;
+  color: #fff;
 }
 
+.hero-subtitle {
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 1.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* background slideshow */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+/* dark overlay for readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 1;
+}
+
+/* Primary button */
 .btn-primary {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -168,10 +208,55 @@ body {
   text-decoration: none;
   background: #111;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.98rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
 }
 
-/* INTRO */
+/* Secondary button (used elsewhere) */
+.btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 1px solid #111;
+  background: transparent;
+  color: #111;
+  font-size: 0.98rem;
+  font-weight: 300;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 4.5rem 1.25rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+}
+
+/* =========================================================
+   HOMEPAGE SECTIONS
+   ========================================================= */
+
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
 .intro {
   padding: 4rem 1.5rem;
   text-align: center;
@@ -191,7 +276,7 @@ body {
   line-height: 1.7;
 }
 
-/* FEATURED COLLECTIONS */
+/* Featured collections on home */
 .collections-section {
   padding: 4rem 1.5rem;
 }
@@ -202,10 +287,11 @@ body {
 }
 
 .collections-grid {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   gap: 2rem;
+  padding: 0 1rem;
 }
 
 .collection-card a {
@@ -220,6 +306,7 @@ body {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 1rem;
+  max-height: 350px;
 }
 
 .collection-thumb img {
@@ -231,6 +318,7 @@ body {
 .collection-card h3 {
   font-size: 1.4rem;
   margin-bottom: 0.3rem;
+  font-weight: 300;
 }
 
 .collection-description {
@@ -243,14 +331,19 @@ body {
   opacity: 0.7;
 }
 
-/* Desktop 2-column layout */
 @media (min-width: 800px) {
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* PRINTS CTA */
+/* Sessions section placeholder */
+.sessions-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+/* Prints CTA on home */
 .prints-cta {
   background: #f4f4f4;
   padding: 4rem 1.5rem;
@@ -262,24 +355,10 @@ body {
   margin: 0 auto;
 }
 
-/* SESSIONS */
-.sessions-section {
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-.btn-secondary {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  border: 1px solid #111;
-  border-radius: 40px;
-  text-decoration: none;
-  background: none;
-  color: #111;
-  font-size: 1rem;
-}
-
-/* FOOTER */
 .site-footer {
   padding: 3rem 1.5rem;
   background: #111;
@@ -287,10 +366,29 @@ body {
   text-align: center;
 }
 
+.footer-logo-top img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  opacity: 0.95;
+}
+
+.footer-email a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .footer-social a {
   text-decoration: none;
   color: #fff;
   margin: 0 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .back-home-link {
@@ -301,117 +399,10 @@ body {
   text-decoration: none;
 }
 
-/* Sleek header title styling (matches logo aesthetics) */
-.site-title a {
-  font-weight: 300;
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  color: #111;
-}
+/* =========================================================
+   COLLECTIONS LANDING PAGE
+   ========================================================= */
 
-.site-header-inner {
-  justify-content: space-between !important;
-}
-
-.collections-grid {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 0 1rem !important;
-}
-
-.collection-thumb {
-  aspect-ratio: 1 / 1;
-  max-height: 350px;
-}
-
-.collection-thumb img {
-  object-fit: cover;
-}
-
-.hero-title {
-  font-weight: 300 !important;
-  letter-spacing: 0.02em;
-  font-family: "bc-alphapipe", sans-serif !important;
-}
-
-/* Footer top logo size */
-.footer-logo-top img {
-  max-width: 140px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 1.5rem;
-  opacity: 0.95;
-}
-
-/* HERO SLIDESHOW BACKGROUND */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-}
-
-/* full-bleed slideshow behind the text */
-.hero-slideshow {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-.hero-slide.is-active {
-  opacity: 1;
-}
-
-/* dark overlay to keep text readable */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.32);
-  z-index: 1;
-}
-
-/* make sure hero text stays readable on top of photos */
-.hero-title {
-  color: #fff;
-}
-
-.btn-primary {
-  position: relative;
-  z-index: 2;
-}
-
-.back-collections {
-  max-width: 1100px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-}
-
-.back-collections a {
-  font-size: 0.95rem;
-  text-decoration: none;
-  color: #555;
-}
-
-.back-collections a:hover {
-  opacity: 0.7;
-}
-
-/* Collections Landing Page Hero */
 .page-hero {
   text-align: center;
   padding: 4rem 1rem 2rem;
@@ -427,11 +418,11 @@ body {
 }
 
 .page-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   opacity: 0.75;
 }
 
-/* Collections Landing Page Grid */
+/* Collections landing grid */
 .collections-page .collections-grid {
   max-width: 1100px;
   margin: 2rem auto;
@@ -463,10 +454,9 @@ body {
   opacity: 0.85;
 }
 
-/* Thumbnail box */
 .collections-page .collection-thumb {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -478,36 +468,27 @@ body {
   object-fit: cover;
 }
 
-/* Uniform Masonry Gallery Layout */
-.gallery {
-  column-count: 3;
-  column-gap: 1rem;
+.back-collections {
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   padding: 0 1rem;
 }
 
-.gallery img {
-  width: 100%;
-  display: block;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  break-inside: avoid;
+.back-collections a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #555;
 }
 
-@media (max-width: 900px) {
-  .gallery {
-    column-count: 2;
-  }
+.back-collections a:hover {
+  opacity: 0.7;
 }
 
-@media (max-width: 600px) {
-  .gallery {
-    column-count: 1;
-  }
-}
+/* =========================================================
+   INDIVIDUAL COLLECTION PAGES (GALLERIES)
+   ========================================================= */
 
-/* Collection Page Title */
+/* Page title on collection pages */
 .collection-heading {
   text-align: center;
   max-width: 900px;
@@ -522,19 +503,36 @@ body {
   margin: 0;
 }
 
-.gallery img {
-  cursor: pointer;
+/* NEW: Responsive grid gallery instead of masonry columns */
+.gallery {
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
-/* LIGHTBOX OVERLAY */
+.gallery a {
+  display: block;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Lightbox overlay */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 999999;
 }
 
 .lightbox-overlay img {
@@ -544,33 +542,88 @@ body {
   object-fit: contain;
 }
 
-.gallery {
+/* =========================================================
+   PRINTS PAGE – HERO & GRID
+   ========================================================= */
+
+/* Hero for prints listing page */
+.prints-hero {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  background-image: url("https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.5rem 3.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.lightbox-overlay {
-  z-index: 999999 !important;
+.prints-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-/* PRINTS PAGE */
-.page-intro {
-  padding: 80px 20px 40px;
+.prints-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
   text-align: center;
+  color: #fff;
 }
 
-.page-title {
-  font-family: "bc-alphapipe", sans-serif;
-  font-size: 48px;
+.prints-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
   font-weight: 300;
-  margin-bottom: 10px;
 }
 
-.page-subtitle {
-  font-size: 18px;
-  color: #777;
+.prints-hero p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto 24px;
 }
 
+/* Filter / helper buttons under hero text */
+.prints-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-btn {
+  padding: 10px 18px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.hero-btn.primary {
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+.hero-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.hero-btn.primary:hover {
+  background: #eaeaea;
+}
+
+/* Prints grid section */
 .prints-grid-section {
   padding: 40px 20px 80px;
 }
@@ -583,16 +636,36 @@ body {
   margin: 0 auto;
 }
 
+/* Print card styles */
+.print-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.print-card.hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  pointer-events: none;
+}
+
 .print-card a {
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
+.print-thumb {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 .print-thumb img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -604,24 +677,48 @@ body {
 }
 
 .print-title {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-top: 10px;
   font-weight: 200;
 }
 
 .print-collection {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #888;
 }
 
 .print-link {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #333;
   margin-top: 5px;
   display: inline-block;
 }
 
-/* PRINT DETAIL PAGE */
+/* Optional: filter button bar under hero (if used) */
+.prints-filter-buttons {
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.prints-filter-buttons button,
+.prints-filter-buttons a {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   PRINT DETAIL PAGE
+   ========================================================= */
+
 .print-detail {
   padding: 80px 20px;
 }
@@ -630,7 +727,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
 }
 
@@ -640,36 +737,37 @@ body {
 
 .print-detail-image {
   width: 100%;
-  height: auto;
   border-radius: 8px;
   object-fit: cover;
 }
 
 .print-info {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .print-title {
   font-family: "bc-alphapipe", sans-serif;
   font-weight: 200;
-  font-size: 42px;
+  font-size: 2.6rem;
   margin-bottom: 10px;
 }
 
 .print-collection-label {
   color: #777;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
 }
 
 .print-description {
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
+  font-size: 1rem;
 }
 
 .print-sizes h2 {
-  font-size: 20px;
+  font-size: 1.15rem;
   margin-bottom: 10px;
+  font-weight: 300;
 }
 
 .print-sizes ul {
@@ -679,57 +777,16 @@ body {
 }
 
 .print-sizes li {
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 6px;
+  font-size: 0.98rem;
 }
 
 .purchase-btn {
-  margin-top: 20px;
+  margin-top: 10px;
   display: inline-block;
 }
 
-.back-prints-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #333;
-  font-size: 14px;
-}
-
-/* Mobile Layout */
-@media (max-width: 880px) {
-  .print-detail-inner {
-    grid-template-columns: 1fr;
-  }
-  .print-image-wrapper {
-    order: 1;
-  }
-  .print-info {
-    order: 2;
-  }
-}
-
-.print-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
-.print-nav-btn {
-  font-size: 14px;
-  color: #333;
-  text-decoration: none;
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.print-nav-btn:hover {
-  background: #333;
-  color: #fff;
-}
-
-/* PRINT NAVIGATION STYLING */
+/* Next / Previous and back link */
 .print-nav {
   display: flex;
   gap: 12px;
@@ -740,7 +797,7 @@ body {
   padding: 8px 16px;
   border: 1px solid #aaa;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-decoration: none;
   color: #333;
   background: #fff;
@@ -754,189 +811,64 @@ body {
 .nav-back {
   display: block;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-decoration: none;
   color: #333;
 }
 
-/* ============================
-   Prints Page Hero
-============================ */
-.prints-hero {
-  position: relative;
-  width: 100%;
-  height: 55vh;
-  min-height: 380px;
-  background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+/* =========================================================
+   CONTACT + SESSIONS PAGE BASICS
+   ========================================================= */
+
+.contact-section {
+  padding: 4rem 1.5rem 5rem;
 }
 
-.prints-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
+.contact-inner {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.prints-hero-content {
-  position: relative;
-  max-width: 900px;
-  text-align: center;
-  z-index: 2;
-  color: white;
+.contact-inner h1 {
+  font-size: 2.3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
-.prints-hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
+.contact-inner p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-.prints-hero p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 750px;
-  margin: 0 auto 25px auto;
+/* You can apply similar structure for sessions */
+.sessions-section h1 {
+  font-size: 2.3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
-.prints-hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
+/* =========================================================
+   RESPONSIVE TWEAKS
+   ========================================================= */
 
-.hero-btn {
-  padding: 10px 18px;
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.2s;
-  font-size: 0.95rem;
-}
+@media (max-width: 880px) {
+  .print-detail-inner {
+    grid-template-columns: 1fr;
+  }
 
-.hero-btn.primary {
-  background: white;
-  color: black;
-  font-weight: 600;
-}
+  .print-image-wrapper {
+    order: 1;
+  }
 
-.hero-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  .print-info {
+    order: 2;
+  }
 }
-
-.hero-btn.primary:hover {
-  background: #eaeaea;
-}
-
-/* simple fade (legacy, but harmless) */
-.print-card {
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.print-card.fade-out {
-  opacity: 0;
-}
-
-.print-card.fade-in {
-  opacity: 1;
-}
-
-/* Luxury gallery animations (override above) */
-.print-card {
-  opacity: 1;
-  transform: translateY(0px) scale(1);
-  transition:
-    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.print-card.hidden {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  pointer-events: none;
-}
-
-.print-card {
-  will-change: opacity, transform;
-}
-
-/* -----------------------------
-   MOBILE FIXES FOR PRINTS PAGE
-   ----------------------------- */
 
 @media (max-width: 600px) {
-
-  .prints-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* one card per row */
-    gap: 32px; /* breathing room between cards */
-    padding: 0 20px;
-  }
-
-  .print-card a {
-    display: block;
-    text-decoration: none;
-  }
-
-  .print-thumb img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .print-title {
-    font-size: 1.1rem;
-    font-weight: 300; /* NOT BOLD — your request! */
-    margin-top: 10px;
-  }
-
-  .print-collection {
-    font-size: 0.9rem;
-    font-weight: 300;
-    opacity: 0.7;
-    margin-bottom: 6px;
-  }
-
-  .print-link {
-    font-size: 0.85rem;
-    font-weight: 400;
-    opacity: 0.8;
-    display: inline-block;
-    margin-top: 4px;
-  }
-}
-/* PRINTS HERO – MOBILE FIX */
-.prints-hero {
-  min-height: 100vh;          /* Let hero expand naturally */
-  padding: 2rem 1rem;         /* Space for breathing room */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;    /* Center content vertically */
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Extra spacing between text and filter buttons */
-.prints-hero .prints-hero-buttons {
-  margin-top: 1.5rem;
-}
-
-/* MOBILE ADJUSTMENTS */
-@media (max-width: 600px) {
+  /* Prints hero mobile adjustments */
   .prints-hero {
-    min-height: unset;       /* Allow hero to grow naturally */
-    padding-top: 4rem;       /* Extra space under the header */
+    padding-top: 5.5rem;
     padding-bottom: 3rem;
   }
 
@@ -945,12 +877,11 @@ body {
   }
 
   .prints-hero p {
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 0.98rem;
+    line-height: 1.45;
   }
 
   .prints-hero-buttons {
-    display: flex;
     flex-direction: column;
     gap: 0.75rem;
   }
@@ -958,41 +889,42 @@ body {
   .prints-hero-buttons a {
     width: 100%;
   }
-}
 
-/* Fix header width on mobile */
-@media (max-width: 600px) {
-  .site-header-inner {
-    padding: 0 16px;
-    max-width: 100%;
-    overflow: hidden;
+  /* Prints grid – one column */
+  .prints-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 10px;
   }
 
-  .site-title a {
-    font-size: 20px;
-    white-space: nowrap;
+  .print-title {
+    font-size: 1.1rem;
+    font-weight: 300; /* slimmer on mobile */
+    margin-top: 10px;
   }
 
-  .nav-toggle {
-    margin-left: auto;
-  }
-}
-
-.nav-menu {
-  display: none;
-}
-
-.nav-menu.open {
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .prints-filter-buttons {
-    padding: 0 16px;
+  .print-collection {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.75;
+    margin-bottom: 6px;
   }
 
-  .prints-filter-buttons a {
-    width: 100%;
-    margin-bottom: 12px;
+  .print-link {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  /* Collection galleries – tighter padding */
+  .gallery {
+    padding: 0 0.75rem;
+  }
+
+  .collection-heading h1 {
+    font-size: 2.1rem;
+  }
+
+  .page-hero {
+    padding-top: 3.5rem;
   }
 }
