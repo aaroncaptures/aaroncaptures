@@ -868,3 +868,50 @@ body {
 .print-card {
   will-change: opacity, transform;
 }
+
+/* -----------------------------
+   MOBILE FIXES FOR PRINTS PAGE
+   ----------------------------- */
+
+@media (max-width: 600px) {
+
+  .prints-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 32px; /* breathing room between cards */
+    padding: 0 20px;
+  }
+
+  .print-card a {
+    display: block;
+    text-decoration: none;
+  }
+
+  .print-thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .print-title {
+    font-size: 1.1rem;
+    font-weight: 300; /* NOT BOLD — your request! */
+    margin-top: 10px;
+  }
+
+  .print-collection {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  .print-link {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.8;
+    display: inline-block;
+    margin-top: 4px;
+  }
+}
