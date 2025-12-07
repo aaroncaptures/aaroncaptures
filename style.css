@@ -915,3 +915,48 @@ body {
     margin-top: 4px;
   }
 }
+/* PRINTS HERO – MOBILE FIX */
+.prints-hero {
+  min-height: 100vh;          /* Let hero expand naturally */
+  padding: 2rem 1rem;         /* Space for breathing room */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* Center content vertically */
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Extra spacing between text and filter buttons */
+.prints-hero .prints-hero-buttons {
+  margin-top: 1.5rem;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .prints-hero {
+    min-height: unset;       /* Allow hero to grow naturally */
+    padding-top: 4rem;       /* Extra space under the header */
+    padding-bottom: 3rem;
+  }
+
+  .prints-hero h1 {
+    font-size: 2rem;
+  }
+
+  .prints-hero p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .prints-hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .prints-hero-buttons a {
+    width: 100%;
+  }
+}
+
