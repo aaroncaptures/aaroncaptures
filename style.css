@@ -960,3 +960,39 @@ body {
   }
 }
 
+/* Fix header width on mobile */
+@media (max-width: 600px) {
+  .site-header-inner {
+    padding: 0 16px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .site-title a {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .nav-toggle {
+    margin-left: auto;
+  }
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu.open {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .prints-filter-buttons {
+    padding: 0 16px;
+  }
+
+  .prints-filter-buttons a {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
