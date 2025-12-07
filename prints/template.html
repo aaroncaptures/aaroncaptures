@@ -89,6 +89,18 @@
     </div>
   </footer>
 
+  <script>
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isOpen);
+    navMenu.classList.toggle('open');
+  });
+</script>
+
   <!-- TEMPLATE SCRIPT -->
   <script>
     async function loadPrint() {
