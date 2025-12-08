@@ -456,7 +456,7 @@ a {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .gallery a:hover img {
