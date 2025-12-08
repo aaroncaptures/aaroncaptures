@@ -1,12 +1,6 @@
-/* =========================================================
+/* =========================================
    GLOBAL BASE
-   ========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+   ========================================= */
 
 body {
   margin: 0;
@@ -16,6 +10,7 @@ body {
   line-height: 1.5;
 }
 
+/* Basic elements */
 img {
   max-width: 100%;
   height: auto;
@@ -24,73 +19,56 @@ img {
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
-main {
-  min-height: 60vh;
-}
-
-/* Simple wrapper utility */
-.max-width {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* Generic section spacing */
-.section {
-  padding: 4rem 1.5rem;
-}
-
-.section h2 {
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-/* =========================================================
+/* =========================================
    HEADER / NAV
-   ========================================================= */
+   ========================================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   background: #fff;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .site-header-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0.9rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Brand text */
 .site-title a {
   font-weight: 300;
   font-size: 1.15rem;
   letter-spacing: 0.06em;
+  text-decoration: none;
+  color: #111;
   white-space: nowrap;
 }
 
-/* Desktop nav */
+/* Desktop navigation */
 .nav-menu {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 2.2rem;
+  background: none;
+  position: static;
+  padding: 0;
+  box-shadow: none;
 }
 
 .nav-menu a {
-  font-size: 0.98rem;
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
   letter-spacing: 0.02em;
-  font-weight: 300;
-  opacity: 0.9;
   transition: opacity 0.2s ease;
+  font-weight: 300;
 }
 
 .nav-menu a:hover {
@@ -98,155 +76,50 @@ main {
 }
 
 .nav-menu a.active {
-  opacity: 1;
+  opacity: 0.85;
 }
 
-/* Mobile toggle */
+/* Mobile nav toggle */
 .nav-toggle {
   display: none;
+  font-size: 2rem;
   background: none;
   border: none;
-  font-size: 1.8rem;
   cursor: pointer;
+  padding: 0.25rem;
 }
 
-/* Mobile nav behavior */
-@media (max-width: 800px) {
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-  }
+/* =========================================
+   HERO – HOMEPAGE
+   ========================================= */
 
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    right: 1rem;
-    padding: 1rem 1.3rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    gap: 0.85rem;
-    min-width: 170px;
-    z-index: 25;
-  }
-
-  /* class added by JS */
-  .nav-menu.nav-menu-open {
-    display: flex;
-  }
-
-  .site-header-inner {
-    padding-inline: 1rem;
-  }
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.btn-primary,
-.btn-secondary,
-.hero-btn,
-.print-nav-btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  border-radius: 40px;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-}
-
-.btn-primary {
-  background: #111;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #000;
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  background: none;
-  border-color: #111;
-  color: #111;
-}
-
-.btn-secondary:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.site-footer {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 3rem 1.5rem 2.5rem;
-  margin-top: 3rem;
-}
-
-.footer-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.footer-logo-top img {
-  max-width: 140px;
-  margin: 0 auto 1.5rem;
-  opacity: 0.95;
-}
-
-.footer-email a {
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-.footer-social {
-  margin: 0.75rem 0;
-  font-size: 0.95rem;
-}
-
-.footer-social a {
-  color: #fff;
-  margin: 0 0.4rem;
-}
-
-.footer-copy {
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.back-home-link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-/* =========================================================
-   HOMEPAGE
-   ========================================================= */
-
-/* HERO with background slideshow */
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 4rem 1.5rem;
+  background: #111;
   overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
   color: #fff;
 }
 
+/* Background slideshow */
 .hero-slideshow {
   position: absolute;
   inset: 0;
@@ -257,15 +130,17 @@ main {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 1.1s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
 }
 
 .hero-slide.is-active {
   opacity: 1;
 }
 
+/* Dark overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -273,48 +148,81 @@ main {
   z-index: 1;
 }
 
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 700px;
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.hero-title {
-  font-size: 2.8rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.5rem;
+.btn-primary {
+  background: #111;
+  color: #fff;
 }
 
-/* Intro section */
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid #111;
+  background: none;
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* =========================================
+   INTRO
+   ========================================= */
+
 .intro {
   padding: 4rem 1.5rem;
   text-align: center;
 }
 
 .intro-label {
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .intro-text {
   max-width: 700px;
   margin: 0 auto;
-  font-size: 1.04rem;
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* Featured collections on homepage */
+/* =========================================
+   HOMEPAGE – COLLECTIONS
+   ========================================= */
+
 .collections-section {
   padding: 4rem 1.5rem;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-header p {
+  opacity: 0.8;
 }
 
 .collections-grid {
@@ -325,8 +233,9 @@ main {
 }
 
 .collection-card a {
-  display: block;
+  text-decoration: none;
   color: #111;
+  display: block;
 }
 
 .collection-thumb {
@@ -344,22 +253,25 @@ main {
 }
 
 .collection-card h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
   font-weight: 300;
-  margin: 0 0 0.35rem;
 }
 
 .collection-description {
-  font-size: 0.98rem;
-  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .collection-link {
   font-size: 0.9rem;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
-/* Prints CTA on homepage */
+/* =========================================
+   PRINTS CTA – HOMEPAGE
+   ========================================= */
+
 .prints-cta {
   background: #f4f4f4;
   padding: 4rem 1.5rem;
@@ -371,36 +283,75 @@ main {
   margin: 0 auto;
 }
 
-/* Simple sessions teaser on homepage (if used) */
+/* =========================================
+   SESSIONS – HOMEPAGE
+   ========================================= */
+
 .sessions-section {
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 5rem;
   text-align: center;
 }
 
-/* Homepage responsive adjustments */
-@media (min-width: 800px) {
-  .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.sessions-inner {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
+/* =========================================
+   FOOTER
+   ========================================= */
 
-  .intro {
-    padding-top: 3rem;
-  }
+.site-footer {
+  padding: 3rem 1.5rem;
+  background: #111;
+  color: #fff;
+  text-align: center;
 }
 
-/* =========================================================
-   COLLECTIONS LANDING PAGE  (/collections/)
-   ========================================================= */
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-logo-top img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  opacity: 0.95;
+}
+
+.footer-email a,
+.footer-social a,
+.back-home-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+}
+
+.footer-copy {
+  opacity: 0.9;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.back-home-link {
+  display: inline-block;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* =========================================
+   COLLECTIONS LANDING PAGE
+   ========================================= */
 
 .page-hero {
   text-align: center;
-  padding: 4rem 1.5rem 2rem;
+  padding: 4rem 1rem 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -409,32 +360,20 @@ main {
   font-size: 2.6rem;
   font-weight: 300;
   letter-spacing: 0.03em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-  font-size: 1.05rem;
-  opacity: 0.8;
+  font-size: 1.1rem;
+  opacity: 0.75;
 }
 
-/* Grid of collection cards on the landing page */
 .collections-page .collections-grid {
   max-width: 1100px;
-  margin: 2rem auto 3rem;
-  padding: 0 1.5rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
   display: grid;
   gap: 2rem;
-}
-
-@media (min-width: 800px) {
-  .collections-page .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.collections-page .collection-card {
-  display: block;
-  color: #111;
 }
 
 .collections-page .collection-card h2 {
@@ -448,41 +387,15 @@ main {
   opacity: 0.85;
 }
 
-/* Thumbnail box reused */
-.collections-page .collection-thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
+/* =========================================
+   COLLECTION DETAIL PAGES
+   ========================================= */
 
-/* =========================================================
-   INDIVIDUAL COLLECTION PAGES  (Silent Horizons, etc.)
-   ========================================================= */
-
-/* Back to collections link above gallery */
-.back-collections {
-  max-width: 1100px;
-  margin: 2rem auto 0;
-  padding: 0 1.5rem;
-}
-
-.back-collections a {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.back-collections a:hover {
-  opacity: 0.7;
-}
-
-/* Page heading */
 .collection-heading {
   text-align: center;
   max-width: 900px;
-  margin: 2.5rem auto 1rem;
-  padding: 0 1.5rem;
+  margin: 3rem auto 1rem;
+  padding: 0 1rem;
 }
 
 .collection-heading h1 {
@@ -492,25 +405,63 @@ main {
   margin: 0;
 }
 
-/* NEW: responsive grid gallery (replacing masonry) */
+/* Back to collections link */
+.back-collections {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+.back-collections a {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #555;
+}
+
+.back-collections a:hover {
+  opacity: 0.7;
+}
+
+/* Aspect-ratio gallery cards */
 .gallery {
   max-width: 1100px;
-  margin: 2rem auto 3rem;
-  padding: 0 1.5rem;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .gallery a {
+  position: relative;
   display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
+
+/* 3:2-ish card */
+.gallery a::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.6667%;
 }
 
 .gallery img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: zoom-in;
+}
+
+.gallery a:hover img {
+  transform: scale(1.03);
+  opacity: 0.95;
 }
 
 /* Lightbox overlay */
@@ -521,7 +472,7 @@ main {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 999999;
 }
 
 .lightbox-overlay img {
@@ -531,20 +482,23 @@ main {
   object-fit: contain;
 }
 
-/* =========================================================
-   PRINTS INDEX PAGE  (/prints/)
-   ========================================================= */
+/* =========================================
+   PRINTS PAGE – HERO & GRID
+   ========================================= */
 
-/* Hero with background image + copy + filter buttons */
 .prints-hero {
   position: relative;
   width: 100%;
+  min-height: 420px;
   background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg');
   background-size: cover;
   background-position: center;
-  overflow: hidden;           /* prevent right-side overflow */
-  padding: 4.5rem 1.5rem 3.5rem;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 1.5rem 3rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .prints-hero-overlay {
@@ -557,41 +511,43 @@ main {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  margin: 0 auto;
   text-align: center;
+  color: #fff;
 }
 
 .prints-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
   letter-spacing: 0.03em;
-  margin-bottom: 0.9rem;
+  font-weight: 300;
 }
 
 .prints-hero p {
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 760px;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 1.5rem;
 }
 
-/* Hero buttons (shop all + filters) */
 .prints-hero-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
+/* Filter buttons */
 .hero-btn {
-  padding: 0.8rem 1.6rem;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #fff;
-  background: transparent;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   color: #fff;
-  font-size: 0.95rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background 0.25s ease, transform 0.2s ease, color 0.25s ease;
 }
 
 .hero-btn.primary {
@@ -601,35 +557,25 @@ main {
 }
 
 .hero-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .hero-btn.primary:hover {
-  background: #eaeaea;
+  background: #eee;
 }
 
-/* Optional extra row of filters under hero if used */
-.prints-filter-buttons {
-  max-width: 1100px;
-  margin: 1.5rem auto 0;
-  padding: 0 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-/* Grid of print cards */
+/* Prints grid */
 .prints-grid-section {
-  padding: 3rem 1.5rem 4.5rem;
+  padding: 40px 20px 80px;
 }
 
 .prints-grid {
-  max-width: 1100px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2.5rem;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .print-card {
@@ -638,6 +584,7 @@ main {
   transition:
     opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .print-card.hidden {
@@ -647,19 +594,18 @@ main {
 }
 
 .print-card a {
+  text-decoration: none;
+  color: inherit;
   display: block;
-}
-
-.print-thumb {
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .print-thumb img {
   width: 100%;
+  height: auto;
+  border-radius: 6px;
   object-fit: cover;
+  cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  cursor: zoom-in;
 }
 
 .print-thumb img:hover {
@@ -668,36 +614,37 @@ main {
 }
 
 .print-title {
-  font-size: 1.1rem;
-  font-weight: 300;  /* slim, not bold */
-  margin-top: 0.75rem;
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 200;
 }
 
 .print-collection {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #888;
-  font-weight: 300;
 }
 
 .print-link {
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+  display: inline-block;
 }
 
-/* =========================================================
-   PRINT DETAIL PAGE  (/prints/template.html?print=...)
-   ========================================================= */
+/* =========================================
+   PRINT DETAIL PAGE
+   ========================================= */
 
 .print-detail {
-  padding: 4.5rem 1.5rem 4rem;
+  padding: 80px 20px;
 }
 
 .print-detail-inner {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
 .print-image-wrapper {
@@ -706,68 +653,79 @@ main {
 
 .print-detail-image {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
 }
 
 .print-info {
-  padding-top: 0.5rem;
+  padding-top: 20px;
 }
 
-.print-info .print-title {
+.print-title {
   font-family: "bc-alphapipe", sans-serif;
   font-weight: 200;
-  font-size: 2.4rem;
-  margin: 0 0 0.4rem;
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
 .print-collection-label {
-  font-size: 0.98rem;
   color: #777;
-  margin-bottom: 1.4rem;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .print-description {
-  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.8rem;
+  margin-bottom: 30px;
 }
 
 .print-sizes h2 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0.6rem;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
 }
 
 .print-sizes ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.3rem;
+  margin-bottom: 20px;
 }
 
 .print-sizes li {
-  font-size: 0.98rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
 .purchase-btn {
-  margin-top: 0.5rem;
+  margin-top: 20px;
+  display: inline-block;
 }
 
-/* Next / Previous nav + back link */
+.back-prints-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Next / Previous nav */
 .print-nav {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.8rem;
+  gap: 12px;
+  margin-top: 35px;
 }
 
 .print-nav-btn {
-  font-size: 0.9rem;
+  padding: 8px 16px;
+  border: 1px solid #aaa;
   border-radius: 6px;
-  border-color: #aaa;
-  background: #fff;
+  font-size: 14px;
+  text-decoration: none;
   color: #333;
-  padding: 0.5rem 1rem;
+  background: #fff;
+  transition: background 0.2s ease;
 }
 
 .print-nav-btn:hover {
@@ -776,92 +734,140 @@ main {
 
 .nav-back {
   display: block;
-  margin-top: 0.6rem;
-  font-size: 0.9rem;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
 }
 
-/* =========================================================
-   SESSIONS PAGE (future-proof styles)
-   ========================================================= */
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================= */
 
-.sessions-hero {
-  padding: 4rem 1.5rem 2.5rem;
-  text-align: center;
+/* Desktop two-column collections */
+@media (min-width: 800px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collections-page .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.sessions-hero h1 {
-  font-size: 2.4rem;
-  font-weight: 300;
-  margin-bottom: 0.6rem;
-}
-
-.sessions-hero p {
-  max-width: 700px;
-  margin: 0.5rem auto 0;
-}
-
-.sessions-grid {
-  max-width: 1100px;
-  margin: 2.5rem auto 4rem;
-  padding: 0 1.5rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.session-card {
-  padding: 1.8rem 1.5rem;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-}
-
-.session-card h2 {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin-top: 0;
-}
-
-.session-card p {
-  font-size: 0.98rem;
-}
-
-/* =========================================================
-   RESPONSIVE TWEAKS (GLOBAL)
-   ========================================================= */
-
-@media (max-width: 900px) {
+/* Tablet & down */
+@media (max-width: 880px) {
   .print-detail-inner {
     grid-template-columns: 1fr;
   }
+
+  .print-image-wrapper {
+    order: 1;
+  }
+
+  .print-info {
+    order: 2;
+  }
 }
 
-@media (max-width: 700px) {
+/* Mobile (nav, hero, grids) */
+@media (max-width: 800px) {
+  .site-header {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .site-header-inner {
+    max-width: 100%;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 1.25rem;
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-menu.nav-menu-open {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
   .hero {
-    padding-top: 4.5rem;
-    min-height: 65vh;
+    padding: 4rem 1.25rem 3.5rem;
+  }
+}
+
+/* Small mobile refinements */
+@media (max-width: 600px) {
+  .intro,
+  .collections-section,
+  .prints-cta,
+  .sessions-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .gallery {
+    margin: 2rem auto 2.5rem;
+    gap: 1.25rem;
   }
 
   .prints-hero {
-    padding-top: 5.5rem;  /* clears sticky header */
+    min-height: 360px;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
   }
 
-  .prints-grid-section {
-    padding-inline: 1.25rem;
+  .prints-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .prints-hero p {
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .prints-hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
   }
 
   .prints-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 4px;
   }
 
-  .print-detail {
-    padding-inline: 1.25rem;
+  .print-title {
+    font-size: 1.1rem;
+    margin-top: 10px;
   }
 
-  .print-detail-inner {
-    gap: 2rem;
+  .print-collection {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
   }
 
-  .sessions-grid {
-    grid-template-columns: 1fr;
+  .print-link {
+    font-size: 0.85rem;
   }
 }
