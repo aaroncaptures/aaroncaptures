@@ -95,9 +95,9 @@
   const navMenu = document.querySelector('.nav-menu');
 
   navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !isOpen);
-    navMenu.classList.toggle('open');
+    const isOpen = navMenu.classList.contains('nav-menu-open');
+    navMenu.classList.toggle('nav-menu-open', !isOpen);
+    navToggle.setAttribute("aria-expanded", !isOpen);
   });
 </script>
 
