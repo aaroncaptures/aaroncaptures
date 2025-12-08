@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sessions | Aaron Captures</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/xyz.css">
+
+  <!-- Correct Adobe Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -17,97 +21,101 @@
         <a href="/">Aaron Captures</a>
       </div>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
 
       <nav class="nav-menu">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
         <a href="/prints/">Prints</a>
         <a href="/sessions/" class="active">Sessions</a>
-        <a href="#footer">Contact</a>
+        <a href="#contact-footer">Contact</a>
       </nav>
     </div>
   </header>
 
+  <!-- MOBILE NAV SCRIPT -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('nav-menu-open');
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        const isOpen = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !isOpen);
+        navToggle.setAttribute('aria-expanded', !isOpen);
       });
     }
   </script>
 
-  <!-- HERO -->
+  <!-- PAGE HERO -->
   <section class="page-hero">
     <h1 class="page-title">Sessions</h1>
     <p class="page-subtitle">
-      Professional portraits, branding sessions, and creative imagery crafted with care.
+      Portraits, branding, and event photography crafted with intention.
     </p>
   </section>
 
-  <!-- SESSION TYPES -->
+  <!-- SESSION OFFERINGS -->
   <section class="collections-section">
     <div class="collections-grid" style="max-width:1100px;">
 
       <!-- Portraits -->
-      <div class="collection-card">
+      <article class="collection-card">
         <a href="#">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Portrait Session">
           </div>
           <h3>Portrait Sessions</h3>
           <p class="collection-description">
-            Clean, timeless portraits for individuals, couples, or special projects.
+            Clean, timeless portraits for individuals, couples, and creative storytelling.
           </p>
-          <p class="collection-link">Starting at $250 →</p>
+          <span class="collection-link">Starting at $250 →</span>
         </a>
-      </div>
+      </article>
 
       <!-- Headshots -->
-      <div class="collection-card">
+      <article class="collection-card">
         <a href="#">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Business Headshot">
           </div>
           <h3>Professional Headshots</h3>
           <p class="collection-description">
-            Modern, confident images designed for business or creative branding.
+            Modern, confident images crafted for business and branding.
           </p>
-          <p class="collection-link">Starting at $175 →</p>
+          <span class="collection-link">Starting at $175 →</span>
         </a>
-      </div>
+      </article>
 
       <!-- Events -->
-      <div class="collection-card">
+      <article class="collection-card">
         <a href="#">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Event Photography">
           </div>
           <h3>Event Photography</h3>
           <p class="collection-description">
-            Coverage for galleries, gatherings, launches, and special moments.
+            Galleries, gatherings, launches, celebrations — covered with care.
           </p>
-          <p class="collection-link">Hourly + packages →</p>
+          <span class="collection-link">Hourly + packages →</span>
         </a>
-      </div>
+      </article>
 
       <!-- Branding -->
-      <div class="collection-card">
+      <article class="collection-card">
         <a href="#">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Branding Session">
           </div>
           <h3>Branding Sessions</h3>
           <p class="collection-description">
-            Lifestyle imagery that tells the story of your business.
+            Visual storytelling for businesses and creative professionals.
           </p>
-          <p class="collection-link">Custom packages →</p>
+          <span class="collection-link">Custom packages →</span>
         </a>
-      </div>
+      </article>
 
     </div>
   </section>
@@ -117,7 +125,7 @@
     <div class="prints-cta-inner">
       <h2 style="font-weight:300; margin-bottom:1rem;">Ready to Book a Session?</h2>
       <p style="max-width:620px; margin:0 auto 2rem;">
-        Tell me about your project and I’ll send a tailored quote along with availability.
+        Tell me about your project and I’ll send a tailored quote with availability.
       </p>
       <a class="btn-primary" href="mailto:rashid.aaron@yahoo.com">
         Contact Me
@@ -126,23 +134,36 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer" id="footer">
+  <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
+
+      <!-- Correct Logo -->
       <div class="footer-logo-top">
-        <img src="/assets/logo.png" alt="Aaron Captures Logo">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
+      <!-- Correct Email -->
       <p class="footer-email">
         <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
       </p>
 
+      <!-- Correct Social Links + Dots -->
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
+        <span>·</span>
         <a href="https://tiktok.com/@aaron.captures" target="_blank">TikTok</a>
+        <span>·</span>
+        <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
       </p>
 
-      <p class="footer-copy">© Aaron Captures</p>
-      <a class="back-home-link" href="/">Back to Home</a>
+      <!-- Correct Copyright -->
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
+      <!-- Correct Back Link -->
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+
     </div>
   </footer>
 
