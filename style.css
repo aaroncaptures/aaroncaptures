@@ -851,6 +851,20 @@ a {
     text-align: center;
   }
 
+  /* Fix button overflow in Prints Hero on mobile */
+@media (max-width: 600px) {
+  .prints-hero-buttons {
+    width: 100%;
+    max-width: 350px;     /* keeps buttons from stretching edge to edge */
+    margin: 0 auto;       /* center horizontally */
+  }
+
+  .prints-hero-buttons a {
+    width: 100%;          /* full width within the container */
+    border-radius: 12px;  /* optional: keeps them looking polished */
+  }
+}
+
   .prints-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -869,5 +883,93 @@ a {
 
   .print-link {
     font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   FORM ENHANCEMENTS — FLOATING LABELS + STEPS
+   ========================================= */
+
+/* Floating label container */
+.float-label {
+  position: relative;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs & textareas */
+.float-label input,
+.float-label textarea,
+.float-label select {
+  width: 100%;
+  padding: 0.9rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Label text */
+.float-label span {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.95rem;
+  color: #666;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  background: #fff;
+  padding: 0 0.25rem;
+}
+
+/* Active/Focused State */
+.float-label input:focus + span,
+.float-label textarea:focus + span,
+.float-label select:focus + span,
+.float-label input:not(:placeholder-shown) + span,
+.float-label textarea:not(:placeholder-shown) + span,
+.float-label select:not([value=""]) + span {
+  top: -0.55rem;
+  left: 0.65rem;
+  font-size: 0.75rem;
+  color: #111;
+}
+
+/* Multi-step form transitions */
+.form-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.form-step.active-step {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progress Indicator */
+#formProgress {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Next/Back buttons spacing */
+.next-step,
+.prev-step {
+  margin-top: 1rem;
+}
+
+/* On mobile, buttons stretch nicely */
+@media (max-width: 600px) {
+  .next-step,
+  .prev-step {
+    width: 100%;
+    text-align: center;
   }
 }
