@@ -886,6 +886,36 @@ a {
   }
 }
 
+/* --- MOBILE FIX FOR PRINTS HERO BUTTONS --- */
+@media (max-width: 600px) {
+
+  /* Prevent background from visually “stretching” wider than viewport */
+  .prints-hero {
+    overflow: hidden;
+  }
+
+  /* Button container should not stretch full width */
+  .prints-hero-buttons {
+    width: 100%;
+    max-width: 340px;     /* controls clean centering */
+    margin: 1.2rem auto 0;
+    padding: 0 10px;      /* breathing room inside the viewport */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Each button stays within the container, not full screen width */
+  .prints-hero-buttons a {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 28px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+  }
+}
+
+
 /* =========================================
    FORM ENHANCEMENTS — FLOATING LABELS + STEPS
    ========================================= */
