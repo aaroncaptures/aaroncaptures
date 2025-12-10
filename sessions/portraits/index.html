@@ -213,6 +213,7 @@
 
 <!-- UNIVERSAL MULTI-STEP SESSION FORM -->
 <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
+  <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
   <div class="prints-cta-inner">
     <h2 class="form-title" id="formTitle">Book Your Portrait Session</h2>
 
@@ -233,54 +234,66 @@
 
       <!-- STEP 1: Contact Info -->
       <div class="form-step">
+
         <label class="float-label">
-          <input type="text" name="name" inputmode="text" required>
+          <input type="text" name="name" inputmode="text"
+                 autocomplete="off" spellcheck="false" required>
           <span>Your Name</span>
         </label>
 
         <label class="float-label">
-          <input type="email" name="email" inputmode="email" required>
+          <input type="email" name="email" inputmode="email"
+                 autocomplete="off" spellcheck="false" required>
           <span>Email Address</span>
         </label>
 
         <label class="float-label">
-          <input type="text" name="phone" inputmode="tel">
+          <input type="tel" name="phone" inputmode="tel"
+                 autocomplete="off" spellcheck="false">
           <span>Phone (optional)</span>
         </label>
 
         <button type="button" class="btn-primary next-step" style="margin-top:1rem;">Next</button>
       </div>
 
-      <!-- STEP 2: Session Details (dynamic by session type) -->
+      <!-- STEP 2: Session Details (dynamic per session) -->
       <div class="form-step">
 
         <!-- PORTRAITS -->
         <div class="dynamic-field" data-show="portraits">
+
           <label class="float-label">
-            <input type="text" name="portrait_subject" inputmode="text" data-required="true">
+            <input type="text" name="portrait_subject" inputmode="text"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>Who will be photographed?</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="portrait_location" inputmode="text">
+            <input type="text" name="portrait_location" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>Preferred location or setting?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="portrait_outfits" rows="3" inputmode="text"></textarea>
+            <textarea name="portrait_outfits" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Outfit plans or styling ideas? (optional)</span>
           </label>
 
           <label class="float-label">
-            <textarea name="portrait_must_haves" rows="3" inputmode="text"></textarea>
+            <textarea name="portrait_must_haves" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Any must-have shots you'd like? (optional)</span>
           </label>
+
         </div>
 
-        <!-- HEADSHOTS (future pages reuse) -->
+        <!-- HEADSHOTS -->
         <div class="dynamic-field" data-show="headshots">
+
           <label class="float-label">
-            <input type="number" name="headshot_count" min="1" inputmode="numeric" data-required="true">
+            <input type="number" name="headshot_count" min="1" inputmode="numeric"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>How many people need headshots?</span>
           </label>
 
@@ -295,12 +308,14 @@
           </label>
 
           <label class="float-label">
-            <input type="text" name="headshot_style" inputmode="text">
+            <input type="text" name="headshot_style" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>What style are you looking for?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="headshot_usage" rows="3" inputmode="text"></textarea>
+            <textarea name="headshot_usage" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>What are these headshots for?</span>
           </label>
 
@@ -313,55 +328,68 @@
             </select>
             <span>Do you need multiple looks?</span>
           </label>
+
         </div>
 
-        <!-- BRANDING (future pages reuse) -->
+        <!-- BRANDING -->
         <div class="dynamic-field" data-show="branding">
+
           <label class="float-label">
-            <input type="text" name="brand_name" inputmode="text" data-required="true">
+            <input type="text" name="brand_name" inputmode="text"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>Business or project name</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="brand_links" inputmode="text">
+            <input type="text" name="brand_links" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>Website or social media handles</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_aesthetic" rows="3" inputmode="text"></textarea>
+            <textarea name="brand_aesthetic" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Describe your brand aesthetic</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_content" rows="3" inputmode="text"></textarea>
+            <textarea name="brand_content" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>What type of content do you need?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_usage" rows="3" inputmode="text"></textarea>
+            <textarea name="brand_usage" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>How will these images be used?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_inspiration" rows="3" inputmode="text"></textarea>
+            <textarea name="brand_inspiration" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Shot list or inspiration? (optional)</span>
           </label>
+
         </div>
 
-        <!-- EVENTS (future pages reuse) -->
+        <!-- EVENTS -->
         <div class="dynamic-field" data-show="events">
+
           <label class="float-label">
-            <input type="text" name="event_type" inputmode="text" data-required="true">
+            <input type="text" name="event_type" inputmode="text"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>What type of event is this?</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="event_venue" inputmode="text">
+            <input type="text" name="event_venue" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>Venue name and address</span>
           </label>
 
           <label class="float-label">
-            <input type="number" name="event_guests" min="1" inputmode="numeric">
+            <input type="number" name="event_guests" min="1" inputmode="numeric"
+                   autocomplete="off" spellcheck="false">
             <span>Estimated number of guests</span>
           </label>
 
@@ -376,52 +404,65 @@
           </label>
 
           <label class="float-label">
-            <textarea name="event_special" rows="3" inputmode="text"></textarea>
+            <textarea name="event_special" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Anything special you want captured?</span>
           </label>
+
         </div>
 
         <button type="button" class="btn-secondary prev-step">Back</button>
         <button type="button" class="btn-primary next-step">Next</button>
       </div>
 
-      <!-- STEP 3: Scheduling (with calendar) -->
+      <!-- STEP 3: Scheduling -->
       <div class="form-step">
-        <!-- Events scheduling -->
+
+        <!-- Events -->
         <div class="dynamic-field" data-show="events">
+
           <label class="float-label">
-            <input type="date" name="event_date" data-required="true">
+            <input type="date" name="event_date"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>Event date</span>
           </label>
 
           <label class="float-label">
-            <input type="time" name="event_start">
+            <input type="time" name="event_start"
+                   autocomplete="off" spellcheck="false">
             <span>Event start time</span>
           </label>
 
           <label class="float-label">
-            <input type="time" name="event_end">
+            <input type="time" name="event_end"
+                   autocomplete="off" spellcheck="false">
             <span>Event end time</span>
           </label>
+
         </div>
 
-        <!-- Portraits scheduling -->
+        <!-- Portraits -->
         <div class="dynamic-field" data-show="portraits">
+
           <label class="float-label">
-            <input type="date" name="portrait_date" data-required="true">
+            <input type="date" name="portrait_date"
+                   autocomplete="off" spellcheck="false" data-required="true">
             <span>Preferred date</span>
           </label>
 
           <label class="float-label">
-            <textarea name="portrait_timeframe_notes" rows="3" inputmode="text"></textarea>
+            <textarea name="portrait_timeframe_notes" rows="3" inputmode="text"
+                      autocomplete="off" spellcheck="false"></textarea>
             <span>Preferred timeframe or flexibility (optional)</span>
           </label>
+
         </div>
 
         <!-- Headshots -->
         <div class="dynamic-field" data-show="headshots">
           <label class="float-label">
-            <input type="text" name="headshot_deadline" inputmode="text">
+            <input type="text" name="headshot_deadline" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>Do you have a deadline or launch date?</span>
           </label>
         </div>
@@ -429,7 +470,8 @@
         <!-- Branding -->
         <div class="dynamic-field" data-show="branding">
           <label class="float-label">
-            <input type="text" name="brand_timeline" inputmode="text">
+            <input type="text" name="brand_timeline" inputmode="text"
+                   autocomplete="off" spellcheck="false">
             <span>Timeline or deadline for this project</span>
           </label>
         </div>
@@ -440,13 +482,16 @@
 
       <!-- STEP 4: Final Notes -->
       <div class="form-step">
+
         <label class="float-label">
-          <textarea name="message" rows="5" inputmode="text"></textarea>
+          <textarea name="message" rows="5" inputmode="text"
+                    autocomplete="off" spellcheck="false"></textarea>
           <span>Tell me anything else you'd like me to know</span>
         </label>
 
         <label class="float-label">
-          <input type="text" name="referral_source" inputmode="text">
+          <input type="text" name="referral_source" inputmode="text"
+                 autocomplete="off" spellcheck="false">
           <span>How did you hear about me? (optional)</span>
         </label>
 
@@ -457,6 +502,7 @@
     </form>
   </div>
 </section>
+
 
 
   <!-- FOOTER -->
