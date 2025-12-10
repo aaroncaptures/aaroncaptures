@@ -69,70 +69,107 @@
   </section>
 
   <!-- PACKAGES GRID -->
-  <section class="collections-section" style="padding-top:2rem;">
-    <div class="section-header">
-      <h2>Portrait Packages</h2>
-      <p>Choose the session that fits your vision.</p>
-    </div>
+ <section class="collections-section" style="padding-top:2rem;">
+  <div class="section-header">
+    <h2>Portrait Packages</h2>
+    <p>Choose the session that fits your vision.</p>
+  </div>
 
-    <div class="collections-grid" style="max-width:1100px;">
+  <div class="collections-grid" style="max-width:1100px;">
 
-      <!-- MINI -->
-      <article class="collection-card">
+    <!-- MINI -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="mini"
+         data-package-label="Mini Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Mini Session – $200</h3>
         <p class="collection-description">30 minutes · 1 outfit · 1 location · 5–15 edited images</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-      <!-- STANDARD -->
-      <article class="collection-card">
+    <!-- STANDARD -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="standard"
+         data-package-label="Standard Portrait Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Standard Session – $300</h3>
         <p class="collection-description">60 minutes · up to 2 outfits · 1 location · 15–30 edited images</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-      <!-- EXTENDED SESSION -->
-      <article class="collection-card">
+    <!-- EXTENDED SESSION -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="extended"
+         data-package-label="Extended Portrait Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Extended Session – $550</h3>
         <p class="collection-description">2 hours · up to 4 outfits · 1–2 locations · around 40 edited images</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-      <!-- GRADUATION -->
-      <article class="collection-card">
+    <!-- GRADUATION -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="senior"
+         data-package-label="Senior / Graduation Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Senior / Graduation – $500</h3>
         <p class="collection-description">2 hours · 3 outfits · 1–2 locations · 30 edited images</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-      <!-- FAMILY -->
-      <article class="collection-card">
+    <!-- FAMILY -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="family"
+         data-package-label="Family Portrait Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Family Session – $400</h3>
         <p class="collection-description">60 minutes · 1 location · up to 6 members · 20–40 edited images · $25/additional</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-      <!-- EXTENDED FAMILY -->
-      <article class="collection-card">
+    <!-- EXTENDED FAMILY -->
+    <article class="collection-card">
+      <a href="#book"
+         class="package-button"
+         data-package-id="extended-family"
+         data-package-label="Extended Family Session">
         <div class="collection-thumb" style="background:#eee;">
           <img src="https://placehold.co/800x800" alt="">
         </div>
         <h3>Extended Family – $500</h3>
         <p class="collection-description">90 minutes · 1–2 locations · up to 10 members · 40 edited images · $25/additional</p>
-      </article>
+        <p class="collection-link">Book this package →</p>
+      </a>
+    </article>
 
-    </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- WHAT'S INCLUDED -->
   <section class="prints-cta">
@@ -175,8 +212,10 @@
   </section>
 
 <!-- UNIVERSAL MULTI-STEP SESSION FORM -->
-<section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;">
+<section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
   <div class="prints-cta-inner">
+    <h2 class="form-title" id="formTitle">Book Your Portrait Session</h2>
+
     <form data-multistep id="sessionForm"
           action="https://formsubmit.co/rashid.aaron@yahoo.com"
           method="POST">
@@ -187,6 +226,7 @@
       <input type="hidden" name="_autoresponse"
              value="Thank you for reaching out to Aaron Captures! I’ve received your message and will respond shortly.">
       <input type="hidden" name="session_type" value="">
+      <input type="hidden" name="selected_package" value="">
 
       <!-- Progress indicator -->
       <div class="form-progress" style="margin-bottom:1.5rem; text-align:center;"></div>
@@ -194,17 +234,17 @@
       <!-- STEP 1: Contact Info -->
       <div class="form-step">
         <label class="float-label">
-          <input type="text" name="name" required>
+          <input type="text" name="name" inputmode="text" required>
           <span>Your Name</span>
         </label>
 
         <label class="float-label">
-          <input type="email" name="email" required>
+          <input type="email" name="email" inputmode="email" required>
           <span>Email Address</span>
         </label>
 
         <label class="float-label">
-          <input type="text" name="phone">
+          <input type="text" name="phone" inputmode="tel">
           <span>Phone (optional)</span>
         </label>
 
@@ -217,35 +257,30 @@
         <!-- PORTRAITS -->
         <div class="dynamic-field" data-show="portraits">
           <label class="float-label">
-            <input type="text" name="portrait_subject" data-required="true">
+            <input type="text" name="portrait_subject" inputmode="text" data-required="true">
             <span>Who will be photographed?</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="portrait_location">
+            <input type="text" name="portrait_location" inputmode="text">
             <span>Preferred location or setting?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="portrait_outfits" rows="3"></textarea>
+            <textarea name="portrait_outfits" rows="3" inputmode="text"></textarea>
             <span>Outfit plans or styling ideas? (optional)</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="portrait_timing">
-            <span>Preferred date or time frame?</span>
-          </label>
-
-          <label class="float-label">
-            <textarea name="portrait_must_haves" rows="3"></textarea>
+            <textarea name="portrait_must_haves" rows="3" inputmode="text"></textarea>
             <span>Any must-have shots you'd like? (optional)</span>
           </label>
         </div>
 
-        <!-- HEADSHOTS -->
+        <!-- HEADSHOTS (future pages reuse) -->
         <div class="dynamic-field" data-show="headshots">
           <label class="float-label">
-            <input type="number" name="headshot_count" min="1" data-required="true">
+            <input type="number" name="headshot_count" min="1" inputmode="numeric" data-required="true">
             <span>How many people need headshots?</span>
           </label>
 
@@ -260,12 +295,12 @@
           </label>
 
           <label class="float-label">
-            <input type="text" name="headshot_style">
+            <input type="text" name="headshot_style" inputmode="text">
             <span>What style are you looking for?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="headshot_usage" rows="3"></textarea>
+            <textarea name="headshot_usage" rows="3" inputmode="text"></textarea>
             <span>What are these headshots for?</span>
           </label>
 
@@ -280,53 +315,53 @@
           </label>
         </div>
 
-        <!-- BRANDING -->
+        <!-- BRANDING (future pages reuse) -->
         <div class="dynamic-field" data-show="branding">
           <label class="float-label">
-            <input type="text" name="brand_name" data-required="true">
+            <input type="text" name="brand_name" inputmode="text" data-required="true">
             <span>Business or project name</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="brand_links">
+            <input type="text" name="brand_links" inputmode="text">
             <span>Website or social media handles</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_aesthetic" rows="3"></textarea>
+            <textarea name="brand_aesthetic" rows="3" inputmode="text"></textarea>
             <span>Describe your brand aesthetic</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_content" rows="3"></textarea>
+            <textarea name="brand_content" rows="3" inputmode="text"></textarea>
             <span>What type of content do you need?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_usage" rows="3"></textarea>
+            <textarea name="brand_usage" rows="3" inputmode="text"></textarea>
             <span>How will these images be used?</span>
           </label>
 
           <label class="float-label">
-            <textarea name="brand_inspiration" rows="3"></textarea>
+            <textarea name="brand_inspiration" rows="3" inputmode="text"></textarea>
             <span>Shot list or inspiration? (optional)</span>
           </label>
         </div>
 
-        <!-- EVENTS -->
+        <!-- EVENTS (future pages reuse) -->
         <div class="dynamic-field" data-show="events">
           <label class="float-label">
-            <input type="text" name="event_type" data-required="true">
+            <input type="text" name="event_type" inputmode="text" data-required="true">
             <span>What type of event is this?</span>
           </label>
 
           <label class="float-label">
-            <input type="text" name="event_venue">
+            <input type="text" name="event_venue" inputmode="text">
             <span>Venue name and address</span>
           </label>
 
           <label class="float-label">
-            <input type="number" name="event_guests" min="1">
+            <input type="number" name="event_guests" min="1" inputmode="numeric">
             <span>Estimated number of guests</span>
           </label>
 
@@ -341,7 +376,7 @@
           </label>
 
           <label class="float-label">
-            <textarea name="event_special" rows="3"></textarea>
+            <textarea name="event_special" rows="3" inputmode="text"></textarea>
             <span>Anything special you want captured?</span>
           </label>
         </div>
@@ -350,7 +385,7 @@
         <button type="button" class="btn-primary next-step">Next</button>
       </div>
 
-      <!-- STEP 3: Scheduling & Budget -->
+      <!-- STEP 3: Scheduling (with calendar) -->
       <div class="form-step">
         <!-- Events scheduling -->
         <div class="dynamic-field" data-show="events">
@@ -370,35 +405,34 @@
           </label>
         </div>
 
-        <!-- Non-event scheduling -->
+        <!-- Portraits scheduling -->
         <div class="dynamic-field" data-show="portraits">
           <label class="float-label">
-            <input type="text" name="portrait_timeframe">
-            <span>Ideal date or timeframe</span>
+            <input type="date" name="portrait_date" data-required="true">
+            <span>Preferred date</span>
+          </label>
+
+          <label class="float-label">
+            <textarea name="portrait_timeframe_notes" rows="3" inputmode="text"></textarea>
+            <span>Preferred timeframe or flexibility (optional)</span>
           </label>
         </div>
 
+        <!-- Headshots -->
         <div class="dynamic-field" data-show="headshots">
           <label class="float-label">
-            <input type="text" name="headshot_deadline">
+            <input type="text" name="headshot_deadline" inputmode="text">
             <span>Do you have a deadline or launch date?</span>
           </label>
         </div>
 
+        <!-- Branding -->
         <div class="dynamic-field" data-show="branding">
           <label class="float-label">
-            <input type="text" name="brand_timeline">
+            <input type="text" name="brand_timeline" inputmode="text">
             <span>Timeline or deadline for this project</span>
           </label>
         </div>
-
-        <!-- Budget (session-specific options filled by JS) -->
-        <label class="float-label">
-          <select name="budget">
-            <option value="" disabled selected></option>
-          </select>
-          <span>Estimated budget</span>
-        </label>
 
         <button type="button" class="btn-secondary prev-step">Back</button>
         <button type="button" class="btn-primary next-step">Next</button>
@@ -407,12 +441,12 @@
       <!-- STEP 4: Final Notes -->
       <div class="form-step">
         <label class="float-label">
-          <textarea name="message" rows="5"></textarea>
+          <textarea name="message" rows="5" inputmode="text"></textarea>
           <span>Tell me anything else you'd like me to know</span>
         </label>
 
         <label class="float-label">
-          <input type="text" name="referral_source">
+          <input type="text" name="referral_source" inputmode="text">
           <span>How did you hear about me? (optional)</span>
         </label>
 

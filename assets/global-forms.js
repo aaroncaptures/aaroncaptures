@@ -1,40 +1,18 @@
 // /assets/global-forms.js
 
-// Session-specific data (budget options + label)
+// Session-specific data
 const SESSION_DATA = {
   portraits: {
-    sessionType: "Portrait Session",
-    budgetOptions: [
-      "$150–$250",
-      "$250–$400",
-      "$400–$800",
-      "$800–$1500"
-    ]
+    sessionType: "Portrait Session"
   },
   headshots: {
-    sessionType: "Professional Headshots",
-    budgetOptions: [
-      "$175–$250",
-      "$250–$350",
-      "$350–$600"
-    ]
+    sessionType: "Professional Headshots"
   },
   branding: {
-    sessionType: "Branding Session",
-    budgetOptions: [
-      "$300–$600",
-      "$600–$1200",
-      "$1200–$2500"
-    ]
+    sessionType: "Branding Session"
   },
   events: {
-    sessionType: "Event Photography",
-    budgetOptions: [
-      "$300–$500",
-      "$500–$800",
-      "$800–$1500",
-      "$1500–$2000"
-    ]
+    sessionType: "Event Photography"
   }
 };
 
@@ -43,6 +21,29 @@ window.addEventListener("DOMContentLoaded", () => {
   const sessionKey = body.dataset.session || null;
   const forms = document.querySelectorAll("[data-multistep]");
 
+  // -----------------------------------
+  // PACKAGE SELECTION → FORM
+  // -----------------------------------
+  const packageButtons = document.querySelectorAll(".package-button");
+  const selectedPackageField = document.querySelector("input[name='selected_package']");
+  const formTitle = document.getElementById("formTitle");
+
+  packageButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const label = btn.dataset.packageLabel || "";
+      if (selectedPackageField) {
+        selectedPackageField.value = label;
+      }
+      if (formTitle && label) {
+        formTitle.textContent = `Book Your ${label}`;
+      }
+      // smooth scroll is already handled by your anchor script
+    });
+  });
+
+  // -----------------------------------
+  // MULTI-STEP FORMS
+  // -----------------------------------
   forms.forEach(form => {
     const steps = form.querySelectorAll(".form-step");
     const nextBtns = form.querySelectorAll(".next-step");
@@ -51,34 +52,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!steps.length) return;
 
-    // -----------------------------------
-    // SESSION-SPECIFIC HIDDEN + BUDGET
-    // -----------------------------------
+    // SESSION TYPE HIDDEN FIELD
     if (sessionKey && SESSION_DATA[sessionKey]) {
       const data = SESSION_DATA[sessionKey];
-
-      // Hidden session_type field
       const typeField = form.querySelector("input[name='session_type']");
       if (typeField) {
         typeField.value = data.sessionType;
       }
-
-      // Budget dropdown
-      const budgetSelect = form.querySelector("select[name='budget']");
-      if (budgetSelect) {
-        budgetSelect.innerHTML = `<option value="" disabled selected></option>`;
-        data.budgetOptions.forEach(option => {
-          const opt = document.createElement("option");
-          opt.value = option;
-          opt.textContent = option;
-          budgetSelect.appendChild(opt);
-        });
-      }
     }
 
-    // -----------------------------------
     // SHOW/HIDE DYNAMIC FIELDS PER SESSION
-    // -----------------------------------
     const dynamicFields = form.querySelectorAll(".dynamic-field");
     dynamicFields.forEach(wrapper => {
       const showFor = wrapper.dataset.show;
@@ -105,9 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // -----------------------------------
     // FIELD HELPERS
-    // -----------------------------------
     const allFields = form.querySelectorAll(
       ".float-label input, .float-label textarea, .float-label select"
     );
@@ -170,7 +151,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const isRequired = field.hasAttribute("required");
 
-      // Optional and empty → always OK, but no success state
+      // Optional and empty → OK
       if (!isRequired && value === "") {
         wrapper.classList.remove("field-error", "field-success");
         const msg = wrapper.querySelector(".error-message");
@@ -180,7 +161,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       let valid = field.checkValidity();
 
-      // Extra soft email rule
+      // Soft email rule
       if (valid && field.type === "email") {
         if (!value.includes("@") || !value.includes(".")) {
           valid = false;
@@ -198,9 +179,8 @@ window.addEventListener("DOMContentLoaded", () => {
       return true;
     };
 
-    // Attach live validation
+    // LIVE VALIDATION
     allFields.forEach(field => {
-      // For floating-label "has-value" state
       const updateHasValue = () => {
         const wrapper = getWrapper(field);
         if (!wrapper) return;
@@ -213,7 +193,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       field.addEventListener("input", () => {
         updateHasValue();
-        // Only validate if there was an error or some content
         const wrapper = getWrapper(field);
         if (wrapper && (wrapper.classList.contains("field-error") || field.value !== "")) {
           validateField(field);
@@ -230,13 +209,10 @@ window.addEventListener("DOMContentLoaded", () => {
         validateField(field);
       });
 
-      // Initialize has-value state on load
       updateHasValue();
     });
 
-    // -----------------------------------
     // STEP-LEVEL VALIDATION
-    // -----------------------------------
     const validateStep = stepIndex => {
       const step = steps[stepIndex];
       if (!step) return true;
@@ -249,7 +225,6 @@ window.addEventListener("DOMContentLoaded", () => {
       let allValid = true;
 
       fields.forEach(field => {
-        // Skip fields inside hidden dynamic blocks
         const dyn = field.closest(".dynamic-field");
         if (dyn && dyn.style.display === "none") return;
 
@@ -273,9 +248,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return allValid;
     };
 
-    // -----------------------------------
     // STEP NAVIGATION
-    // -----------------------------------
     let currentStep = 0;
 
     const updateProgress = () => {
@@ -293,9 +266,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     nextBtns.forEach(btn => {
       btn.addEventListener("click", () => {
-        // validate current step before advancing
         if (!validateStep(currentStep)) return;
-
         if (currentStep < steps.length - 1) {
           currentStep++;
           showStep(currentStep);
@@ -312,7 +283,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Initialize first step
+    // Initialize
     showStep(0);
   });
 });
