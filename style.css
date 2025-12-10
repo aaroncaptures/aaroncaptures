@@ -917,7 +917,7 @@ a {
 
 
 /* =========================================
-   FORM ENHANCEMENTS — FLOATING LABELS + STEPS
+   FORM ENHANCEMENTS — FLOATING LABELS + STEPS + VALIDATION
    ========================================= */
 
 /* Floating label container */
@@ -927,7 +927,7 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Inputs & textareas */
+/* Inputs & textareas & selects */
 .float-label input,
 .float-label textarea,
 .float-label select {
@@ -939,7 +939,10 @@ a {
   background: #fff;
   color: #111;
   outline: none;
-  transition: border 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
 }
 
 /* Label text */
@@ -955,13 +958,13 @@ a {
   padding: 0 0.25rem;
 }
 
-/* Active/Focused State */
+/* Active / focused / has-value state */
 .float-label input:focus + span,
 .float-label textarea:focus + span,
 .float-label select:focus + span,
-.float-label input:not(:placeholder-shown) + span,
-.float-label textarea:not(:placeholder-shown) + span,
-.float-label select:not([value=""]) + span {
+.float-label input.has-value + span,
+.float-label textarea.has-value + span,
+.float-label select.has-value + span {
   top: -0.55rem;
   left: 0.65rem;
   font-size: 0.75rem;
@@ -982,8 +985,20 @@ a {
   transform: translateY(0);
 }
 
-/* Progress Indicator */
-#formProgress {
+/* Dynamic field fade-in */
+.dynamic-field {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.dynamic-field.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progress indicator (minimal text style) */
+.form-progress {
   font-size: 0.9rem;
   color: #777;
   margin-bottom: 1rem;
@@ -995,11 +1010,68 @@ a {
   margin-top: 1rem;
 }
 
-/* On mobile, buttons stretch nicely */
+/* Mobile: buttons full-width */
 @media (max-width: 600px) {
   .next-step,
   .prev-step {
     width: 100%;
     text-align: center;
   }
+}
+
+/* ==========================
+   Luxe Validation States
+   ========================== */
+
+/* Error + success wrapper states */
+.float-label.field-error input,
+.float-label.field-error textarea,
+.float-label.field-error select {
+  border-color: #c76363 !important;
+  box-shadow: 0 0 0 1px rgba(199, 99, 99, 0.25);
+}
+
+.float-label.field-success input,
+.float-label.field-success textarea,
+.float-label.field-success select {
+  border-color: #d4c18a !important; /* Antique gold */
+  box-shadow: 0 0 0 1px rgba(212, 193, 138, 0.22);
+}
+
+/* Luxe checkmark for success */
+.float-label.field-success::after {
+  content: "✓";
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #d4c18a;
+}
+
+/* Error messages */
+.error-message {
+  font-size: 0.85rem;
+  color: #c76363;
+  margin-top: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.error-message.visible {
+  opacity: 1;
+}
+
+/* Gentle shake for blocked steps */
+@keyframes field-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-4px); }
+  40%  { transform: translateX(4px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+.float-label.shake {
+  animation: field-shake 0.25s ease;
 }

@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sessions | Aaron Captures</title>
 
-  <!-- Correct Adobe Font -->
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
-
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -35,119 +32,127 @@
     </div>
   </header>
 
-  <!-- MOBILE NAV SCRIPT -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.contains('nav-menu-open');
-        navMenu.classList.toggle('nav-menu-open', !isOpen);
-        navToggle.setAttribute('aria-expanded', !isOpen);
+        const open = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !open);
+        navToggle.setAttribute('aria-expanded', !open);
       });
     }
   </script>
 
-  <!-- PAGE HERO -->
+
+
+  <!-- HERO -->
   <section class="page-hero">
     <h1 class="page-title">Sessions</h1>
     <p class="page-subtitle">
-      Portraits, branding, and event photography crafted with intention.
+      Professional photography experiences designed around people, stories, and connection.
     </p>
   </section>
 
-  <!-- SESSION OFFERINGS -->
-  <section class="collections-section">
+
+  <!-- INTRO -->
+  <section class="intro" style="padding-top:2rem; text-align:center;">
+    <p class="intro-text" style="max-width:750px; margin:auto;">
+      Choose the type of session you’re looking for. Each page includes detailed pricing, package options, and a booking form.
+    </p>
+  </section>
+
+
+
+  <!-- SERVICE GRID -->
+  <section class="collections-section" style="padding-top:2rem;">
     <div class="collections-grid" style="max-width:1100px;">
 
-      <!-- Portraits -->
+      <!-- PORTRAITS -->
       <article class="collection-card">
-        <a href="#">
+        <a href="/sessions/portraits/">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Portrait Session">
           </div>
-          <h3>Portrait Sessions</h3>
+          <h3>Portraits</h3>
           <p class="collection-description">
-            Clean, timeless portraits for individuals, couples, and creative storytelling.
+            Individual, family, senior, and lifestyle portraits.
           </p>
-          <span class="collection-link">Starting at $250 →</span>
+          <p class="collection-link">View Packages →</p>
         </a>
       </article>
 
-      <!-- Headshots -->
+      <!-- EVENTS -->
       <article class="collection-card">
-        <a href="#">
-          <div class="collection-thumb">
-            <img src="https://placehold.co/800x800" alt="Business Headshot">
-          </div>
-          <h3>Professional Headshots</h3>
-          <p class="collection-description">
-            Modern, confident images crafted for business and branding.
-          </p>
-          <span class="collection-link">Starting at $175 →</span>
-        </a>
-      </article>
-
-      <!-- Events -->
-      <article class="collection-card">
-        <a href="#">
+        <a href="/sessions/events/">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Event Photography">
           </div>
-          <h3>Event Photography</h3>
+          <h3>Events</h3>
           <p class="collection-description">
-            Galleries, gatherings, launches, celebrations — covered with care.
+            Coverage for gatherings, galleries, launches, and more.
           </p>
-          <span class="collection-link">Hourly + packages →</span>
+          <p class="collection-link">View Packages →</p>
         </a>
       </article>
 
-      <!-- Branding -->
+      <!-- HEADSHOTS -->
       <article class="collection-card">
-        <a href="#">
+        <a href="/sessions/headshots/">
+          <div class="collection-thumb">
+            <img src="https://placehold.co/800x800" alt="Professional Headshots">
+          </div>
+          <h3>Professional Headshots</h3>
+          <p class="collection-description">
+            Clean, confident images for business or creative branding.
+          </p>
+          <p class="collection-link">View Packages →</p>
+        </a>
+      </article>
+
+      <!-- BRANDING -->
+      <article class="collection-card">
+        <a href="/sessions/branding/">
           <div class="collection-thumb">
             <img src="https://placehold.co/800x800" alt="Branding Session">
           </div>
           <h3>Branding Sessions</h3>
           <p class="collection-description">
-            Visual storytelling for businesses and creative professionals.
+            Visual storytelling for entrepreneurs and creators.
           </p>
-          <span class="collection-link">Custom packages →</span>
+          <p class="collection-link">View Packages →</p>
         </a>
       </article>
 
+      
     </div>
   </section>
 
+
+
   <!-- CTA -->
-  <section class="prints-cta">
+  <section class="prints-cta" style="padding-top:3rem;">
     <div class="prints-cta-inner">
-      <h2 style="font-weight:300; margin-bottom:1rem;">Ready to Book a Session?</h2>
-      <p style="max-width:620px; margin:0 auto 2rem;">
-        Tell me about your project and I’ll send a tailored quote with availability.
+      <h2 style="font-weight:300;">Not sure which session is right for you?</h2>
+      <p style="max-width:700px; margin:0 auto 1.5rem;">
+        Reach out and I’ll happily guide you toward the perfect fit.
       </p>
-      <a class="btn-primary" href="mailto:rashid.aaron@yahoo.com">
-        Contact Me
-      </a>
+      <a href="#contact-footer" class="btn-primary">Get in Touch</a>
     </div>
   </section>
+
+
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
 
-      <!-- Correct Logo -->
       <div class="footer-logo-top">
         <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
-      <!-- Correct Email -->
-      <p class="footer-email">
-        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
-      </p>
+      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
-      <!-- Correct Social Links + Dots -->
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
         <span>·</span>
@@ -156,12 +161,7 @@
         <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
       </p>
 
-      <!-- Correct Copyright -->
-      <p class="footer-copy">
-        © 2025 Aaron Captures. All Rights Reserved.
-      </p>
-
-      <!-- Correct Back Link -->
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
       <a href="/" class="back-home-link">← Back to Homepage</a>
 
     </div>
