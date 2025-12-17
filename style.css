@@ -1096,3 +1096,49 @@ a {
   opacity: 0;
   transform: translateY(6px);
 }
+
+/* =========================
+   FLOATING LABEL SYSTEM
+========================= */
+
+.float-label {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.float-label input,
+.float-label textarea,
+.float-label select {
+  width: 100%;
+  padding: 1.1rem 0.75rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.float-label span {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #777;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: #fff;
+  padding: 0 0.25rem;
+}
+
+/* FLOAT when focused OR has value */
+.float-label input:focus + span,
+.float-label input:not(:placeholder-shown) + span,
+.float-label textarea:focus + span,
+.float-label textarea:not(:placeholder-shown) + span,
+.float-label select:focus + span,
+.float-label select:not([value=""]) + span {
+  top: 0.35rem;
+  font-size: 0.7rem;
+  color: #000;
+}
