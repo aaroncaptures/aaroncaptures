@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   return true;
 };
 
-
     form.addEventListener("click", e => {
       if (e.target.classList.contains("next-step")) {
         if (!isStepValid(steps[currentStep])) return;
@@ -96,6 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+
+    const showStep = index => {
+      steps.forEach((step, i) => {
+        step.classList.toggle("active-step", i === index);
+      });
+      if (progress) {
+        progress.textContent = `Step ${index + 1} of ${steps.length}`;
+      }
+    };
 
     showStep(0);
   });

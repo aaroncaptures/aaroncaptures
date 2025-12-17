@@ -958,19 +958,6 @@ a {
   padding: 0 0.25rem;
 }
 
-/* Active / focused / has-value state */
-.float-label input:focus + span,
-.float-label textarea:focus + span,
-.float-label select:focus + span,
-.float-label input.has-value + span,
-.float-label textarea.has-value + span,
-.float-label select.has-value + span {
-  top: -0.55rem;
-  left: 0.65rem;
-  font-size: 0.75rem;
-  color: #111;
-}
-
 /* Multi-step form transitions */
 .form-step {
   display: none;
@@ -1101,22 +1088,6 @@ a {
    FLOATING LABEL SYSTEM
 ========================= */
 
-.float-label {
-  position: relative;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.float-label input,
-.float-label textarea,
-.float-label select {
-  width: 100%;
-  padding: 1.1rem 0.75rem 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: transparent;
-}
 
 .float-label span {
   position: absolute;
