@@ -1,135 +1,115 @@
-/* =========================================================
-   GLOBAL FORMS ENGINE
-   Used by: Portraits, Headshots, Branding, Events
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-/* -----------------------------
-   SESSION CONFIG
--------------------------------- */
-const SESSION_DATA = {
-  portraits: { sessionType: "Portrait Session" },
-  headshots: { sessionType: "Professional Headshots" },
-  branding: { sessionType: "Branding Session" },
-  events: { sessionType: "Event Photography" }
-};
-
-/* -----------------------------
-   PACKAGE → ADD-ON RULES
--------------------------------- */
-const PACKAGE_ADDONS = {
-  mini: ["extra-images", "prints", "rush"],
-  standard: ["extra-images", "extra-outfit", "extra-time", "prints", "rush"],
-  extended: ["extra-images", "extra-outfit", "extra-time", "extra-location", "prints", "rush", "studio"],
-  senior: ["extra-images", "extra-time", "extra-location", "prints", "rush"],
-  family: ["extra-images", "extra-time", "extra-location", "prints", "rush"],
-  "extended-family": ["extra-images", "extra-time", "extra-location", "prints", "rush"]
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  const bodySession = document.body.dataset.session;
-  const form = document.querySelector("[data-multistep]");
-  if (!form) return;
-
-  /* -----------------------------
-     Hidden field setup
-  -------------------------------- */
-  const sessionTypeField = form.querySelector("input[name='session_type']");
-  const selectedPackageField = form.querySelector("input[name='selected_package']");
-  const formTitle = document.getElementById("formTitle");
-
-  if (sessionTypeField && bodySession && SESSION_DATA[bodySession]) {
-    sessionTypeField.value = SESSION_DATA[bodySession].sessionType;
+  /* ============================
+     SESSION TYPE (HIDDEN FIELD)
+  ============================ */
+  const sessionTypeInput = document.querySelector('input[name="session_type"]');
+  if (sessionTypeInput && document.body.dataset.session) {
+    sessionTypeInput.value = document.body.dataset.session;
   }
 
-  /* -----------------------------
-     Package selection
-  -------------------------------- */
+  /* ============================
+     PACKAGE → ADD-ONS LOGIC
+  ============================ */
+  const PACKAGE_ADDONS = {
+    mini: ["extra-images", "prints", "rush"],
+    standard: ["extra-images", "extra-outfit", "extra-time", "prints", "rush"],
+    extended: ["extra-images", "extra-outfit", "extra-time", "extra-location", "prints", "rush", "studio"],
+    senior: ["extra-images", "extra-time", "extra-location", "prints", "rush"],
+    family: ["extra-images", "extra-time", "extra-location", "prints", "rush"],
+    "extended-family": ["extra-images", "extra-time", "extra-location", "prints", "rush"]
+  };
+
   const packageButtons = document.querySelectorAll(".package-button");
+  const selectedPackageInput = document.querySelector('input[name="selected_package"]');
+  const formTitle = document.getElementById("formTitle");
   const addons = document.querySelectorAll(".addon");
 
-  // Hide add-ons initially
-  addons.forEach(addon => {
-    addon.style.display = "none";
-    addon.classList.remove("visible");
-  });
+  // Hide add-ons on load
+  addons.forEach(addon => addon.style.display = "none");
 
   packageButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const label = btn.dataset.packageLabel || "";
-      const packageId = btn.dataset.packageId || "";
+      const packageId = btn.dataset.packageId;
+      const packageLabel = btn.dataset.packageLabel;
 
-      if (selectedPackageField) selectedPackageField.value = label;
-      if (formTitle && label) formTitle.textContent = `Book Your ${label}`;
+      if (selectedPackageInput) selectedPackageInput.value = packageLabel;
+      if (formTitle) formTitle.textContent = `Book Your ${packageLabel}`;
 
       const allowed = PACKAGE_ADDONS[packageId] || [];
 
       addons.forEach(addon => {
         const key = addon.dataset.addon;
-        const show = allowed.includes(key);
-
-        if (show) {
+        if (allowed.includes(key)) {
           addon.style.display = "block";
-          requestAnimationFrame(() => addon.classList.add("visible"));
         } else {
-          addon.classList.remove("visible");
           addon.style.display = "none";
-          addon.querySelectorAll("input, select, textarea").forEach(f => f.value = "");
+          addon.querySelectorAll("input, select, textarea").forEach(el => el.value = "");
         }
       });
     });
   });
 
-  /* -----------------------------
-     Dynamic fields per session
-  -------------------------------- */
-  document.querySelectorAll(".dynamic-field").forEach(field => {
-    const showFor = field.dataset.show;
-    if (!showFor || showFor === bodySession) {
-      field.style.display = "block";
-    } else {
-      field.style.display = "none";
-    }
-  });
+  /* ============================
+     MULTI-STEP FORM LOGIC
+  ============================ */
+  document.querySelectorAll("[data-multistep]").forEach(form => {
+    const steps = Array.from(form.querySelectorAll(".form-step"));
+    const progress = form.querySelector(".form-progress");
+    let currentStep = 0;
 
-  /* -----------------------------
-     Multi-step logic
-  -------------------------------- */
-  const steps = form.querySelectorAll(".form-step");
-  const nextBtns = form.querySelectorAll(".next-step");
-  const prevBtns = form.querySelectorAll(".prev-step");
-  const progress = form.querySelector(".form-progress");
-  let currentStep = 0;
+    const showStep = index => {
+      steps.forEach((step, i) => {
+        step.classList.toggle("active-step", i === index);
+      });
+      if (progress) {
+        progress.textContent = `Step ${index + 1} of ${steps.length}`;
+      }
+    };
 
-  const updateProgress = () => {
-    if (progress) {
-      progress.textContent = `Step ${currentStep + 1} of ${steps.length}`;
-    }
-  };
+    const isStepValid = step => {
+      const fields = step.querySelectorAll("input, textarea, select");
 
-  const showStep = index => {
-    steps.forEach((step, i) => {
-      step.classList.toggle("active-step", i === index);
-    });
-    updateProgress();
-  };
+      for (const field of fields) {
+        // Ignore hidden fields
+        if (field.offsetParent === null) continue;
 
-  nextBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentStep < steps.length - 1) {
-        currentStep++;
-        showStep(currentStep);
+        if (field.hasAttribute("required") && !field.value.trim()) {
+          field.focus();
+          field.scrollIntoView({ behavior: "smooth", block: "center" });
+          return false;
+        }
+      }
+      return true;
+    };
+
+    form.addEventListener("click", e => {
+      if (e.target.classList.contains("next-step")) {
+        if (!isStepValid(steps[currentStep])) return;
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      }
+
+      if (e.target.classList.contains("prev-step")) {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
       }
     });
+
+    showStep(0);
   });
 
-  prevBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentStep > 0) {
-        currentStep--;
-        showStep(currentStep);
-      }
+  /* ============================
+     VALIDATION CHECKMARK FIX
+  ============================ */
+  document.querySelectorAll("input, textarea, select").forEach(field => {
+    field.addEventListener("blur", () => {
+      field.classList.toggle("is-valid", field.checkValidity());
     });
   });
 
-  showStep(0);
 });
