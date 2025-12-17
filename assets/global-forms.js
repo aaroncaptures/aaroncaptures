@@ -58,30 +58,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = form.querySelector(".form-progress");
     let currentStep = 0;
 
-    const showStep = index => {
-      steps.forEach((step, i) => {
-        step.classList.toggle("active-step", i === index);
-      });
-      if (progress) {
-        progress.textContent = `Step ${index + 1} of ${steps.length}`;
-      }
-    };
+   const isStepValid = step => {
+  const fields = step.querySelectorAll("input, textarea, select");
 
-    const isStepValid = step => {
-      const fields = step.querySelectorAll("input, textarea, select");
+  for (const field of fields) {
+    // Ignore hidden fields
+    if (field.offsetParent === null) continue;
 
-      for (const field of fields) {
-        // Ignore hidden fields
-        if (field.offsetParent === null) continue;
+    const isRequired =
+      field.hasAttribute("required") ||
+      field.dataset.required === "true";
 
-        if (field.hasAttribute("required") && !field.value.trim()) {
-          field.focus();
-          field.scrollIntoView({ behavior: "smooth", block: "center" });
-          return false;
-        }
-      }
-      return true;
-    };
+    if (isRequired && !field.value.trim()) {
+      field.focus();
+      field.scrollIntoView({ behavior: "smooth", block: "center" });
+      return false;
+    }
+  }
+
+  return true;
+};
+
 
     form.addEventListener("click", e => {
       if (e.target.classList.contains("next-step")) {
