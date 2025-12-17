@@ -201,19 +201,8 @@
     </div>
   </section>
 
-  <!-- BOOK NOW -->
-  <section class="prints-cta" id="book">
-    <div class="prints-cta-inner">
-      <h2 style="font-weight:300;">Ready to Book a Portrait Session?</h2>
-      <p style="max-width:700px; margin:0 auto 1.5rem;">
-        Fill out the form below and I’ll follow up with availability and next steps.
-      </p>
-    </div>
-  </section>
-
 <!-- UNIVERSAL MULTI-STEP SESSION FORM -->
 <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
-  <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
   <div class="prints-cta-inner">
     <h2 class="form-title" id="formTitle">Book Your Portrait Session</h2>
 
@@ -480,7 +469,103 @@
         <button type="button" class="btn-primary next-step">Next</button>
       </div>
 
-      <!-- STEP 4: Final Notes -->
+        <!-- STEP 4: Add-Ons (Package-specific) -->
+  <div class="form-step">
+
+    <p style="margin-bottom:1rem; text-align:center;">
+      Optional add-ons to enhance your session
+    </p>
+
+    <!-- Extra Images -->
+    <div class="dynamic-field addon" data-addon="extra-images">
+      <label class="float-label">
+        <select name="addon_extra_images">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Extra edited images ($15 per image)</span>
+      </label>
+    </div>
+
+    <!-- Extra Outfit -->
+    <div class="dynamic-field addon" data-addon="extra-outfit">
+      <label class="float-label">
+        <select name="addon_extra_outfit">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Extra outfit change ($50)</span>
+      </label>
+    </div>
+
+    <!-- Extra Time -->
+    <div class="dynamic-field addon" data-addon="extra-time">
+      <label class="float-label">
+        <select name="addon_extra_time">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Additional shooting time ($75 / 30 min)</span>
+      </label>
+    </div>
+
+    <!-- Extra Location -->
+    <div class="dynamic-field addon" data-addon="extra-location">
+      <label class="float-label">
+        <select name="addon_extra_location">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Additional location ($75)</span>
+      </label>
+    </div>
+
+    <!-- Prints & Albums -->
+    <div class="dynamic-field addon" data-addon="prints">
+      <label class="float-label">
+        <select name="addon_prints">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Prints & albums (starting at $150)</span>
+      </label>
+    </div>
+
+    <!-- Rush Delivery -->
+    <div class="dynamic-field addon" data-addon="rush">
+      <label class="float-label">
+        <select name="addon_rush">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Rush delivery (within 7 days – $150)</span>
+      </label>
+    </div>
+
+    <!-- Studio Rental -->
+    <div class="dynamic-field addon" data-addon="studio">
+      <label class="float-label">
+        <select name="addon_studio">
+          <option value="" disabled selected></option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <span>Studio rental (studio cost + $35)</span>
+      </label>
+    </div>
+
+    <button type="button" class="btn-secondary prev-step">Back</button>
+    <button type="button" class="btn-primary next-step">Next</button>
+
+  </div>
+
+      <!-- STEP 5: Final Notes -->
       <div class="form-step">
 
         <label class="float-label">
@@ -502,7 +587,6 @@
     </form>
   </div>
 </section>
-
 
 
   <!-- FOOTER -->
