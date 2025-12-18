@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Headshots | Aaron Captures</title>
+
+  <!-- Adobe Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body data-session="headshots">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/" class="site-logo">Aaron Captures</a>
+    <button class="nav-toggle" aria-label="Menu"></button>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/collections/">Collections</a>
+      <a href="/prints/">Prints</a>
+      <a href="/sessions/">Sessions</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="session-hero">
+    <h1>Professional Headshots</h1>
+    <p>Clean, modern headshots for professionals, creatives, and teams.</p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="session-packages">
+    <h2>Select Your Session</h2>
+
+    <div class="package-grid">
+
+      <button class="package-button"
+        data-package-id="headshot-essential"
+        data-package-label="Essential Headshot">
+        <h3>Essential Headshot</h3>
+        <p>30 minutes · 1 look · 3–5 retouched images</p>
+        <span>$175</span>
+      </button>
+
+      <button class="package-button"
+        data-package-id="headshot-professional"
+        data-package-label="Professional Headshot">
+        <h3>Professional Headshot</h3>
+        <p>60 minutes · Up to 2 looks · 8–12 retouched images</p>
+        <span>$300</span>
+      </button>
+
+      <button class="package-button"
+        data-package-id="headshot-team"
+        data-package-label="Team / Company Headshots">
+        <h3>Team / Company Headshots</h3>
+        <p>Consistent lighting · Volume pricing</p>
+        <span>Starting at $125 / person</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="session-form">
+    <h2 id="formTitle">Book Your Headshot Session</h2>
+
+    <form data-multistep
+      action="https://formsubmit.co/rashid.aaron@yahoo.com"
+      method="POST">
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="session_type" value="Headshots">
+      <input type="hidden" name="selected_package">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Headshot Booking — Aaron Captures">
+      <input type="hidden" name="_next" value="https://aaroncaptures.com/sessions/thank-you.html">
+
+      <div class="form-progress"></div>
+
+      <!-- STEP 1 -->
+      <div class="form-step">
+        <h3>Contact Information</h3>
+
+        <label class="float-label">
+          <input type="text" name="name" required placeholder=" ">
+          <span>Your Name</span>
+        </label>
+
+        <label class="float-label">
+          <input type="email" name="email" required placeholder=" ">
+          <span>Email Address</span>
+        </label>
+
+        <label class="float-label">
+          <input type="tel" name="phone" placeholder=" ">
+          <span>Phone (optional)</span>
+        </label>
+
+        <button type="button" class="next-step">Next</button>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step">
+        <h3>Session Details</h3>
+
+        <div class="dynamic-field" data-show="headshots">
+
+          <label class="float-label">
+            <input type="text" name="industry" placeholder=" ">
+            <span>Industry / Profession</span>
+          </label>
+
+          <label class="float-label">
+            <input type="text" name="usage" placeholder=" ">
+            <span>Intended use (LinkedIn, website, press)</span>
+          </label>
+
+          <label class="float-label">
+            <textarea name="style_notes" rows="3" placeholder=" "></textarea>
+            <span>Style preferences</span>
+          </label>
+
+        </div>
+
+        <button type="button" class="prev-step">Back</button>
+        <button type="button" class="next-step">Next</button>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step">
+        <h3>Preferred Date</h3>
+
+        <label class="float-label">
+          <input type="date" name="preferred_date" required placeholder=" ">
+          <span>Preferred date</span>
+        </label>
+
+        <button type="button" class="prev-step">Back</button>
+        <button type="button" class="next-step">Next</button>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step addons-step">
+        <h3>Add-ons & Extras</h3>
+
+        <div class="addon" data-addon="extra-images">
+          <label class="addon-option">
+            <input type="checkbox" name="extra_images" value="yes">
+            <span>
+              <strong>Extra retouched images</strong>
+              <em>$15 per image</em>
+            </span>
+          </label>
+        </div>
+
+        <div class="addon" data-addon="rush">
+          <label class="addon-option">
+            <input type="checkbox" name="rush_delivery" value="yes">
+            <span>
+              <strong>Rush delivery</strong>
+              <em>Within 7 days — $150</em>
+            </span>
+          </label>
+        </div>
+
+        <div class="addon" data-addon="prints">
+          <label class="addon-option">
+            <input type="checkbox" name="prints" value="yes">
+            <span>
+              <strong>Prints & albums</strong>
+              <em>Starting at $150</em>
+            </span>
+          </label>
+        </div>
+
+        <button type="button" class="prev-step">Back</button>
+        <button type="button" class="next-step">Next</button>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="form-step">
+        <h3>Review & Submit</h3>
+        <p>Once submitted, I’ll be in touch within 24–48 hours.</p>
+
+        <button type="button" class="prev-step">Back</button>
+        <button type="submit">Submit Request</button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="/assets/logo.svg" alt="Aaron Captures logo">
+    <p>© Aaron Captures · All rights reserved</p>
+  </footer>
+
+  <!-- GLOBAL FORM SCRIPT -->
+  <script src="/assets/global-forms.js"></script>
+
+</body>
+</html>
