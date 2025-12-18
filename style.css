@@ -1113,3 +1113,19 @@ a {
   font-size: 0.7rem;
   color: #000;
 }
+
+.form-step.addons-step {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+input[type="date"] {
+  font-size: 1rem;
+  padding: 1rem 0.75rem;
+  min-height: 3.25rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  transform: scale(1.25);
+  cursor: pointer;
+}
