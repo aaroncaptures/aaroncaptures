@@ -8,35 +8,59 @@
   <!-- Adobe Font -->
   <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
 
-  <!-- Global CSS -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body data-session="headshots">
 
-  <!-- HEADER -->
+  <!-- SITE HEADER -->
   <header class="site-header">
     <a href="/" class="site-logo">Aaron Captures</a>
-    <button class="nav-toggle" aria-label="Menu"></button>
+
+    <button class="nav-toggle" aria-label="Toggle navigation"></button>
+
     <nav class="nav-menu">
       <a href="/">Home</a>
       <a href="/collections/">Collections</a>
       <a href="/prints/">Prints</a>
-      <a href="/sessions/">Sessions</a>
+      <a href="/sessions/" class="active">Sessions</a>
       <a href="/contact/">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="session-hero">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
     <h1>Professional Headshots</h1>
-    <p>Clean, modern headshots for professionals, creatives, and teams.</p>
+    <p>
+      Clean, modern headshots for professionals, creatives, and teams who want
+      to make a strong first impression.
+    </p>
   </section>
+
+  <!-- CONTEXT / INTRO -->
+  <section class="session-intro">
+    <p>
+      A great headshot should feel natural, confident, and unmistakably you.
+      My approach is relaxed and guided, helping you look professional without
+      feeling stiff or over-posed.
+    </p>
+
+    <p>
+      Whether you’re updating LinkedIn, building a personal brand, or creating
+      consistent images for your team, sessions are designed to be efficient,
+      collaborative, and tailored to how you’ll actually use the photos.
+    </p>
+  </section>
+
+  <!-- BACK TO SESSIONS -->
+  <nav class="session-nav">
+    <a href="/sessions/">← Back to Sessions</a>
+  </nav>
 
   <!-- PACKAGES -->
   <section class="session-packages">
-    <h2>Select Your Session</h2>
+    <h2>Headshot Packages</h2>
 
     <div class="package-grid">
 
@@ -60,14 +84,14 @@
         data-package-id="headshot-team"
         data-package-label="Team / Company Headshots">
         <h3>Team / Company Headshots</h3>
-        <p>Consistent lighting · Volume pricing</p>
+        <p>Consistent lighting · On-site or studio · Volume pricing</p>
         <span>Starting at $125 / person</span>
       </button>
 
     </div>
   </section>
 
-  <!-- FORM -->
+  <!-- BOOKING FORM -->
   <section class="session-form">
     <h2 id="formTitle">Book Your Headshot Session</h2>
 
@@ -188,7 +212,10 @@
       <!-- STEP 5 -->
       <div class="form-step">
         <h3>Review & Submit</h3>
-        <p>Once submitted, I’ll be in touch within 24–48 hours.</p>
+        <p>
+          Once submitted, I’ll follow up within 24–48 hours to confirm details
+          and availability.
+        </p>
 
         <button type="button" class="prev-step">Back</button>
         <button type="submit">Submit Request</button>
@@ -197,13 +224,16 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- SITE FOOTER -->
   <footer class="site-footer">
     <img src="/assets/logo.svg" alt="Aaron Captures logo">
-    <p>© Aaron Captures · All rights reserved</p>
+    <p>
+      © Aaron Captures ·
+      <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
+    </p>
   </footer>
 
-  <!-- GLOBAL FORM SCRIPT -->
+  <!-- GLOBAL FORM LOGIC -->
   <script src="/assets/global-forms.js"></script>
 
 </body>
