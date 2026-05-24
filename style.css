@@ -287,12 +287,12 @@ a {
    BOOKING – HOMEPAGE
    ========================================= */
 
-.booking-section {
+.sessions-section {
   padding: 4rem 1.5rem 5rem;
   text-align: center;
 }
 
-.booking-inner {
+.sessions-inner {
   max-width: 700px;
   margin: 0 auto;
 }
