@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking | Aaron Captures</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+
+      <nav class="nav-menu">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/">Prints</a>
+        <a href="/booking/" class="active">Booking</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !open);
+        navToggle.setAttribute('aria-expanded', !open);
+      });
+    }
+  </script>
+
+
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1 class="page-title">Sessions</h1>
+    <p class="page-subtitle">
+      Professional photography experiences designed around people, stories, and connection.
+    </p>
+  </section>
+
+
+  <!-- INTRO -->
+  <section class="intro" style="padding-top:2rem; text-align:center;">
+    <p class="intro-text" style="max-width:750px; margin:auto;">
+      Choose the type of session you’re looking for. Each page includes detailed pricing, package options, and a booking form.
+    </p>
+  </section>
+
+
+
+  <!-- SERVICE GRID -->
+  <section class="collections-section" style="padding-top:2rem;">
+    <div class="collections-grid" style="max-width:1100px;">
+
+      <!-- PORTRAITS -->
+      <article class="collection-card">
+        <a href="/sessions/portraits/">
+          <div class="collection-thumb">
+            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/portraits-landing.jpg" alt="Portrait Session">
+          </div>
+          <h3>Portraits</h3>
+          <p class="collection-description">
+            Individual, family, senior, and lifestyle portraits.
+          </p>
+          <p class="collection-link">View Packages →</p>
+        </a>
+      </article>
+
+      <!-- HEADSHOTS -->
+      <article class="collection-card">
+        <a href="/sessions/headshots/">
+          <div class="collection-thumb">
+            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/headshot-landing-1.jpg" alt="Professional Headshots">
+          </div>
+          <h3>Professional Headshots</h3>
+          <p class="collection-description">
+            Clean, confident images for business or creative branding.
+          </p>
+          <p class="collection-link">View Packages →</p>
+        </a>
+      </article>
+
+      <!-- EVENTS -->
+      <article class="collection-card">
+        <a href="/sessions/events/">
+          <div class="collection-thumb">
+            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Events/portraits.jpg" alt="Event Photography">
+          </div>
+          <h3>Events</h3>
+          <p class="collection-description">
+            Coverage for gatherings, galleries, launches, and more.
+          </p>
+          <p class="collection-link">View Packages →</p>
+        </a>
+      </article>
+
+      <!-- BRANDING -->
+      <article class="collection-card">
+        <a href="/sessions/branding/">
+          <div class="collection-thumb">
+            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Branding/branding.jpg" alt="Branding Session">
+          </div>
+          <h3>Branding Sessions</h3>
+          <p class="collection-description">
+            Visual storytelling for entrepreneurs and creators.
+          </p>
+          <p class="collection-link">View Packages →</p>
+        </a>
+      </article>
+
+
+
+    </div>
+  </section>
+  
+
+  <!-- CTA -->
+  <section class="prints-cta" style="padding-top:3rem;">
+    <div class="prints-cta-inner">
+      <h2 style="font-weight:300;">Not sure which session is right for you?</h2>
+      <p style="max-width:700px; margin:0 auto 1.5rem;">
+        Reach out and I’ll happily guide you toward the perfect fit.
+      </p>
+      <a href="#contact-footer" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+
+      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
+        <span>·</span>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank">TikTok</a>
+        <span>·</span>
+        <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
+      </p>
+
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <a href="/" class="back-home-link">← Back to Homepage</a>
+
+    </div>
+  </footer>
+
+</body>
+</html>
