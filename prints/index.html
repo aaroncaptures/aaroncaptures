@@ -168,10 +168,21 @@
     document.addEventListener("DOMContentLoaded", () => {
       const buttons = document.querySelectorAll(".hero-btn");
 
-      // hook up hero buttons
+      // hook up hero buttons + update active button state
       buttons.forEach(btn => {
         btn.addEventListener("click", e => {
           e.preventDefault();
+
+          // Remove the filled/active styling from every filter button
+          buttons.forEach(button => {
+            button.classList.remove("primary");
+            button.classList.remove("active");
+          });
+
+          // Add the filled/active styling to the button that was clicked
+          btn.classList.add("primary");
+          btn.classList.add("active");
+
           const collection = btn.dataset.filter;
           filterPrints(collection);
         });
