@@ -59,84 +59,61 @@
     </div>
   </section>
 
-  <!-- FEATURED COLLECTIONS -->
-  <section class="collections-section">
-    <div class="section-header">
-      <h2>Collections</h2>
-      <p>Explore the series that shape Aaron’s fine art work.</p>
-    </div>
-
-    <div class="collections-grid">
-      <!-- Silent Horizons -->
-      <article class="collection-card">
-        <a href="/collections/silent-horizons/">
-          <div class="collection-thumb">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg"
-                 alt="Silent Horizons fine art photography collection thumbnail">
-          </div>
-          <h3>Silent Horizons</h3>
-          <p class="collection-description">
-            Solitude only found by being one with nature.
-          </p>
-          <span class="collection-link">View Collection →</span>
-        </a>
-      </article>
-
-      <!-- Nocturne -->
-      <article class="collection-card">
-        <a href="/collections/nocturne/">
-          <div class="collection-thumb">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg"
-                 alt="Nocturne fine art photography collection thumbnail">
-          </div>
-          <h3>Nocturne</h3>
-          <p class="collection-description">
-            Night landscapes shaped by space and stillness.
-          </p>
-          <span class="collection-link">View Collection →</span>
-        </a>
-      </article>
-
-      <!-- Shapes of Nature -->
-      <article class="collection-card">
-        <a href="/collections/shapes-of-nature/">
-          <div class="collection-thumb">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-6.jpg"
-                 alt="Shapes of Nature fine art photography collection thumbnail">
-          </div>
-          <h3>Shapes of Nature</h3>
-          <p class="collection-description">
-            Patterns and forms found in the natural world.
-          </p>
-          <span class="collection-link">View Collection →</span>
-        </a>
-      </article>
-
-      <!-- Echos of Los Angeles -->
-      <article class="collection-card">
-        <a href="/collections/echos-of-los-angeles/">
-          <div class="collection-thumb">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg"
-                 alt="Echos of Los Angeles fine art photography collection thumbnail">
-          </div>
-          <h3>Echos of Los Angeles</h3>
-          <p class="collection-description">
-            Cityscapes after the noise fades.
-          </p>
-          <span class="collection-link">View Collection →</span>
-        </a>
-      </article>
-    </div>
-  </section>
-
-  <!-- PRINTS CTA -->
-  <section class="prints-cta">
+<!-- PRINTS CTA -->
+  <section class="prints-cta" aria-labelledby="prints-cta-title">
     <div class="prints-cta-inner">
-      <h2>Own a Fine Art Print</h2>
-      <p>
-        Limited editions. Signed, numbered, and printed on museum-grade archival paper.
-      </p>
-      <a href="/prints/" class="btn-primary">Explore Prints</a>
+      <div class="prints-cta-copy">
+        <p class="prints-cta-label">Fine Art Prints</p>
+        <h2 id="prints-cta-title">Own a Fine Art Print</h2>
+        <p>
+          Limited editions. Signed, numbered, and printed on museum-grade archival paper.
+          See how the work feels framed, finished, and placed in a real space.
+        </p>
+        <a href="/prints/" class="btn-primary">Explore Prints</a>
+      </div>
+
+      <div class="prints-cta-slideshow" aria-label="Framed print and room mockup slideshow">
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-f.jpg"
+          alt="Silent Horizons fine art print shown in a frame"
+          class="prints-cta-slide is-active"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-m.jpg"
+          alt="Silent Horizons fine art print displayed in a room"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3-f.jpg"
+          alt="Nocturne fine art print shown in a frame"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3-m.jpg"
+          alt="Nocturne fine art print displayed in a room"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5-f.jpg"
+          alt="Shapes of Nature fine art print shown in a frame"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5-m.jpg"
+          alt="Shapes of Nature fine art print displayed in a room"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6-f.jpg"
+          alt="Echos of Los Angeles fine art print shown in a frame"
+          class="prints-cta-slide"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6-m.jpg"
+          alt="Echos of Los Angeles fine art print displayed in a room"
+          class="prints-cta-slide"
+        >
+      </div>
     </div>
   </section>
 
@@ -202,8 +179,20 @@
         heroSlides[currentHeroIndex].classList.remove('is-active');
         currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
         heroSlides[currentHeroIndex].classList.add('is-active');
-      }, 7000); // change slide every 5 seconds
+      }, 7000); // change slide every 7 seconds
+    }
+
+    // Prints CTA slideshow
+    const printSlides = document.querySelectorAll('.prints-cta-slide');
+    let currentPrintIndex = 0;
+
+    if (printSlides.length > 1) {
+      setInterval(() => {
+        printSlides[currentPrintIndex].classList.remove('is-active');
+        currentPrintIndex = (currentPrintIndex + 1) % printSlides.length;
+        printSlides[currentPrintIndex].classList.add('is-active');
+      }, 4500);
     }
   </script>
 </body>
-
+</html>
