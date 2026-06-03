@@ -50,13 +50,13 @@
         <p id="printDescription" class="print-description"></p>
 
         <div class="print-options">
-          <h2>Choose a Size</h2>
-          <div id="sizeOptions" class="option-button-group"></div>
+          <label for="sizeSelect" class="print-select-label">Choose a Size</label>
+          <select id="sizeSelect" class="print-select"></select>
         </div>
 
         <div class="print-options">
-          <h2>Choose a Finish</h2>
-          <div id="frameOptions" class="option-button-group"></div>
+          <label for="frameSelect" class="print-select-label">Choose a Finish</label>
+          <select id="frameSelect" class="print-select"></select>
         </div>
 
         <div class="selected-print-summary">
@@ -223,67 +223,47 @@
     }
 
     function renderSizeOptions(print) {
-      const sizeOptions = document.getElementById('sizeOptions');
-      sizeOptions.innerHTML = "";
+      const sizeSelect = document.getElementById('sizeSelect');
+      sizeSelect.innerHTML = "";
 
       selectedSize = print.sizes[0];
 
       print.sizes.forEach((size, index) => {
-        const button = document.createElement('button');
-        button.type = "button";
-        button.className = index === 0 ? "option-button active" : "option-button";
-        button.innerHTML = `
-          <span>${size.size}</span>
-          <small>Edition of ${size.edition} · ${formatPrice(size.price)}</small>
-        `;
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${size.size} · Edition of ${size.edition} · ${formatPrice(size.price)}`;
+        sizeSelect.appendChild(option);
+      });
 
-        button.addEventListener('click', () => {
-          selectedSize = size;
-
-          document.querySelectorAll('#sizeOptions .option-button').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          button.classList.add('active');
-
-          updateSelectedSummary();
-        });
-
-        sizeOptions.appendChild(button);
+      sizeSelect.value = "0";
+      sizeSelect.addEventListener('change', () => {
+        selectedSize = print.sizes[Number(sizeSelect.value)];
+        updateSelectedSummary();
       });
     }
 
     function renderFrameOptions() {
-      const frameOptions = document.getElementById('frameOptions');
-      frameOptions.innerHTML = "";
+      const frameSelect = document.getElementById('frameSelect');
+      frameSelect.innerHTML = "";
 
       selectedFrame = FRAME_OPTIONS[0];
 
       FRAME_OPTIONS.forEach((frame, index) => {
-        const button = document.createElement('button');
-        button.type = "button";
-        button.className = index === 0 ? "option-button active" : "option-button";
+        const option = document.createElement('option');
+        option.value = index;
 
         const subText = frame.id === "unframed"
           ? "Archival paper print only"
           : "Mat + frame add-on";
 
-        button.innerHTML = `
-          <span>${frame.label}</span>
-          <small>${subText}</small>
-        `;
+        option.textContent = `${frame.label} · ${subText}`;
+        frameSelect.appendChild(option);
+      });
 
-        button.addEventListener('click', () => {
-          selectedFrame = frame;
-
-          document.querySelectorAll('#frameOptions .option-button').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          button.classList.add('active');
-
-          updateSelectedSummary();
-        });
-
-        frameOptions.appendChild(button);
+      frameSelect.value = "0";
+      frameSelect.addEventListener('change', () => {
+        selectedFrame = FRAME_OPTIONS[Number(frameSelect.value)];
+        updateSelectedSummary();
       });
     }
 
