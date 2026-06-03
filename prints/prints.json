@@ -7,36 +7,87 @@
     "aspect": "2x3",
     "description": "A quiet moment suspended between solitude and sky in the basin of Hidden Lake.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1-m.jpg"
+    }
   },
   {
     "slug": "between-sky-and-shadow",
     "title": "Between Sky and Shadow",
-    "collection":"Silent Horizons",
+    "collection": "Silent Horizons",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2.jpg",
     "aspect": "2x1",
     "description": "Golden light drapes across Kelso Dunes as the storm-darkened horizon holds its breath.",
     "sizes": [
-      { "size": "10×20", "edition": 25, "price": 295 },
-      { "size": "15×30", "edition": 15, "price": 495 },
-      { "size": "20×40", "edition": 10, "price": 795 }
-    ]   
+      {
+        "size": "10×20",
+        "edition": 25,
+        "price": 295
+      },
+      {
+        "size": "15×30",
+        "edition": 15,
+        "price": 495
+      },
+      {
+        "size": "20×40",
+        "edition": 10,
+        "price": 795
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2-m.jpg"
+    }
   },
   {
     "slug": "the-quiet-drift",
     "title": "The Quiet Drift",
-    "collection":"Silent Horizons",
+    "collection": "Silent Horizons",
     "image": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-3.jpg",
     "aspect": "2x3",
     "description": "A gentle veil of snow and sun drifts through the pines, softening Longs Peak into a moment of pure stillness.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ] 
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-3.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-3-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-3-m.jpg"
+    }
   },
   {
     "slug": "passing-wings",
@@ -46,10 +97,27 @@
     "aspect": "2x3",
     "description": "Birds following their silent path above the winding river valley of Hot Creek.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-4.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-4-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-4-m.jpg"
+    }
   },
   {
     "slug": "pillars-of-spring",
@@ -59,10 +127,27 @@
     "aspect": "2x3",
     "description": "Morning light pools across the desert floor, illuminating the new growth of an otherwise barren land.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-5.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-5-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-5-m.jpg"
+    }
   },
   {
     "slug": "stillness-in-stone",
@@ -72,10 +157,27 @@
     "aspect": "2x3",
     "description": "Factory Butte stands against the fading day, a constant shape in a changing world.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-6.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-6-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-6-m.jpg"
+    }
   },
   {
     "slug": "spring-awakening",
@@ -85,10 +187,27 @@
     "aspect": "2x3",
     "description": "Colors spill softly across the desert horizon, transforming an arid expanse into a fleeting tapestry of life.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-7.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-7-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-7-m.jpg"
+    }
   },
   {
     "slug": "evening-ember",
@@ -98,10 +217,27 @@
     "aspect": "2x3",
     "description": "Warm light settles on the Joshua trees as the day exhales its final breath into the quiet desert air.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-8.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-8-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-8-m.jpg"
+    }
   },
   {
     "slug": "toward-the-quiet",
@@ -111,12 +247,28 @@
     "aspect": "2x3",
     "description": "A single Joshua tree meets the hush that comes with twilight against the horizons gentle retreat.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 395 },
-      { "size": "16×24", "edition": 15, "price": 695 },
-      { "size": "20×30", "edition": 10, "price": 1295 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 395
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 695
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 1295
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9.jpg",
+      "framed": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-f.jpg",
+      "room": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-m.jpg"
+    }
   },
-
   {
     "slug": "arch-of-the-night",
     "title": "Arch of the Night",
@@ -125,10 +277,27 @@
     "aspect": "2x1",
     "description": "Soft starlight settles over arch rock, revealing the beauty of the abyss of the universe.",
     "sizes": [
-      { "size": "10×20", "edition": 25, "price": 295 },
-      { "size": "15×30", "edition": 15, "price": 495 },
-      { "size": "20×40", "edition": 10, "price": 795 }
-    ]
+      {
+        "size": "10×20",
+        "edition": 25,
+        "price": 295
+      },
+      {
+        "size": "15×30",
+        "edition": 15,
+        "price": 495
+      },
+      {
+        "size": "20×40",
+        "edition": 10,
+        "price": 795
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "a-brief-crossing",
@@ -138,10 +307,27 @@
     "aspect": "2x3",
     "description": "The comet NEOWISE glides above the still desert, leaving only a momentary trace of light in the night.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-2.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "alone-with-the-stars",
@@ -151,10 +337,27 @@
     "aspect": "2x3",
     "description": "A lone Joshua tree stands beneath the vast night sky, rooted in a solitude that feels both ancient and tender.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 395 },
-      { "size": "16×24", "edition": 15, "price": 695 },
-      { "size": "20×30", "edition": 10, "price": 1295 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 395
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 695
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 1295
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "eternal-witness",
@@ -164,12 +367,29 @@
     "aspect": "2x3",
     "description": "Tucked back beyond the rocks and bushes, the Joshua tree only surveyor is the glow of the galaxy.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-4.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "midnight-reverie",
     "title": "Midnight Reverie",
     "collection": "Nocturne",
@@ -177,12 +397,29 @@
     "aspect": "2x3",
     "description": "In the hushed glow of midnight, the landscape dissolves into a dreamlike tapestry of shadow and starlight.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-5.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "desert-wish",
     "title": "Desert Wish",
     "collection": "Nocturne",
@@ -190,12 +427,29 @@
     "aspect": "2x3",
     "description": "A shooting star meets the stillness of the desert, leaving only a sliver of light and a quiet hope for the future.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-6.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "rise-with-the-red-rocks",
     "title": "Rise with the Red Rocks",
     "collection": "Nocturne",
@@ -203,12 +457,29 @@
     "aspect": "2x3",
     "description": "The red stones of Goblin Valley emerge from the darkness as silent sentinels beneath the rising moon.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-7.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "celestial-drift",
     "title": "Celestial Drift",
     "collection": "Nocturne",
@@ -216,12 +487,29 @@
     "aspect": "2x3",
     "description": "Star trails sweep across the sky in a slow cosmic rythm, tracing time itself over the desert floor.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 395 },
-      { "size": "16×24", "edition": 15, "price": 695 },
-      { "size": "20×30", "edition": 10, "price": 1295 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 395
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 695
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 1295
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-8.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "nocturnal-bloom",
     "title": "Nocturnal Bloom",
     "collection": "Nocturne",
@@ -229,12 +517,29 @@
     "aspect": "2x3",
     "description": "Moonlit wildflowers rest beneath the evening sky, revealing a fleeting softness within the desert's night.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-9.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
-    {
+  {
     "slug": "eclipse-of-the-desert",
     "title": "Eclipse of the Desert",
     "collection": "Nocturne",
@@ -242,10 +547,27 @@
     "aspect": "2x3",
     "description": "Framed through the Joshua tree's branches, the earth begins casting its shadow against the light of the harvest moon.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-10.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "horizon-of-spines",
@@ -255,10 +577,27 @@
     "aspect": "2x3",
     "description": "Soft evening light catches the chola's spines, turning a harsh desert form into a quiet line of radiant texture.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-1.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "sunrise-chorus",
@@ -268,10 +607,27 @@
     "aspect": "2x3",
     "description": "The dew covered blooms awaken in the warm morning light, creating a gentle harmony of color.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-2.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "spring-ascending",
@@ -281,10 +637,27 @@
     "aspect": "2x3",
     "description": "Delicate blossoms reach toward the sky, lifting the season's first colors into the open air.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-3.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "petal-glow",
@@ -294,10 +667,27 @@
     "aspect": "2x3",
     "description": "A single rose gathers the soft light around it, revealing a quiet warmth held within its unfolding layers.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-4.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "soft-landing",
@@ -307,10 +697,27 @@
     "aspect": "2x3",
     "description": "A fallen leaf comes to rest atop another, forming a quiet exchange of balance and stillness in the shadows.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 395 },
-      { "size": "16×24", "edition": 15, "price": 695 },
-      { "size": "20×30", "edition": 10, "price": 1295 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 395
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 695
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 1295
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "green-geometry",
@@ -320,10 +727,27 @@
     "aspect": "2x3",
     "description": "Light traces along the fern's repeating patterns, revealing the natural architecture hidden within its curves.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-6.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "shaded-haven",
@@ -333,10 +757,27 @@
     "aspect": "2x3",
     "description": "Layers of fern fronds settle into the dim forest light, forming a quiet refuge of deep greens and shadows.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-7.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "evening-seeds",
@@ -346,10 +787,27 @@
     "aspect": "2x3",
     "description": "Silhouetted grasses catch the last warmth of the day, holding the sunset's glow in their delicate forms.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-8.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "aspen-rhythm",
@@ -359,10 +817,27 @@
     "aspect": "2x3",
     "description": "The repeating lines of the aspen trunks create a gentle cadence, echoing the soft transition of autumn light.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-9.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "urban-eye",
@@ -372,10 +847,27 @@
     "aspect": "2x3",
     "description": "The Broad's sculpted facade reveals a single watchin aperture, capturing the city's restless energy.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "the-speed-of-night",
@@ -385,10 +877,27 @@
     "aspect": "2x3",
     "description": "Lights sweep through downtown in a rush of color, tracing the rhythm of a city that never fully slows.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 245 },
-      { "size": "16×24", "edition": 15, "price": 445 },
-      { "size": "20×30", "edition": 10, "price": 745 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 245
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 445
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 745
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "grid-lock",
@@ -398,10 +907,27 @@
     "aspect": "2x3",
     "description": "Through the chain-link grid, the skyline echos the tension between distance and desire in urban life.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "bustling-morning",
@@ -411,10 +937,27 @@
     "aspect": "2x3",
     "description": "City Hall rises into the cool dawn as early commuters fill the streets, ushering in another day of movement.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "evening-edifice",
@@ -424,10 +967,27 @@
     "aspect": "2x3",
     "description": "The last light settles against the historic tower, shoftening its sharp lines into a soft silhouette.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "the-city-softened",
@@ -437,10 +997,27 @@
     "aspect": "2x3",
     "description": "Branches frame the skyline in the golden hour, lending tenderness to a landscape built of concrete and steel.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 345 },
-      { "size": "16×24", "edition": 15, "price": 645 },
-      { "size": "20×30", "edition": 10, "price": 1295 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 345
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 645
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 1295
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "road-to-dusk",
@@ -450,10 +1027,27 @@
     "aspect": "2x3",
     "description": "A path of light guids the city toward nightfall, holding a moment suspended between motion and stillness.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "electric-memory",
@@ -463,10 +1057,27 @@
     "aspect": "2x3",
     "description": "Neon light casts a passerby's silhouette, preserving a fleeting moment that lingers after it pases.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg",
+      "framed": "",
+      "room": ""
+    }
   },
   {
     "slug": "city-of-angels",
@@ -476,9 +1087,26 @@
     "aspect": "2x3",
     "description": "The sun descends over LA, casting the landscape in a quiet haze where brillance and nostalgia briefly meet.",
     "sizes": [
-      { "size": "12×18", "edition": 25, "price": 195 },
-      { "size": "16×24", "edition": 15, "price": 295 },
-      { "size": "20×30", "edition": 10, "price": 495 }
-    ]
+      {
+        "size": "12×18",
+        "edition": 25,
+        "price": 195
+      },
+      {
+        "size": "16×24",
+        "edition": 15,
+        "price": 295
+      },
+      {
+        "size": "20×30",
+        "edition": 10,
+        "price": 495
+      }
+    ],
+    "images": {
+      "original": "https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg",
+      "framed": "",
+      "room": ""
+    }
   }
 ]

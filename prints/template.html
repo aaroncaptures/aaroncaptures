@@ -29,43 +29,56 @@
   </header>
 
   <!-- PRINT DETAIL -->
-<section class="print-detail">
-  <div class="print-detail-inner">
+  <section class="print-detail">
+    <div class="print-detail-inner">
 
-    <!-- IMAGE -->
-    <div class="print-image-wrapper">
-      <img id="printImage" class="print-detail-image" alt="">
+      <!-- IMAGE GALLERY -->
+      <div class="print-gallery">
+        <div class="print-image-wrapper">
+          <img id="printImage" class="print-detail-image" alt="">
+        </div>
+
+        <div id="printThumbnails" class="print-thumbnails" aria-label="Print preview options"></div>
+      </div>
+
+      <!-- TEXT INFO -->
+      <div class="print-info">
+
+        <h1 id="printTitle" class="print-title"></h1>
+        <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
+
+        <p id="printDescription" class="print-description"></p>
+
+        <div class="print-options">
+          <h2>Choose a Size</h2>
+          <div id="sizeOptions" class="option-button-group"></div>
+        </div>
+
+        <div class="print-options">
+          <h2>Choose a Finish</h2>
+          <div id="frameOptions" class="option-button-group"></div>
+        </div>
+
+        <div class="selected-print-summary">
+          <p id="selectedEdition"></p>
+          <p id="selectedPrice" class="selected-price"></p>
+        </div>
+
+        <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
+
+        <!-- NEXT / PREVIOUS BUTTONS -->
+        <div class="print-nav">
+          <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
+          <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
+        </div>
+
+        <!-- BACK LINK -->
+        <a href="/prints/" class="back-prints-link nav-back">← Back to Prints</a>
+
+      </div>
+
     </div>
-
-    <!-- TEXT INFO -->
-    <div class="print-info">
-
-      <h1 id="printTitle" class="print-title"></h1>
-      <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
-
-      <p id="printDescription" class="print-description"></p>
-
-      <div class="print-sizes">
-        <h2>Available Sizes</h2>
-        <ul id="sizesList"></ul>
-      </div>
-
-      <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
-
-      <!-- NEXT / PREVIOUS BUTTONS -->
-      <div class="print-nav">
-        <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
-        <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
-      </div>
-
-      <!-- BACK LINK -->
-      <a href="/prints/" class="back-prints-link nav-back">← Back to Prints</a>
-
-    </div> <!-- CLOSE print-info -->
-
-  </div> <!-- CLOSE print-detail-inner -->
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
@@ -90,19 +103,190 @@
   </footer>
 
   <script>
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.contains('nav-menu-open');
-    navMenu.classList.toggle('nav-menu-open', !isOpen);
-    navToggle.setAttribute("aria-expanded", !isOpen);
-  });
-</script>
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !isOpen);
+        navToggle.setAttribute("aria-expanded", !isOpen);
+      });
+    }
+  </script>
 
   <!-- TEMPLATE SCRIPT -->
   <script>
+    /*
+      Framed price add-ons.
+      Adjust these numbers once you know your actual lab/framing cost.
+    */
+    const FRAMING_ADD_ONS = {
+      "10×20": 150,
+      "12×18": 150,
+      "15×30": 250,
+      "16×24": 225,
+      "20×30": 325,
+      "20×40": 400
+    };
+
+    const FRAME_OPTIONS = [
+      { id: "unframed", label: "Unframed", addOn: 0 },
+      { id: "framed", label: "Framed", addOn: null }
+    ];
+
+    let selectedSize = null;
+    let selectedFrame = FRAME_OPTIONS[0];
+    let currentPrint = null;
+
+    function formatPrice(value) {
+      return `$${Number(value).toLocaleString()}`;
+    }
+
+    function getImageSet(print) {
+      const original = print.images?.original || print.image || "";
+      return [
+        { id: "original", label: "Original", src: original },
+        { id: "framed", label: "Framed", src: print.images?.framed || "" },
+        { id: "room", label: "In Room", src: print.images?.room || "" }
+      ];
+    }
+
+    function renderImageGallery(print) {
+      const mainImage = document.getElementById('printImage');
+      const thumbnails = document.getElementById('printThumbnails');
+      const imageSet = getImageSet(print);
+      const availableImages = imageSet.filter(img => img.src && img.src.trim() !== "");
+
+      thumbnails.innerHTML = "";
+
+      if (availableImages.length === 0) return;
+
+      mainImage.src = availableImages[0].src;
+      mainImage.alt = `${print.title} - ${availableImages[0].label}`;
+
+      availableImages.forEach((image, index) => {
+        const button = document.createElement('button');
+        button.type = "button";
+        button.className = index === 0 ? "print-thumbnail active" : "print-thumbnail";
+        button.setAttribute("aria-label", `View ${image.label} preview`);
+        button.innerHTML = `
+          <img src="${image.src}" alt="${print.title} ${image.label} preview">
+          <span>${image.label}</span>
+        `;
+
+        button.addEventListener('click', () => {
+          mainImage.src = image.src;
+          mainImage.alt = `${print.title} - ${image.label}`;
+
+          document.querySelectorAll('.print-thumbnail').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+        });
+
+        thumbnails.appendChild(button);
+      });
+    }
+
+    function getFrameAddOn(sizeLabel) {
+      if (selectedFrame.id === "unframed") return 0;
+      return FRAMING_ADD_ONS[sizeLabel] || 0;
+    }
+
+    function updateSelectedSummary() {
+      if (!selectedSize) return;
+
+      const addOn = getFrameAddOn(selectedSize.size);
+      const totalPrice = selectedSize.price + addOn;
+
+      document.getElementById('selectedEdition').textContent =
+        `${selectedSize.size} · Edition of ${selectedSize.edition} · ${selectedFrame.label}`;
+
+      document.getElementById('selectedPrice').textContent =
+        formatPrice(totalPrice);
+
+      const inquiryBtn = document.getElementById('inquiryButton');
+      const subject = `Print Inquiry – ${currentPrint.title}`;
+      const body =
+        `Hi Aaron,%0D%0A%0D%0A` +
+        `I'm interested in this print:%0D%0A` +
+        `Title: ${currentPrint.title}%0D%0A` +
+        `Size: ${selectedSize.size}%0D%0A` +
+        `Finish: ${selectedFrame.label}%0D%0A` +
+        `Price shown: ${formatPrice(totalPrice)}%0D%0A%0D%0A` +
+        `Please send me more information.`;
+
+      inquiryBtn.href =
+        `mailto:rashid.aaron@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+
+    function renderSizeOptions(print) {
+      const sizeOptions = document.getElementById('sizeOptions');
+      sizeOptions.innerHTML = "";
+
+      selectedSize = print.sizes[0];
+
+      print.sizes.forEach((size, index) => {
+        const button = document.createElement('button');
+        button.type = "button";
+        button.className = index === 0 ? "option-button active" : "option-button";
+        button.innerHTML = `
+          <span>${size.size}</span>
+          <small>Edition of ${size.edition} · ${formatPrice(size.price)}</small>
+        `;
+
+        button.addEventListener('click', () => {
+          selectedSize = size;
+
+          document.querySelectorAll('#sizeOptions .option-button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+
+          updateSelectedSummary();
+        });
+
+        sizeOptions.appendChild(button);
+      });
+    }
+
+    function renderFrameOptions() {
+      const frameOptions = document.getElementById('frameOptions');
+      frameOptions.innerHTML = "";
+
+      selectedFrame = FRAME_OPTIONS[0];
+
+      FRAME_OPTIONS.forEach((frame, index) => {
+        const button = document.createElement('button');
+        button.type = "button";
+        button.className = index === 0 ? "option-button active" : "option-button";
+
+        const subText = frame.id === "unframed"
+          ? "Archival paper print only"
+          : "Mat + frame add-on";
+
+        button.innerHTML = `
+          <span>${frame.label}</span>
+          <small>${subText}</small>
+        `;
+
+        button.addEventListener('click', () => {
+          selectedFrame = frame;
+
+          document.querySelectorAll('#frameOptions .option-button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+
+          updateSelectedSummary();
+        });
+
+        frameOptions.appendChild(button);
+      });
+    }
+
     async function loadPrint() {
       const params = new URLSearchParams(window.location.search);
       const slug = params.get('print');
@@ -123,27 +307,18 @@
         return;
       }
 
+      currentPrint = print;
+
       // Fill content
       document.title = print.title + " – Fine Art Print";
       document.getElementById('printTitle').textContent = print.title;
       document.getElementById('printCollection').textContent = print.collection;
       document.getElementById('printDescription').textContent = print.description;
-      document.getElementById('printImage').src = print.image;
-      document.getElementById('printImage').alt = print.title;
 
-      // Sizes
-      const sizesList = document.getElementById('sizesList');
-      sizesList.innerHTML = "";
-      print.sizes.forEach(s => {
-        const li = document.createElement('li');
-        li.textContent = `${s.size} – Edition of ${s.edition} – $${s.price}`;
-        sizesList.appendChild(li);
-      });
-
-      // Email button
-      const inquiryBtn = document.getElementById('inquiryButton');
-      inquiryBtn.href =
-        `mailto:rashid.aaron@yahoo.com?subject=Print Inquiry – ${encodeURIComponent(print.title)}`;
+      renderImageGallery(print);
+      renderSizeOptions(print);
+      renderFrameOptions();
+      updateSelectedSummary();
 
       // NEXT / PREVIOUS
       const index = prints.findIndex(p => p.slug === slug);
