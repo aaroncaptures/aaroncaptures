@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Thank You – Aaron Captures</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
+        &#9776;
+      </button>
+
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/" aria-current="page">Prints</a>
+        <a href="/booking/">Booking</a>
+        <a href="#contact-footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero order-confirmation-page" aria-labelledby="thank-you-title">
+      <p class="intro-label">Fine Art Print Order</p>
+
+      <h1 id="thank-you-title" class="page-title">Thank you for your order.</h1>
+
+      <p class="page-subtitle">
+        Your payment was completed successfully. In live mode, this is where collectors will land after purchasing a print.
+      </p>
+
+      <div class="order-confirmation-card">
+        <p>
+          Aaron will review the order details, confirm fulfillment, and prepare the print, framing selection, and Certificate of Authenticity information.
+        </p>
+
+        <p id="sessionMessage" class="order-session-message"></p>
+
+        <div class="order-confirmation-actions">
+          <a class="btn-primary" href="/prints/">Return to Prints</a>
+          <a class="btn-secondary" href="/collections/">View Collections</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+
+      <p class="footer-email">
+        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
+      </p>
+
+      <p class="footer-social">
+        <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <span>·</span>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <span>·</span>
+        <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </p>
+
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
+      <a href="#top" class="back-home-link">Back to Top</a>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('nav-menu-open');
+
+        navMenu.classList.toggle('nav-menu-open', !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
+      });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    const sessionMessage = document.getElementById('sessionMessage');
+
+    if (sessionId && sessionMessage) {
+      sessionMessage.textContent = 'Stripe session received. Order notification and fulfillment automation will be connected in the next phase.';
+    }
+
+    try {
+      localStorage.removeItem('aaronCapturesPrintCart');
+    } catch (error) {
+      console.warn('Cart could not be cleared after checkout.', error);
+    }
+  </script>
+</body>
+</html>
