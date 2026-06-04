@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fine Art Print – Aaron Captures</title>
+  <title>Fine Art Prints – Aaron Captures</title>
 
+  <!-- Fonts + Main Styles -->
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
   <link rel="stylesheet" href="/style.css" />
 </head>
@@ -32,7 +33,7 @@
       <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
-        <a href="/prints/" aria-current="page">Prints</a>
+        <a href="/prints/" aria-current="page" class="active">Prints</a>
         <a href="/booking/">Booking</a>
         <a href="#contact-footer">Contact</a>
       </nav>
@@ -40,70 +41,48 @@
   </header>
 
   <main id="main-content">
-    <!-- BACK LINK -->
-    <div class="print-detail-back">
-      <a href="/prints/" class="back-prints-link">← Back to Prints</a>
-    </div>
+    <!-- HERO SECTION -->
+    <section class="prints-hero" aria-labelledby="prints-page-title">
+      <div class="prints-hero-overlay" aria-hidden="true"></div>
+      <div class="prints-hero-content">
+        <h1 id="prints-page-title">Fine Art Prints</h1>
+        <p>
+          Each print begins as a moment found in the wild — a horizon, a quiet dusk, a breath of starlight.<br>
+          From there it becomes a limited edition artwork, signed, numbered, and printed on archival materials.<br>
+          Each piece includes a Certificate of Authenticity and is available with optional framing.<br>
+          As editions sell, prices reflect their growing rarity.
+        </p>
 
-    <!-- PRINT DETAIL -->
-    <section class="print-detail" aria-labelledby="printTitle">
-      <div class="print-detail-inner">
-
-        <!-- IMAGE GALLERY -->
-        <div class="print-gallery" aria-label="Print preview gallery">
-          <div class="print-image-wrapper">
-            <img id="printImage" class="print-detail-image" src="" alt="" decoding="async">
-          </div>
-
-          <div id="printThumbnails" class="print-thumbnails" aria-label="Print preview options"></div>
+        <div class="prints-hero-buttons" aria-label="Filter prints by collection">
+          <button type="button" class="hero-btn primary active" data-filter="all" aria-pressed="true">Shop All Prints</button>
+          <button type="button" class="hero-btn" data-filter="Silent Horizons" aria-pressed="false">Silent Horizons</button>
+          <button type="button" class="hero-btn" data-filter="Nocturne" aria-pressed="false">Nocturne</button>
+          <button type="button" class="hero-btn" data-filter="Shapes of Nature" aria-pressed="false">Shapes of Nature</button>
+          <button type="button" class="hero-btn" data-filter="Echos of Los Angeles" aria-pressed="false">Echos of Los Angeles</button>
         </div>
 
-        <!-- TEXT INFO -->
-        <div class="print-info">
-
-          <h1 id="printTitle" class="print-title">Loading print...</h1>
-          <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
-
-          <p id="printDescription" class="print-description"></p>
-
-          <div class="print-options">
-            <label for="sizeSelect" class="print-select-label">Choose a Size</label>
-            <select id="sizeSelect" class="print-select" aria-describedby="selectedEdition selectedPrice"></select>
-          </div>
-
-          <div class="print-options">
-            <label for="frameSelect" class="print-select-label">Choose a Finish</label>
-            <select id="frameSelect" class="print-select" aria-describedby="selectedEdition selectedPrice"></select>
-          </div>
-
-          <div class="selected-print-summary" aria-live="polite" aria-atomic="true">
-            <p id="selectedEdition"></p>
-            <p id="selectedPrice" class="selected-price"></p>
-          </div>
-
-          <a id="inquiryButton" class="btn-primary purchase-btn" href="mailto:rashid.aaron@yahoo.com">Inquire About This Print</a>
-
-          <!-- NEXT / PREVIOUS BUTTONS -->
-          <nav class="print-nav" aria-label="Print navigation">
-            <a id="prevPrint" class="print-nav-btn" hidden>← Previous</a>
-            <a id="nextPrint" class="print-nav-btn" hidden>Next →</a>
-          </nav>
-
-
-        </div>
-
+        <p id="printsFilterStatus" class="sr-only" aria-live="polite">Showing all prints.</p>
       </div>
+    </section>
+
+    <!-- PRINT GRID -->
+    <section class="prints-grid-section" aria-labelledby="prints-grid-title">
+      <h2 id="prints-grid-title" class="sr-only">Available fine art prints</h2>
+      <div class="prints-grid" aria-live="polite"></div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
+
       <div class="footer-logo-top">
         <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
-      <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
+      <p class="footer-email">
+        <a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a>
+      </p>
 
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -113,24 +92,29 @@
         <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
-      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
       <a href="#top" class="back-home-link">Back to Top</a>
+
     </div>
   </footer>
 
+  <!-- NAV + PRINT FILTER SCRIPT -->
   <script>
-    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
+
         navMenu.classList.toggle('nav-menu-open', !isOpen);
         navToggle.setAttribute('aria-expanded', String(!isOpen));
       });
 
-      document.addEventListener('keydown', event => {
+      document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
           navMenu.classList.remove('nav-menu-open');
           navToggle.setAttribute('aria-expanded', 'false');
@@ -138,261 +122,137 @@
         }
       });
     }
-  </script>
 
-  <!-- TEMPLATE SCRIPT -->
-  <script>
-    /*
-      Framed price add-ons.
-      Adjust these numbers once you know your actual lab/framing cost.
-    */
-    const FRAMING_ADD_ONS = {
-      "10×20": 150,
-      "12×18": 150,
-      "15×30": 250,
-      "16×24": 225,
-      "20×30": 325,
-      "20×40": 400
-    };
-
-    const FRAME_OPTIONS = [
-      { id: "unframed", label: "Unframed", addOn: 0 },
-      { id: "framed", label: "Framed", addOn: null }
-    ];
-
-    let selectedSize = null;
-    let selectedFrame = FRAME_OPTIONS[0];
-    let currentPrint = null;
-
-    function formatPrice(value) {
-      return `$${Number(value).toLocaleString()}`;
+    function getPrintAltText(print) {
+      return print.alt?.original || `${print.title} fine art print from the ${print.collection} collection.`;
     }
 
-    function getImageSet(print) {
-      const original = print.images?.original || print.image || "";
-      return [
-        {
-          id: "original",
-          label: "Original",
-          src: original,
-          alt: print.alt?.original || `${print.title} fine art print from the ${print.collection} collection.`
-        },
-        {
-          id: "framed",
-          label: "Framed",
-          src: print.images?.framed || "",
-          alt: print.alt?.framed || `${print.title} shown as a framed fine art print.`
-        },
-        {
-          id: "room",
-          label: "In Room",
-          src: print.images?.room || "",
-          alt: print.alt?.room || `${print.title} fine art print displayed in a room setting.`
-        }
-      ];
+    function createPrintCard(print) {
+      const card = document.createElement('article');
+      card.className = 'print-card hidden';
+      card.dataset.collection = print.collection;
+
+      const link = document.createElement('a');
+      link.href = `/prints/template.html?print=${encodeURIComponent(print.slug)}`;
+      link.setAttribute('aria-label', `View ${print.title} from the ${print.collection} collection`);
+
+      const thumb = document.createElement('div');
+      thumb.className = 'print-thumb';
+
+      const image = document.createElement('img');
+      image.src = print.image;
+      image.alt = getPrintAltText(print);
+      image.loading = 'lazy';
+      image.decoding = 'async';
+
+      const title = document.createElement('h3');
+      title.className = 'print-title';
+      title.textContent = print.title;
+
+      const collection = document.createElement('p');
+      collection.className = 'print-collection';
+      collection.textContent = print.collection;
+
+      const viewLinkText = document.createElement('span');
+      viewLinkText.className = 'print-link';
+      viewLinkText.setAttribute('aria-hidden', 'true');
+      viewLinkText.textContent = 'View Print →';
+
+      thumb.appendChild(image);
+      link.appendChild(thumb);
+      link.appendChild(title);
+      link.appendChild(collection);
+      link.appendChild(viewLinkText);
+      card.appendChild(link);
+
+      return card;
     }
 
-    function setActiveThumbnail(activeButton) {
-      document.querySelectorAll('.print-thumbnail').forEach(button => {
-        button.classList.remove('active');
-        button.setAttribute('aria-pressed', 'false');
-      });
-
-      activeButton.classList.add('active');
-      activeButton.setAttribute('aria-pressed', 'true');
-    }
-
-    function renderImageGallery(print) {
-      const mainImage = document.getElementById('printImage');
-      const thumbnails = document.getElementById('printThumbnails');
-      const imageSet = getImageSet(print);
-      const availableImages = imageSet.filter(image => image.src && image.src.trim() !== "");
-
-      thumbnails.innerHTML = "";
-
-      if (availableImages.length === 0) {
-        mainImage.alt = `Image unavailable for ${print.title}.`;
-        return;
-      }
-
-      mainImage.src = availableImages[0].src;
-      mainImage.alt = availableImages[0].alt;
-
-      availableImages.forEach((image, index) => {
-        const button = document.createElement('button');
-        button.type = "button";
-        button.className = index === 0 ? "print-thumbnail active" : "print-thumbnail";
-        button.setAttribute("aria-label", `View ${print.title} preview: ${image.label}`);
-        button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
-
-        const thumbnailImage = document.createElement('img');
-        thumbnailImage.src = image.src;
-        thumbnailImage.alt = "";
-        thumbnailImage.loading = "lazy";
-        thumbnailImage.decoding = "async";
-
-        const label = document.createElement('span');
-        label.textContent = image.label;
-
-        button.appendChild(thumbnailImage);
-        button.appendChild(label);
-
-        button.addEventListener('click', () => {
-          mainImage.src = image.src;
-          mainImage.alt = image.alt;
-          setActiveThumbnail(button);
-        });
-
-        thumbnails.appendChild(button);
-      });
-    }
-
-    function getFrameAddOn(sizeLabel) {
-      if (selectedFrame.id === "unframed") return 0;
-      return FRAMING_ADD_ONS[sizeLabel] || 0;
-    }
-
-    function updateSelectedSummary() {
-      if (!selectedSize || !currentPrint) return;
-
-      const addOn = getFrameAddOn(selectedSize.size);
-      const totalPrice = selectedSize.price + addOn;
-      const editionText = `${selectedSize.size} · Edition of ${selectedSize.edition} · ${selectedFrame.label}`;
-      const priceText = formatPrice(totalPrice);
-
-      document.getElementById('selectedEdition').textContent = editionText;
-      document.getElementById('selectedPrice').textContent = priceText;
-
-      const inquiryBtn = document.getElementById('inquiryButton');
-      const subject = `Print Inquiry – ${currentPrint.title}`;
-      const body = [
-        `Hi Aaron,`,
-        ``,
-        `I'm interested in this print:`,
-        `Title: ${currentPrint.title}`,
-        `Size: ${selectedSize.size}`,
-        `Finish: ${selectedFrame.label}`,
-        `Price shown: ${priceText}`,
-        ``,
-        `Please send me more information.`
-      ].join('\n');
-
-      inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      inquiryBtn.setAttribute('aria-label', `Inquire about ${currentPrint.title}, ${editionText}, ${priceText}`);
-    }
-
-    function renderSizeOptions(print) {
-      const sizeSelect = document.getElementById('sizeSelect');
-      sizeSelect.innerHTML = "";
-
-      selectedSize = print.sizes[0];
-
-      print.sizes.forEach((size, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = `${size.size} · Edition of ${size.edition} · ${formatPrice(size.price)}`;
-        sizeSelect.appendChild(option);
-      });
-
-      sizeSelect.value = "0";
-      sizeSelect.addEventListener('change', () => {
-        selectedSize = print.sizes[Number(sizeSelect.value)];
-        updateSelectedSummary();
-      });
-    }
-
-    function renderFrameOptions() {
-      const frameSelect = document.getElementById('frameSelect');
-      frameSelect.innerHTML = "";
-
-      selectedFrame = FRAME_OPTIONS[0];
-
-      FRAME_OPTIONS.forEach((frame, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-
-        const subText = frame.id === "unframed"
-          ? "Archival paper print only"
-          : "Mat + frame add-on";
-
-        option.textContent = `${frame.label} · ${subText}`;
-        frameSelect.appendChild(option);
-      });
-
-      frameSelect.value = "0";
-      frameSelect.addEventListener('change', () => {
-        selectedFrame = FRAME_OPTIONS[Number(frameSelect.value)];
-        updateSelectedSummary();
-      });
-    }
-
-    function showPrintError(message) {
-      const detailInner = document.querySelector('.print-detail-inner');
-      detailInner.innerHTML = `<div class="print-info"><h1 class="print-title">Print unavailable</h1><p>${message}</p><a href="/prints/" class="btn-primary">Back to Prints</a></div>`;
-    }
-
-    async function loadPrint() {
-      const params = new URLSearchParams(window.location.search);
-      const slug = params.get('print');
-
-      if (!slug) {
-        showPrintError('Missing print identifier.');
-        return;
-      }
+    async function loadPrints() {
+      const grid = document.querySelector('.prints-grid');
+      if (!grid) return;
 
       try {
         const response = await fetch('/prints/prints.json');
 
         if (!response.ok) {
-          throw new Error('Could not load print data.');
+          throw new Error('Unable to load prints.');
         }
 
         const prints = await response.json();
-        const print = prints.find(item => item.slug === slug);
 
-        if (!print) {
-          showPrintError('Print not found.');
-          return;
-        }
+        prints.forEach((print) => {
+          grid.appendChild(createPrintCard(print));
+        });
 
-        currentPrint = print;
-
-        // Fill content
-        document.title = `${print.title} – Fine Art Print`;
-        document.getElementById('printTitle').textContent = print.title;
-        document.getElementById('printCollection').textContent = print.collection;
-        document.getElementById('printDescription').textContent = print.description;
-
-        renderImageGallery(print);
-        renderSizeOptions(print);
-        renderFrameOptions();
-        updateSelectedSummary();
-
-        // NEXT / PREVIOUS
-        const index = prints.findIndex(item => item.slug === slug);
-
-        const prevBtn = document.getElementById('prevPrint');
-        const nextBtn = document.getElementById('nextPrint');
-
-        if (index > 0) {
-          prevBtn.href = `/prints/template.html?print=${prints[index - 1].slug}`;
-          prevBtn.textContent = `← Previous: ${prints[index - 1].title}`;
-          prevBtn.hidden = false;
-        }
-
-        if (index < prints.length - 1) {
-          nextBtn.href = `/prints/template.html?print=${prints[index + 1].slug}`;
-          nextBtn.textContent = `Next: ${prints[index + 1].title} →`;
-          nextBtn.hidden = false;
-        }
+        revealCards(Array.from(document.querySelectorAll('.print-card')));
       } catch (error) {
-        console.error(error);
-        showPrintError('Something went wrong while loading this print. Please return to the prints page and try again.');
+        grid.innerHTML = '<p>Prints could not be loaded. Please refresh the page or contact Aaron directly.</p>';
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadPrint);
-  </script>
+    function revealCards(cards) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      cards.forEach((card, index) => {
+        const delay = reduceMotion ? 0 : index * 90;
+
+        setTimeout(() => {
+          card.classList.remove('hidden');
+        }, delay);
+      });
+    }
+
+    function filterPrints(collection) {
+      const cards = Array.from(document.querySelectorAll('.print-card'));
+      const status = document.getElementById('printsFilterStatus');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      cards.forEach((card) => card.classList.add('hidden'));
+
+      const delay = reduceMotion ? 0 : 320;
+
+      setTimeout(() => {
+        const visibleCards = [];
+
+        cards.forEach((card) => {
+          const shouldShow = collection === 'all' || card.dataset.collection === collection;
+          card.style.display = shouldShow ? 'block' : 'none';
+
+          if (shouldShow) {
+            visibleCards.push(card);
+          }
+        });
+
+        revealCards(visibleCards);
+
+        if (status) {
+          status.textContent = collection === 'all'
+            ? `Showing all prints. ${visibleCards.length} prints available.`
+            : `Showing ${collection} prints. ${visibleCards.length} prints available.`;
+        }
+      }, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.hero-btn');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          buttons.forEach((otherButton) => {
+            otherButton.classList.remove('primary', 'active');
+            otherButton.setAttribute('aria-pressed', 'false');
+          });
+
+          button.classList.add('primary', 'active');
+          button.setAttribute('aria-pressed', 'true');
+
+          filterPrints(button.dataset.filter);
+        });
+      });
+
+      loadPrints();
+    });
+  </script>
 </body>
 </html>
