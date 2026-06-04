@@ -1646,3 +1646,82 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 1.35rem;
   }
 }
+
+/* =========================================
+   LIGHTBOX GALLERY NAVIGATION ARROWS
+   ========================================= */
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000000;
+  width: 46px;
+  height: 76px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.48);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.lightbox-nav:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.lightbox-nav-prev {
+  left: 1.25rem;
+}
+
+.lightbox-nav-next {
+  right: 1.25rem;
+}
+
+.lightbox-nav svg {
+  width: 18px;
+  height: 34px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lightbox-count {
+  margin-top: 0.55rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (max-width: 700px) {
+  .lightbox-nav {
+    width: 40px;
+    height: 58px;
+  }
+
+  .lightbox-nav-prev {
+    left: 0.75rem;
+  }
+
+  .lightbox-nav-next {
+    right: 0.75rem;
+  }
+
+  .lightbox-nav svg {
+    width: 15px;
+    height: 28px;
+  }
+}
