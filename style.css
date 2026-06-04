@@ -880,6 +880,43 @@ input[type="radio"] {
   text-decoration: none;
 }
 
+
+/* Print detail top back link */
+.print-detail-back {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 20px;
+}
+
+.print-detail-back .back-prints-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0;
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.print-detail-back .back-prints-link:hover {
+  opacity: 0.7;
+}
+
+.print-detail {
+  padding-top: 36px;
+}
+
+@media (max-width: 600px) {
+  .print-detail-back {
+    margin-top: 1.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .print-detail {
+    padding-top: 28px;
+  }
+}
+
 /* Next / Previous nav */
 .print-nav {
   display: flex;
