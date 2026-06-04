@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
 </head>
 
-<body>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -16,12 +17,18 @@
       <div class="site-title">
         <a href="/">Aaron Captures</a>
       </div>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
         &#9776;
       </button>
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/collections/">Collections</a>
+        <a href="/collections/" aria-current="page">Collections</a>
         <a href="/prints/">Prints</a>
         <a href="/booking/">Booking</a>
         <a href="#contact-footer">Contact</a>
@@ -29,71 +36,263 @@
     </div>
   </header>
 
-  <!-- PAGE HEADING -->
-  <section class="collection-heading">
-    <h1>Echos of Los Angeles</h1>
-  </section>
+  <main id="main-content">
+    <!-- PAGE HEADING -->
+    <section class="collection-heading" aria-labelledby="collection-title">
+      <h1 id="collection-title">Echos of Los Angeles</h1>
+    </section>
 
-  <!-- BACK LINK -->
-  <div class="back-collections">
-    <a href="/collections/">← Back to Collections</a>
-  </div>
+    <p class="collection-intro">
+      A city collection shaped by movement, haze, architecture, and the softer moments that linger after the noise fades.
+    </p>
 
-  <!-- GALLERY -->
-  <div class="gallery">
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg" alt="">
-    </a>
-    <a href="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg" class="lightbox-link">
-      <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg" alt="">
-    </a>
-  </div>
+    <!-- BACK LINK -->
+    <div class="back-collections">
+      <a href="/collections/">← Back to Collections</a>
+    </div>
+
+    <!-- ARTWORKS -->
+    <section class="collection-artworks" aria-labelledby="collection-artworks-title">
+      <h2 id="collection-artworks-title" class="sr-only">Echos of Los Angeles artworks</h2>
+
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Urban Eye"
+          data-description="The Broad&#x27;s sculpted facade reveals a single watchin aperture, capturing the city&#x27;s restless energy."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg"
+          data-alt="The Broad museum facade with a single aperture-like opening."
+          aria-label="View details for Urban Eye"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-1.jpg"
+            alt="The Broad museum facade with a single aperture-like opening."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Urban Eye</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="The Speed of Night"
+          data-description="Lights sweep through downtown in a rush of color, tracing the rhythm of a city that never fully slows."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg"
+          data-alt="Colorful city light trails moving through downtown Los Angeles at night."
+          aria-label="View details for The Speed of Night"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-2.jpg"
+            alt="Colorful city light trails moving through downtown Los Angeles at night."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">The Speed of Night</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Grid Lock"
+          data-description="Through the chain-link grid, the skyline echos the tension between distance and desire in urban life."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg"
+          data-alt="Los Angeles skyline seen through a chain-link fence grid."
+          aria-label="View details for Grid Lock"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-3.jpg"
+            alt="Los Angeles skyline seen through a chain-link fence grid."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Grid Lock</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Bustling Morning"
+          data-description="City Hall rises into the cool dawn as early commuters fill the streets, ushering in another day of movement."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg"
+          data-alt="Los Angeles City Hall rising above early morning street movement."
+          aria-label="View details for Bustling Morning"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-4.jpg"
+            alt="Los Angeles City Hall rising above early morning street movement."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Bustling Morning</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Evening Edifice"
+          data-description="The last light settles against the historic tower, shoftening its sharp lines into a soft silhouette."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg"
+          data-alt="A historic Los Angeles tower softened by evening light."
+          aria-label="View details for Evening Edifice"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-5.jpg"
+            alt="A historic Los Angeles tower softened by evening light."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Evening Edifice</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="The City, Softened"
+          data-description="Branches frame the skyline in the golden hour, lending tenderness to a landscape built of concrete and steel."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg"
+          data-alt="Los Angeles skyline framed by branches in golden hour light."
+          aria-label="View details for The City, Softened"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6.jpg"
+            alt="Los Angeles skyline framed by branches in golden hour light."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">The City, Softened</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Road to Dusk"
+          data-description="A path of light guids the city toward nightfall, holding a moment suspended between motion and stillness."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg"
+          data-alt="A glowing road of city light leading into dusk in Los Angeles."
+          aria-label="View details for Road to Dusk"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-7.jpg"
+            alt="A glowing road of city light leading into dusk in Los Angeles."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Road to Dusk</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="Electric Memory"
+          data-description="Neon light casts a passerby&#x27;s silhouette, preserving a fleeting moment that lingers after it pases."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg"
+          data-alt="A passerby silhouette cast in neon city light."
+          aria-label="View details for Electric Memory"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-8.jpg"
+            alt="A passerby silhouette cast in neon city light."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">Electric Memory</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+      <article class="collection-artwork">
+        <button
+          type="button"
+          class="collection-artwork-button"
+          data-title="City of Angels"
+          data-description="The sun descends over LA, casting the landscape in a quiet haze where brillance and nostalgia briefly meet."
+          data-image="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg"
+          data-alt="The Los Angeles skyline fading into a hazy sunset."
+          aria-label="View details for City of Angels"
+        >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg"
+            alt="The Los Angeles skyline fading into a hazy sunset."
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
+        <h2 class="collection-artwork-title">City of Angels</h2>
+        <p class="collection-artwork-action">View details</p>
+      </article>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
       <div class="footer-logo-top">
-        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo" loading="lazy" decoding="async">
       </div>
 
       <p><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
       <p class="footer-social">
-        <a href="https://instagram.com/aaron.captures">Instagram</a> ·
-        <a href="https://tiktok.com/@aaron.captures">TikTok</a> ·
-        <a href="https://facebook.com/aaron.capture">Facebook</a>
+        <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a> ·
+        <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a> ·
+        <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
       <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
 
-      <a href="/" class="back-home-link">← Back to Homepage</a>
+      <a href="#top" class="back-home-link">Back to Top</a>
     </div>
   </footer>
 
   <!-- LIGHTBOX OVERLAY -->
-  <div class="lightbox-overlay" id="lightboxOverlay">
-    <img id="lightboxImage" src="">
+  <div
+    class="lightbox-overlay"
+    id="lightboxOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightboxTitle"
+    aria-describedby="lightboxDescription"
+    hidden
+  >
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+      ×
+    </button>
+
+    <button type="button" class="lightbox-nav lightbox-nav-prev" id="lightboxPrev" aria-label="View previous artwork">
+      <svg aria-hidden="true" viewBox="0 0 24 48" focusable="false">
+        <path d="M18 6L6 24l12 18"></path>
+      </svg>
+    </button>
+
+    <button type="button" class="lightbox-nav lightbox-nav-next" id="lightboxNext" aria-label="View next artwork">
+      <svg aria-hidden="true" viewBox="0 0 24 48" focusable="false">
+        <path d="M6 6l12 18L6 42"></path>
+      </svg>
+    </button>
+
+    <div class="lightbox-content" role="document">
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption">
+        <h2 id="lightboxTitle"></h2>
+        <p id="lightboxDescription"></p>
+        <p class="lightbox-count" id="lightboxCount" aria-live="polite"></p>
+      </div>
+    </div>
   </div>
 
   <!-- SCRIPTS -->
@@ -106,28 +305,132 @@
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
         navMenu.classList.toggle('nav-menu-open', !isOpen);
-        navToggle.setAttribute("aria-expanded", !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     }
   </script>
 
   <script>
-    // Lightbox
-    const lightboxLinks = document.querySelectorAll('.lightbox-link');
+    // Accessible artwork detail modal with previous/next navigation
+    const artworkButtons = Array.from(document.querySelectorAll('.collection-artwork-button'));
     const overlay = document.getElementById('lightboxOverlay');
     const overlayImage = document.getElementById('lightboxImage');
+    const overlayTitle = document.getElementById('lightboxTitle');
+    const overlayDescription = document.getElementById('lightboxDescription');
+    const overlayCount = document.getElementById('lightboxCount');
+    const closeButton = document.getElementById('lightboxClose');
+    const prevButton = document.getElementById('lightboxPrev');
+    const nextButton = document.getElementById('lightboxNext');
 
-    lightboxLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        overlayImage.src = link.href;
-        overlay.style.display = 'flex';
-      });
+    let lastFocusedElement = null;
+    let currentArtworkIndex = 0;
+
+    function getFocusableElements() {
+      return overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    }
+
+    function setLightboxArtwork(index) {
+      if (!artworkButtons.length) return;
+
+      currentArtworkIndex = (index + artworkButtons.length) % artworkButtons.length;
+      const button = artworkButtons[currentArtworkIndex];
+      const title = button.dataset.title || 'Selected artwork';
+
+      overlayImage.src = button.dataset.image || '';
+      overlayImage.alt = button.dataset.alt || title;
+      overlayTitle.textContent = title;
+      overlayDescription.textContent = button.dataset.description || '';
+      overlayCount.textContent = `${currentArtworkIndex + 1} of ${artworkButtons.length}`;
+
+      prevButton.setAttribute('aria-label', `View previous artwork. Current artwork: ${title}`);
+      nextButton.setAttribute('aria-label', `View next artwork. Current artwork: ${title}`);
+    }
+
+    function openLightbox(index) {
+      lastFocusedElement = document.activeElement;
+      setLightboxArtwork(index);
+
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      overlay.hidden = true;
+      overlayImage.src = '';
+      overlayImage.alt = '';
+      overlayTitle.textContent = '';
+      overlayDescription.textContent = '';
+      overlayCount.textContent = '';
+      document.body.style.overflow = '';
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function showPreviousArtwork() {
+      setLightboxArtwork(currentArtworkIndex - 1);
+    }
+
+    function showNextArtwork() {
+      setLightboxArtwork(currentArtworkIndex + 1);
+    }
+
+    artworkButtons.forEach((button, index) => {
+      button.addEventListener('click', () => openLightbox(index));
     });
 
-    overlay.addEventListener('click', () => {
-      overlay.style.display = 'none';
-      overlayImage.src = "";
+    closeButton.addEventListener('click', closeLightbox);
+    prevButton.addEventListener('click', showPreviousArtwork);
+    nextButton.addEventListener('click', showNextArtwork);
+
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (overlay.hidden) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showPreviousArtwork();
+      }
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showNextArtwork();
+      }
+
+      if (event.key === 'Tab') {
+        const focusableElements = Array.from(getFocusableElements());
+        if (!focusableElements.length) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
     });
   </script>
 
