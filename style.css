@@ -1782,3 +1782,56 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+
+/* =========================================
+   FORM VALIDATION ACCESSIBILITY FIX
+   ========================================= */
+
+.form-required-hint {
+  position: static !important;
+  display: inline !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin-left: 0.2rem;
+  background: transparent !important;
+  color: #8a2f2f !important;
+  font-size: 0.72rem !important;
+  pointer-events: none;
+}
+
+.form-step-alert {
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #c76363;
+  border-radius: 10px;
+  background: #fff7f7;
+  color: #8a2f2f;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.form-step-alert[hidden] {
+  display: none !important;
+}
+
+.float-label.field-error input,
+.float-label.field-error textarea,
+.float-label.field-error select {
+  border-color: #c76363 !important;
+  box-shadow: 0 0 0 2px rgba(199, 99, 99, 0.22);
+}
+
+.error-message.visible {
+  display: block;
+  opacity: 1;
+}
+
+.error-message {
+  display: none;
+  width: 100%;
+  color: #8a2f2f;
+  margin: 0.35rem 0 0;
+  line-height: 1.4;
+}
