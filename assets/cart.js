@@ -24,7 +24,7 @@
     When the Cloudflare Worker is ready, replace this with your Worker endpoint.
 
     Example:
-    const CHECKOUT_ENDPOINT = "https://aaron-captures-checkout.YOUR-SUBDOMAIN.workers.dev/create-checkout-session";
+    const CHECKOUT_ENDPOINT = "https://aaron-captures-checkout.rashid-aaron.workers.dev/create-checkout-session";
   */
   const CHECKOUT_ENDPOINT = "";
 
