@@ -81,7 +81,24 @@
             <p id="selectedPrice" class="selected-price"></p>
           </div>
 
-          <a id="inquiryButton" class="btn-primary purchase-btn" href="mailto:rashid.aaron@yahoo.com">Inquire About This Print</a>
+          <div class="print-options print-quantity-option">
+            <label for="quantityInput" class="print-select-label">Quantity</label>
+            <input
+              id="quantityInput"
+              class="print-quantity-input"
+              type="number"
+              min="1"
+              step="1"
+              value="1"
+              inputmode="numeric"
+            >
+          </div>
+
+          <button id="addToCartButton" class="btn-primary purchase-btn" type="button">
+            Add to Cart
+          </button>
+
+          <p id="addToCartStatus" class="sr-only" aria-live="polite"></p>
 
           <!-- NEXT / PREVIOUS BUTTONS -->
           <nav class="print-nav" aria-label="Print navigation">
@@ -139,6 +156,8 @@
       });
     }
   </script>
+
+  <script src="/assets/cart.js"></script>
 
   <!-- TEMPLATE SCRIPT -->
   <script>
@@ -252,33 +271,79 @@
       return FRAMING_ADD_ONS[sizeLabel] || 0;
     }
 
+    function getSelectedUnitPrice() {
+      if (!selectedSize) return 0;
+      return selectedSize.price + getFrameAddOn(selectedSize.size);
+    }
+
     function updateSelectedSummary() {
       if (!selectedSize || !currentPrint) return;
 
       const addOn = getFrameAddOn(selectedSize.size);
-      const totalPrice = selectedSize.price + addOn;
+      const totalPrice = getSelectedUnitPrice();
       const editionText = `${selectedSize.size} · Edition of ${selectedSize.edition} · ${selectedFrame.label}`;
       const priceText = formatPrice(totalPrice);
 
       document.getElementById('selectedEdition').textContent = editionText;
       document.getElementById('selectedPrice').textContent = priceText;
 
-      const inquiryBtn = document.getElementById('inquiryButton');
-      const subject = `Print Inquiry – ${currentPrint.title}`;
-      const body = [
-        `Hi Aaron,`,
-        ``,
-        `I'm interested in this print:`,
-        `Title: ${currentPrint.title}`,
-        `Size: ${selectedSize.size}`,
-        `Finish: ${selectedFrame.label}`,
-        `Price shown: ${priceText}`,
-        ``,
-        `Please send me more information.`
-      ].join('\n');
+      const addToCartButton = document.getElementById('addToCartButton');
 
-      inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      inquiryBtn.setAttribute('aria-label', `Inquire about ${currentPrint.title}, ${editionText}, ${priceText}`);
+      if (addToCartButton) {
+        addToCartButton.setAttribute('aria-label', `Add ${currentPrint.title}, ${editionText}, ${priceText}, to cart`);
+      }
+    }
+
+    function getSelectedQuantity() {
+      const quantityInput = document.getElementById('quantityInput');
+      const quantity = Number(quantityInput?.value || 1);
+
+      if (!Number.isFinite(quantity) || quantity < 1) {
+        return 1;
+      }
+
+      return Math.floor(quantity);
+    }
+
+    function addSelectedPrintToCart() {
+      if (!currentPrint || !selectedSize || !selectedFrame) return;
+
+      const quantityInput = document.getElementById('quantityInput');
+      const status = document.getElementById('addToCartStatus');
+      const quantity = getSelectedQuantity();
+      const frameAddOn = getFrameAddOn(selectedSize.size);
+      const unitPrice = getSelectedUnitPrice();
+
+      if (quantityInput) {
+        quantityInput.value = String(quantity);
+      }
+
+      if (!window.AaronCart || typeof window.AaronCart.addItem !== 'function') {
+        if (status) {
+          status.textContent = 'Cart could not be loaded. Please refresh the page and try again.';
+        }
+
+        alert('Cart could not be loaded. Please refresh the page and try again.');
+        return;
+      }
+
+      window.AaronCart.addItem({
+        slug: currentPrint.slug,
+        title: currentPrint.title,
+        collection: currentPrint.collection,
+        image: currentPrint.images?.original || currentPrint.image || '',
+        size: selectedSize.size,
+        edition: selectedSize.edition,
+        finish: selectedFrame.label,
+        basePrice: selectedSize.price,
+        frameAddOn,
+        unitPrice,
+        quantity
+      });
+
+      if (status) {
+        status.textContent = `${currentPrint.title} was added to your cart.`;
+      }
     }
 
     function renderSizeOptions(print) {
@@ -367,6 +432,11 @@
         renderSizeOptions(print);
         renderFrameOptions();
         updateSelectedSummary();
+
+        const addToCartButton = document.getElementById('addToCartButton');
+        if (addToCartButton) {
+          addToCartButton.addEventListener('click', addSelectedPrintToCart);
+        }
 
         // NEXT / PREVIOUS
         const index = prints.findIndex(item => item.slug === slug);
