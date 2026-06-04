@@ -47,7 +47,7 @@
       <h1 id="thank-you-title" class="page-title">Thank you for your order.</h1>
 
       <p class="page-subtitle">
-        Your payment was completed successfully. In live mode, this is where collectors will land after purchasing a print.
+        Your payment was completed successfully. Thank you for collecting a piece from Aaron Captures.
       </p>
 
       <div class="order-confirmation-card">
@@ -118,7 +118,7 @@
     const sessionMessage = document.getElementById('sessionMessage');
 
     if (sessionId && sessionMessage) {
-      sessionMessage.textContent = 'Stripe session received. Order notification and fulfillment automation will be connected in the next phase.';
+      sessionMessage.textContent = 'A confirmation email has been sent by Stripe. Aaron will review the order details and follow up if anything else is needed.';
     }
 
     try {
