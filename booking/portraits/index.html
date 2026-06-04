@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body data-session="portraits">
+<body id="top" data-session="portraits">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -21,15 +22,21 @@
         <a href="/">Aaron Captures</a>
       </div>
 
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
         &#9776;
       </button>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
         <a href="/prints/">Prints</a>
-        <a href="/sessions/">Sessions</a>
+        <a href="/booking/" aria-current="page">Booking</a>
         <a href="#contact-footer">Contact</a>
       </nav>
     </div>
@@ -38,585 +45,626 @@
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
         navMenu.classList.toggle('nav-menu-open', !isOpen);
-        navToggle.setAttribute('aria-expanded', !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     }
   </script>
 
-  <!-- BACK LINK -->
-  <div class="back-collections">
-    <a href="/sessions/">← Back to Sessions</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="page-hero">
-    <h1 class="page-title">Portrait Sessions</h1>
-    <p class="page-subtitle">
-      Relaxed, natural sessions designed to capture your personality with warmth and authenticity.
-    </p>
-  </section>
-
-  <!-- INTRO SECTION -->
-  <section class="intro" style="padding-top:2rem;">
-    <p class="intro-text" style="max-width:750px;">
-      Whether you're celebrating a milestone, updating your portraits, or capturing a moment in time with loved ones, my portrait sessions are relaxed, easy-going, and focused on helping you feel and look your best in front of the camera.
-    </p>
-  </section>
-
-  <!-- PACKAGES GRID -->
-  <section class="collections-section" style="padding-top:2rem;">
-    <div class="section-header">
-      <h2>Portrait Packages</h2>
-      <p>Choose the session that fits your vision.</p>
+  <main id="main-content">
+    <!-- BACK LINK -->
+    <div class="back-collections">
+      <a href="/booking/">← Back to Booking</a>
     </div>
 
-    <div class="collections-grid" style="max-width:1100px;">
+    <!-- HERO -->
+    <section class="page-hero" aria-labelledby="portraits-title">
+      <h1 class="page-title" id="portraits-title">Portrait Sessions</h1>
+      <p class="page-subtitle">
+        Relaxed, natural sessions designed to capture your personality with warmth and authenticity.
+      </p>
+    </section>
 
-      <!-- MINI -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="mini"
-           data-package-label="Mini Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/mini.jpg" alt="">
-          </div>
-          <h3>Mini Session – $200</h3>
-          <p class="collection-description">30 minutes · 1 outfit · 1 location · 5–15 edited images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+    <!-- INTRO SECTION -->
+    <section class="intro" style="padding-top:2rem;" aria-label="Portrait session introduction">
+      <p class="intro-text" style="max-width:750px;">
+        Whether you're celebrating a milestone, updating your portraits, or capturing a moment in time with loved ones, my portrait sessions are relaxed, easy-going, and focused on helping you feel and look your best in front of the camera.
+      </p>
+    </section>
 
-      <!-- STANDARD -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="standard"
-           data-package-label="Standard Portrait Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/standard.jpg" alt="">
-          </div>
-          <h3>Standard Session – $300</h3>
-          <p class="collection-description">60 minutes · up to 2 outfits · 1 location · 15–30 edited images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+    <!-- PACKAGES GRID -->
+    <section class="collections-section" style="padding-top:2rem;" aria-labelledby="portrait-packages-title">
+      <div class="section-header">
+        <h2 id="portrait-packages-title">Portrait Packages</h2>
+        <p>Choose the session that fits your vision.</p>
+      </div>
 
-      <!-- EXTENDED SESSION -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="extended"
-           data-package-label="Extended Portrait Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/extended.jpg" alt="">
-          </div>
-          <h3>Extended Session – $550</h3>
-          <p class="collection-description">2 hours · up to 4 outfits · 1–2 locations · around 40 edited images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+      <div class="collections-grid" style="max-width:1100px;">
 
-      <!-- GRADUATION -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="senior"
-           data-package-label="Senior / Graduation Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/graduation.jpg" alt="">
-          </div>
-          <h3>Senior / Graduation – $500</h3>
-          <p class="collection-description">2 hours · 3 outfits · 1–2 locations · 30 edited images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+        <!-- MINI -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="mini"
+             data-package-label="Mini Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/mini.jpg"
+                alt="Example image for a mini portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Mini Session – $200</h3>
+            <p class="collection-description">30 minutes · 1 outfit · 1 location · 5–15 edited images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-      <!-- FAMILY -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="family"
-           data-package-label="Family Portrait Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/family.jpg" alt="">
-          </div>
-          <h3>Family Session – $400</h3>
-          <p class="collection-description">60 minutes · 1 location · up to 6 members · 20–40 edited images · $25/additional</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+        <!-- STANDARD -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="standard"
+             data-package-label="Standard Portrait Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/standard.jpg"
+                alt="Example image for a standard portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Standard Session – $300</h3>
+            <p class="collection-description">60 minutes · up to 2 outfits · 1 location · 15–30 edited images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-      <!-- EXTENDED FAMILY -->
-      <article class="collection-card">
-        <a href="#book"
-           class="package-button"
-           data-package-id="extended-family"
-           data-package-label="Extended Family Session">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/extended-fam.jpg" alt="">
-          </div>
-          <h3>Extended Family – $500</h3>
-          <p class="collection-description">90 minutes · 1–2 locations · up to 10 members · 40 edited images · $25/additional</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+        <!-- EXTENDED SESSION -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="extended"
+             data-package-label="Extended Portrait Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/extended.jpg"
+                alt="Example image for an extended portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Extended Session – $550</h3>
+            <p class="collection-description">2 hours · up to 4 outfits · 1–2 locations · around 40 edited images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-    </div>
-  </section>
+        <!-- GRADUATION -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="senior"
+             data-package-label="Senior / Graduation Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/graduation.jpg"
+                alt="Example image for a senior or graduation portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Senior / Graduation – $500</h3>
+            <p class="collection-description">2 hours · 3 outfits · 1–2 locations · 30 edited images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-  <!-- WHAT'S INCLUDED -->
-  <section class="prints-cta">
-    <div class="prints-cta-inner">
-      <h2 style="font-weight:300;">What’s Included</h2>
-      <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
-        <li>Direction and posing guidance</li>
-        <li>High-resolution edited photos</li>
-        <li>Online gallery for downloads</li>
-        <li>Black & white versions upon request</li>
-        <li>1–2 sneak peek images within 72 hours</li>
-      </ul>
-    </div>
-  </section>
+        <!-- FAMILY -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="family"
+             data-package-label="Family Portrait Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/family.jpg"
+                alt="Example image for a family portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Family Session – $400</h3>
+            <p class="collection-description">60 minutes · 1 location · up to 6 members · 20–40 edited images · $25/additional</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-  <!-- ADD-ONS (INFO SECTION) -->
-  <section class="prints-cta" style="background:#f4f4f4;">
-    <div class="prints-cta-inner">
-      <h2 style="font-weight:300;">Add-Ons & Extras</h2>
-      <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
-        <li>Extra outfit — $50</li>
-        <li>Extra location (within 30 minutes) — $75</li>
-        <li>Rush delivery (within 7 days) — $150</li>
-        <li>Prints & albums — starting at $150</li>
-        <li>Additional edited images — $15 each</li>
-        <li>Additional shooting time — $75 per 30 minutes</li>
-        <li>Studio rental — studio fee + $35</li>
-      </ul>
-    </div>
-  </section>
+        <!-- EXTENDED FAMILY -->
+        <article class="collection-card">
+          <a href="#book"
+             class="package-button"
+             data-package-id="extended-family"
+             data-package-label="Extended Family Session">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/extended-fam.jpg"
+                alt="Example image for an extended family portrait session."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Extended Family – $500</h3>
+            <p class="collection-description">90 minutes · 1–2 locations · up to 10 members · 40 edited images · $25/additional</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-  <!-- UNIVERSAL MULTI-STEP SESSION FORM -->
-  <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book">
-    <div class="prints-cta-inner">
-      <h2 class="form-title" id="formTitle">Book Your Portrait Session</h2>
+      </div>
+    </section>
 
-      <form data-multistep action="https://formsubmit.co/rashid.aaron@yahoo.com" method="POST">
+    <!-- WHAT'S INCLUDED -->
+    <section class="prints-cta" aria-labelledby="included-title">
+      <div class="prints-cta-inner">
+        <h2 id="included-title" style="font-weight:300;">What’s Included</h2>
+        <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
+          <li>Direction and posing guidance</li>
+          <li>High-resolution edited photos</li>
+          <li>Online gallery for downloads</li>
+          <li>Black & white versions upon request</li>
+          <li>1–2 sneak peek images within 72 hours</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- Hidden fields -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://aaroncaptures.com/sessions/thank-you.html">
-        <input type="hidden" name="_autoresponse"
-               value="Thank you for reaching out to Aaron Captures! I’ve received your message and will respond shortly.">
-        <input type="hidden" name="session_type" value="">
-        <input type="hidden" name="selected_package" value="">
+    <!-- ADD-ONS (INFO SECTION) -->
+    <section class="prints-cta" style="background:#f4f4f4;" aria-labelledby="addons-title">
+      <div class="prints-cta-inner">
+        <h2 id="addons-title" style="font-weight:300;">Add-Ons & Extras</h2>
+        <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
+          <li>Extra outfit — $50</li>
+          <li>Extra location (within 30 minutes) — $75</li>
+          <li>Rush delivery (within 7 days) — $150</li>
+          <li>Prints & albums — starting at $150</li>
+          <li>Additional edited images — $15 each</li>
+          <li>Additional shooting time — $75 per 30 minutes</li>
+          <li>Studio rental — studio fee + $35</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- Progress indicator -->
-        <div class="form-progress" style="margin-bottom:1.5rem; text-align:center;"></div>
+    <!-- UNIVERSAL MULTI-STEP SESSION FORM -->
+    <section class="prints-cta" style="padding-top:1rem; padding-bottom:4rem;" id="book" aria-labelledby="formTitle">
+      <div class="prints-cta-inner">
+        <h2 class="form-title" id="formTitle">Book Your Portrait Session</h2>
 
-        <!-- STEP 1: Contact Info -->
-        <div class="form-step active-step">
+        <form data-multistep action="https://formsubmit.co/rashid.aaron@yahoo.com" method="POST" aria-labelledby="formTitle">
 
-          <label class="float-label">
-            <input type="text" name="name" inputmode="text"
-                   autocomplete="off" spellcheck="false"
-                   required placeholder=" ">
-            <span>Your Name</span>
-          </label>
+          <!-- Hidden fields -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
+          <input type="hidden" name="_autoresponse"
+                 value="Thank you for reaching out to Aaron Captures! I’ve received your message and will respond shortly.">
+          <input type="hidden" name="session_type" value="Portraits">
+          <input type="hidden" name="selected_package" value="">
 
-          <label class="float-label">
-            <input type="email" name="email" inputmode="email"
-                   autocomplete="off" spellcheck="false"
-                   required placeholder=" ">
-            <span>Email Address</span>
-          </label>
+          <!-- Progress indicator -->
+          <div class="form-progress" style="margin-bottom:1.5rem; text-align:center;" aria-live="polite" aria-atomic="true"></div>
 
-          <label class="float-label">
-            <input type="tel" name="phone" inputmode="tel"
-                   autocomplete="off" spellcheck="false"
-                   placeholder=" ">
-            <span>Phone (optional)</span>
-          </label>
-
-          <button type="button" class="btn-primary next-step" style="margin-top:1rem;">Next</button>
-        </div>
-
-        <!-- STEP 2: Session Details (dynamic per session) -->
-        <div class="form-step">
-
-          <!-- PORTRAITS -->
-          <div class="dynamic-field" data-show="portraits">
+          <!-- STEP 1: Contact Info -->
+          <div class="form-step active-step">
 
             <label class="float-label">
-              <input type="text" name="portrait_subject" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true" placeholder=" ">
-              <span>Who will be photographed?</span>
+              <input type="text" name="name" inputmode="text"
+                     autocomplete="name" spellcheck="false"
+                     required placeholder=" ">
+              <span>Your Name</span>
             </label>
 
             <label class="float-label">
-              <input type="text" name="portrait_location" inputmode="text"
+              <input type="email" name="email" inputmode="email"
+                     autocomplete="email" spellcheck="false"
+                     required placeholder=" ">
+              <span>Email Address</span>
+            </label>
+
+            <label class="float-label">
+              <input type="tel" name="phone" inputmode="tel"
+                     autocomplete="tel" spellcheck="false"
+                     placeholder=" ">
+              <span>Phone (optional)</span>
+            </label>
+
+            <button type="button" class="btn-primary next-step" style="margin-top:1rem;">Next</button>
+          </div>
+
+          <!-- STEP 2: Session Details (dynamic per session) -->
+          <div class="form-step">
+
+            <!-- PORTRAITS -->
+            <div class="dynamic-field" data-show="portraits">
+
+              <label class="float-label">
+                <input type="text" name="portrait_subject" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true" placeholder=" ">
+                <span>Who will be photographed?</span>
+              </label>
+
+              <label class="float-label">
+                <input type="text" name="portrait_location" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Preferred location or setting? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="portrait_outfits" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Outfit plans or styling ideas? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="portrait_must_haves" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Any must-have shots you'd like? (optional)</span>
+              </label>
+
+            </div>
+
+            <!-- HEADSHOTS -->
+            <div class="dynamic-field" data-show="headshots">
+
+              <label class="float-label">
+                <input type="number" name="headshot_count" min="1" inputmode="numeric"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true" placeholder=" ">
+                <span>How many people need headshots?</span>
+              </label>
+
+              <label class="float-label">
+                <select name="headshot_location_type">
+                  <option value="" selected></option>
+                  <option>Indoor / studio-style</option>
+                  <option>Outdoor / natural light</option>
+                  <option>Both / not sure</option>
+                </select>
+                <span>Indoor or outdoor?</span>
+              </label>
+
+              <label class="float-label">
+                <input type="text" name="headshot_style" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>What style are you looking for? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="headshot_usage" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>What are these headshots for? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <select name="headshot_multiple_looks">
+                  <option value="" selected></option>
+                  <option>Yes</option>
+                  <option>No</option>
+                  <option>Not sure yet</option>
+                </select>
+                <span>Do you need multiple looks?</span>
+              </label>
+
+            </div>
+
+            <!-- BRANDING -->
+            <div class="dynamic-field" data-show="branding">
+
+              <label class="float-label">
+                <input type="text" name="brand_name" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true" placeholder=" ">
+                <span>Business or project name</span>
+              </label>
+
+              <label class="float-label">
+                <input type="text" name="brand_links" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Website or social media handles (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="brand_aesthetic" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Describe your brand aesthetic (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="brand_content" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>What type of content do you need? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="brand_usage" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>How will these images be used? (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="brand_inspiration" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Shot list or inspiration? (optional)</span>
+              </label>
+
+            </div>
+
+            <!-- EVENTS -->
+            <div class="dynamic-field" data-show="events">
+
+              <label class="float-label">
+                <input type="text" name="event_type" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true" placeholder=" ">
+                <span>What type of event is this?</span>
+              </label>
+
+              <label class="float-label">
+                <input type="text" name="event_venue" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Venue name and address (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <input type="number" name="event_guests" min="1" inputmode="numeric"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Estimated number of guests (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <select name="event_indoor_outdoor">
+                  <option value="" selected></option>
+                  <option>Indoor</option>
+                  <option>Outdoor</option>
+                  <option>Both</option>
+                </select>
+                <span>Indoor, outdoor, or both?</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="event_special" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Anything special you want captured? (optional)</span>
+              </label>
+
+            </div>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 3: Scheduling -->
+          <div class="form-step">
+
+            <!-- Events -->
+            <div class="dynamic-field" data-show="events">
+
+              <label class="float-label">
+                <input type="date" name="event_date"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true">
+                <span>Event date</span>
+              </label>
+
+              <label class="float-label">
+                <input type="time" name="event_start"
+                       autocomplete="off" spellcheck="false">
+                <span>Event start time (optional)</span>
+              </label>
+
+              <label class="float-label">
+                <input type="time" name="event_end"
+                       autocomplete="off" spellcheck="false">
+                <span>Event end time (optional)</span>
+              </label>
+
+            </div>
+
+            <!-- Portraits -->
+            <div class="dynamic-field" data-show="portraits">
+
+              <label class="float-label">
+                <input type="date" name="portrait_date"
+                       autocomplete="off" spellcheck="false"
+                       data-required="true">
+                <span>Preferred date</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="portrait_timeframe_notes" rows="3" inputmode="text"
+                          autocomplete="off" spellcheck="false"
+                          placeholder=" "></textarea>
+                <span>Preferred timeframe or flexibility (optional)</span>
+              </label>
+
+            </div>
+
+            <!-- Headshots -->
+            <div class="dynamic-field" data-show="headshots">
+              <label class="float-label">
+                <input type="text" name="headshot_deadline" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Do you have a deadline or launch date? (optional)</span>
+              </label>
+            </div>
+
+            <!-- Branding -->
+            <div class="dynamic-field" data-show="branding">
+              <label class="float-label">
+                <input type="text" name="brand_timeline" inputmode="text"
+                       autocomplete="off" spellcheck="false"
+                       placeholder=" ">
+                <span>Timeline or deadline for this project (optional)</span>
+              </label>
+            </div>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 4: Add-Ons (Package-specific) -->
+          <div class="form-step addons-step">
+
+            <p style="margin-bottom:1rem; text-align:center;">
+              Optional add-ons to enhance your session
+            </p>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="extra-images">
+              <label class="addon-option">
+                <input type="checkbox" name="extra_outfit" value="yes">
+                <span>
+                  <strong>Extra outfit</strong>
+                 <em>$50</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="extra-outfit">
+              <label class="addon-option">
+                <input type="checkbox" name="extra_location" value="yes">
+                <span>
+                  <strong>Extra location</strong>
+                 <em>$75</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="extra-time">
+              <label class="addon-option">
+                <input type="checkbox" name="additional-edited-images" value="yes">
+                <span>
+                  <strong>Additional edited images</strong>
+                 <em>$15 per image</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="extra-location">
+              <label class="addon-option">
+                <input type="checkbox" name="additional-shooting-time" value="yes">
+                <span>
+                  <strong>Additional shooting time</strong>
+                 <em>$75 per 30 minutes</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="prints">
+              <label class="addon-option">
+                <input type="checkbox" name="prints-and-albums" value="yes">
+                <span>
+                  <strong>Prints & albums</strong>
+                 <em>Starting at $150</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="rush">
+              <label class="addon-option">
+                <input type="checkbox" name="rush-delivery" value="yes">
+                <span>
+                  <strong>Rush delivery</strong>
+                 <em>$150</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="portraits" data-addon="studio">
+              <label class="addon-option">
+                <input type="checkbox" name="studio-rental" value="yes">
+                <span>
+                  <strong>Studio rental</strong>
+                 <em>Studio fee + $35</em>
+                </span>
+              </label>
+            </div>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+
+          </div>
+
+          <!-- STEP 5: Final Notes -->
+          <div class="form-step">
+
+            <label class="float-label">
+              <textarea name="message" rows="5" inputmode="text"
+                        autocomplete="off" spellcheck="false"
+                        placeholder=" "></textarea>
+              <span>Tell me anything else you'd like me to know</span>
+            </label>
+
+            <label class="float-label">
+              <input type="text" name="referral_source" inputmode="text"
                      autocomplete="off" spellcheck="false"
                      placeholder=" ">
-              <span>Preferred location or setting? (optional)</span>
+              <span>How did you hear about me? (optional)</span>
             </label>
 
-            <label class="float-label">
-              <textarea name="portrait_outfits" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Outfit plans or styling ideas? (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="portrait_must_haves" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Any must-have shots you'd like? (optional)</span>
-            </label>
-
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="submit" class="btn-primary">Submit Inquiry</button>
           </div>
 
-          <!-- HEADSHOTS -->
-          <div class="dynamic-field" data-show="headshots">
-
-            <label class="float-label">
-              <input type="number" name="headshot_count" min="1" inputmode="numeric"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true" placeholder=" ">
-              <span>How many people need headshots?</span>
-            </label>
-
-            <label class="float-label">
-              <select name="headshot_location_type">
-                <option value="" selected></option>
-                <option>Indoor / studio-style</option>
-                <option>Outdoor / natural light</option>
-                <option>Both / not sure</option>
-              </select>
-              <span>Indoor or outdoor?</span>
-            </label>
-
-            <label class="float-label">
-              <input type="text" name="headshot_style" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>What style are you looking for? (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="headshot_usage" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>What are these headshots for? (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <select name="headshot_multiple_looks">
-                <option value="" selected></option>
-                <option>Yes</option>
-                <option>No</option>
-                <option>Not sure yet</option>
-              </select>
-              <span>Do you need multiple looks?</span>
-            </label>
-
-          </div>
-
-          <!-- BRANDING -->
-          <div class="dynamic-field" data-show="branding">
-
-            <label class="float-label">
-              <input type="text" name="brand_name" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true" placeholder=" ">
-              <span>Business or project name</span>
-            </label>
-
-            <label class="float-label">
-              <input type="text" name="brand_links" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>Website or social media handles (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="brand_aesthetic" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Describe your brand aesthetic (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="brand_content" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>What type of content do you need? (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="brand_usage" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>How will these images be used? (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="brand_inspiration" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Shot list or inspiration? (optional)</span>
-            </label>
-
-          </div>
-
-          <!-- EVENTS -->
-          <div class="dynamic-field" data-show="events">
-
-            <label class="float-label">
-              <input type="text" name="event_type" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true" placeholder=" ">
-              <span>What type of event is this?</span>
-            </label>
-
-            <label class="float-label">
-              <input type="text" name="event_venue" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>Venue name and address (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <input type="number" name="event_guests" min="1" inputmode="numeric"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>Estimated number of guests (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <select name="event_indoor_outdoor">
-                <option value="" selected></option>
-                <option>Indoor</option>
-                <option>Outdoor</option>
-                <option>Both</option>
-              </select>
-              <span>Indoor, outdoor, or both?</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="event_special" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Anything special you want captured? (optional)</span>
-            </label>
-
-          </div>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-        </div>
-
-        <!-- STEP 3: Scheduling -->
-        <div class="form-step">
-
-          <!-- Events -->
-          <div class="dynamic-field" data-show="events">
-
-            <label class="float-label">
-              <input type="date" name="event_date"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true">
-              <span>Event date</span>
-            </label>
-
-            <label class="float-label">
-              <input type="time" name="event_start"
-                     autocomplete="off" spellcheck="false">
-              <span>Event start time (optional)</span>
-            </label>
-
-            <label class="float-label">
-              <input type="time" name="event_end"
-                     autocomplete="off" spellcheck="false">
-              <span>Event end time (optional)</span>
-            </label>
-
-          </div>
-
-          <!-- Portraits -->
-          <div class="dynamic-field" data-show="portraits">
-
-            <label class="float-label">
-              <input type="date" name="portrait_date"
-                     autocomplete="off" spellcheck="false"
-                     data-required="true">
-              <span>Preferred date</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="portrait_timeframe_notes" rows="3" inputmode="text"
-                        autocomplete="off" spellcheck="false"
-                        placeholder=" "></textarea>
-              <span>Preferred timeframe or flexibility (optional)</span>
-            </label>
-
-          </div>
-
-          <!-- Headshots -->
-          <div class="dynamic-field" data-show="headshots">
-            <label class="float-label">
-              <input type="text" name="headshot_deadline" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>Do you have a deadline or launch date? (optional)</span>
-            </label>
-          </div>
-
-          <!-- Branding -->
-          <div class="dynamic-field" data-show="branding">
-            <label class="float-label">
-              <input type="text" name="brand_timeline" inputmode="text"
-                     autocomplete="off" spellcheck="false"
-                     placeholder=" ">
-              <span>Timeline or deadline for this project (optional)</span>
-            </label>
-          </div>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-        </div>
-
-        <!-- STEP 4: Add-Ons (Package-specific) -->
-        <div class="form-step addons-step">
-
-          <p style="margin-bottom:1rem; text-align:center;">
-            Optional add-ons to enhance your session
-          </p>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="extra-images">
-            <label class="addon-option">
-              <input type="checkbox" name="extra_outfit" value="yes">
-              <span>
-                <strong>Extra outfit</strong>
-               <em>$50</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="extra-outfit">
-            <label class="addon-option">
-              <input type="checkbox" name="extra_location" value="yes">
-              <span>
-                <strong>Extra location</strong>
-               <em>$75</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="extra-time">
-            <label class="addon-option">
-              <input type="checkbox" name="additional-edited-images" value="yes">
-              <span>
-                <strong>Additional edited images</strong>
-               <em>$15 per image</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="extra-location">
-            <label class="addon-option">
-              <input type="checkbox" name="additional-shooting-time" value="yes">
-              <span>
-                <strong>Additional shooting time</strong>
-               <em>$75 per 30 minutes</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="prints">
-            <label class="addon-option">
-              <input type="checkbox" name="prints-&-albums" value="yes">
-              <span>
-                <strong>Prints & albums</strong>
-               <em>Starting at $150</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="rush">
-            <label class="addon-option">
-              <input type="checkbox" name="rush-delivery" value="yes">
-              <span>
-                <strong>Rush delivery</strong>
-               <em>$150</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="portraits" data-addon="studio">
-            <label class="addon-option">
-              <input type="checkbox" name="studio-rental" value="yes">
-              <span>
-                <strong>Studio rental</strong>
-               <em>Studio fee + $35</em>
-              </span>
-            </label>
-          </div>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-
-        </div>
-
-        <!-- STEP 5: Final Notes -->
-        <div class="form-step">
-
-          <label class="float-label">
-            <textarea name="message" rows="5" inputmode="text"
-                      autocomplete="off" spellcheck="false"
-                      placeholder=" "></textarea>
-            <span>Tell me anything else you'd like me to know</span>
-          </label>
-
-          <label class="float-label">
-            <input type="text" name="referral_source" inputmode="text"
-                   autocomplete="off" spellcheck="false"
-                   placeholder=" ">
-            <span>How did you hear about me? (optional)</span>
-          </label>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="submit" class="btn-primary">Submit Inquiry</button>
-        </div>
-
-      </form>
-    </div>
-  </section>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
 
       <div class="footer-logo-top">
-        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo" loading="lazy" decoding="async">
       </div>
 
       <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
       <p class="footer-social">
-        <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
+        <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
         <span>·</span>
-        <a href="https://tiktok.com/@aaron.captures" target="_blank">TikTok</a>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
         <span>·</span>
-        <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
+        <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
       <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
-      <a href="/" class="back-home-link">← Back to Homepage</a>
+      <a href="#top" class="back-home-link">Back to Top</a>
 
     </div>
   </footer>
@@ -628,9 +676,11 @@
       anchor.addEventListener("click", function(e) {
         const id = this.getAttribute("href").slice(1);
         const target = document.getElementById(id);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
+          target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
         }
       });
     });

@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -17,88 +18,100 @@
       <div class="site-title">
         <a href="/">Aaron Captures</a>
       </div>
-      <button class="nav-toggle" aria-expanded="false">☰</button>
-      <nav class="nav-menu">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
+        &#9776;
+      </button>
+
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
-        <a href="/prints/" class="active">Prints</a>
-        <a href="/sessions/">Sessions</a>
+        <a href="/prints/" aria-current="page">Prints</a>
+        <a href="/booking/">Booking</a>
         <a href="#contact-footer">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- PRINT DETAIL -->
-  <section class="print-detail">
-    <div class="print-detail-inner">
+  <main id="main-content">
+    <!-- PRINT DETAIL -->
+    <section class="print-detail" aria-labelledby="printTitle">
+      <div class="print-detail-inner">
 
-      <!-- IMAGE GALLERY -->
-      <div class="print-gallery">
-        <div class="print-image-wrapper">
-          <img id="printImage" class="print-detail-image" alt="">
+        <!-- IMAGE GALLERY -->
+        <div class="print-gallery" aria-label="Print preview gallery">
+          <div class="print-image-wrapper">
+            <img id="printImage" class="print-detail-image" src="" alt="" decoding="async">
+          </div>
+
+          <div id="printThumbnails" class="print-thumbnails" aria-label="Print preview options"></div>
         </div>
 
-        <div id="printThumbnails" class="print-thumbnails" aria-label="Print preview options"></div>
+        <!-- TEXT INFO -->
+        <div class="print-info">
+
+          <h1 id="printTitle" class="print-title">Loading print...</h1>
+          <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
+
+          <p id="printDescription" class="print-description"></p>
+
+          <div class="print-options">
+            <label for="sizeSelect" class="print-select-label">Choose a Size</label>
+            <select id="sizeSelect" class="print-select" aria-describedby="selectedEdition selectedPrice"></select>
+          </div>
+
+          <div class="print-options">
+            <label for="frameSelect" class="print-select-label">Choose a Finish</label>
+            <select id="frameSelect" class="print-select" aria-describedby="selectedEdition selectedPrice"></select>
+          </div>
+
+          <div class="selected-print-summary" aria-live="polite" aria-atomic="true">
+            <p id="selectedEdition"></p>
+            <p id="selectedPrice" class="selected-price"></p>
+          </div>
+
+          <a id="inquiryButton" class="btn-primary purchase-btn" href="mailto:rashid.aaron@yahoo.com">Inquire About This Print</a>
+
+          <!-- NEXT / PREVIOUS BUTTONS -->
+          <nav class="print-nav" aria-label="Print navigation">
+            <a id="prevPrint" class="print-nav-btn" hidden>← Previous</a>
+            <a id="nextPrint" class="print-nav-btn" hidden>Next →</a>
+          </nav>
+
+          <!-- BACK LINK -->
+          <a href="/prints/" class="back-prints-link nav-back">← Back to Prints</a>
+
+        </div>
+
       </div>
-
-      <!-- TEXT INFO -->
-      <div class="print-info">
-
-        <h1 id="printTitle" class="print-title"></h1>
-        <p class="print-collection-label">From the <span id="printCollection"></span> collection</p>
-
-        <p id="printDescription" class="print-description"></p>
-
-        <div class="print-options">
-          <label for="sizeSelect" class="print-select-label">Choose a Size</label>
-          <select id="sizeSelect" class="print-select"></select>
-        </div>
-
-        <div class="print-options">
-          <label for="frameSelect" class="print-select-label">Choose a Finish</label>
-          <select id="frameSelect" class="print-select"></select>
-        </div>
-
-        <div class="selected-print-summary">
-          <p id="selectedEdition"></p>
-          <p id="selectedPrice" class="selected-price"></p>
-        </div>
-
-        <a id="inquiryButton" class="btn-primary purchase-btn">Inquire About This Print</a>
-
-        <!-- NEXT / PREVIOUS BUTTONS -->
-        <div class="print-nav">
-          <a id="prevPrint" class="print-nav-btn" style="display:none;">← Previous</a>
-          <a id="nextPrint" class="print-nav-btn" style="display:none;">Next →</a>
-        </div>
-
-        <!-- BACK LINK -->
-        <a href="/prints/" class="back-prints-link nav-back">← Back to Prints</a>
-
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
       <div class="footer-logo-top">
-        <img src="/assets/aaron-captures-logo.jpg" alt="">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
       <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
       <p class="footer-social">
-        <a href="https://instagram.com/aaron.captures">Instagram</a>
+        <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
         <span>·</span>
-        <a href="https://tiktok.com/@aaron.captures">TikTok</a>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
         <span>·</span>
-        <a href="https://facebook.com/aaron.capture">Facebook</a>
+        <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
       <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
-      <a href="/" class="back-home-link">← Back to Homepage</a>
+      <a href="#top" class="back-home-link">Back to Top</a>
     </div>
   </footer>
 
@@ -111,7 +124,15 @@
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
         navMenu.classList.toggle('nav-menu-open', !isOpen);
-        navToggle.setAttribute("aria-expanded", !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     }
   </script>
@@ -147,43 +168,76 @@
     function getImageSet(print) {
       const original = print.images?.original || print.image || "";
       return [
-        { id: "original", label: "Original", src: original },
-        { id: "framed", label: "Framed", src: print.images?.framed || "" },
-        { id: "room", label: "In Room", src: print.images?.room || "" }
+        {
+          id: "original",
+          label: "Original",
+          src: original,
+          alt: print.alt?.original || `${print.title} fine art print from the ${print.collection} collection.`
+        },
+        {
+          id: "framed",
+          label: "Framed",
+          src: print.images?.framed || "",
+          alt: print.alt?.framed || `${print.title} shown as a framed fine art print.`
+        },
+        {
+          id: "room",
+          label: "In Room",
+          src: print.images?.room || "",
+          alt: print.alt?.room || `${print.title} fine art print displayed in a room setting.`
+        }
       ];
+    }
+
+    function setActiveThumbnail(activeButton) {
+      document.querySelectorAll('.print-thumbnail').forEach(button => {
+        button.classList.remove('active');
+        button.setAttribute('aria-pressed', 'false');
+      });
+
+      activeButton.classList.add('active');
+      activeButton.setAttribute('aria-pressed', 'true');
     }
 
     function renderImageGallery(print) {
       const mainImage = document.getElementById('printImage');
       const thumbnails = document.getElementById('printThumbnails');
       const imageSet = getImageSet(print);
-      const availableImages = imageSet.filter(img => img.src && img.src.trim() !== "");
+      const availableImages = imageSet.filter(image => image.src && image.src.trim() !== "");
 
       thumbnails.innerHTML = "";
 
-      if (availableImages.length === 0) return;
+      if (availableImages.length === 0) {
+        mainImage.alt = `Image unavailable for ${print.title}.`;
+        return;
+      }
 
       mainImage.src = availableImages[0].src;
-      mainImage.alt = `${print.title} - ${availableImages[0].label}`;
+      mainImage.alt = availableImages[0].alt;
 
       availableImages.forEach((image, index) => {
         const button = document.createElement('button');
         button.type = "button";
         button.className = index === 0 ? "print-thumbnail active" : "print-thumbnail";
-        button.setAttribute("aria-label", `View ${image.label} preview`);
-        button.innerHTML = `
-          <img src="${image.src}" alt="${print.title} ${image.label} preview">
-          <span>${image.label}</span>
-        `;
+        button.setAttribute("aria-label", `View ${print.title} preview: ${image.label}`);
+        button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+
+        const thumbnailImage = document.createElement('img');
+        thumbnailImage.src = image.src;
+        thumbnailImage.alt = "";
+        thumbnailImage.loading = "lazy";
+        thumbnailImage.decoding = "async";
+
+        const label = document.createElement('span');
+        label.textContent = image.label;
+
+        button.appendChild(thumbnailImage);
+        button.appendChild(label);
 
         button.addEventListener('click', () => {
           mainImage.src = image.src;
-          mainImage.alt = `${print.title} - ${image.label}`;
-
-          document.querySelectorAll('.print-thumbnail').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          button.classList.add('active');
+          mainImage.alt = image.alt;
+          setActiveThumbnail(button);
         });
 
         thumbnails.appendChild(button);
@@ -196,30 +250,32 @@
     }
 
     function updateSelectedSummary() {
-      if (!selectedSize) return;
+      if (!selectedSize || !currentPrint) return;
 
       const addOn = getFrameAddOn(selectedSize.size);
       const totalPrice = selectedSize.price + addOn;
+      const editionText = `${selectedSize.size} · Edition of ${selectedSize.edition} · ${selectedFrame.label}`;
+      const priceText = formatPrice(totalPrice);
 
-      document.getElementById('selectedEdition').textContent =
-        `${selectedSize.size} · Edition of ${selectedSize.edition} · ${selectedFrame.label}`;
-
-      document.getElementById('selectedPrice').textContent =
-        formatPrice(totalPrice);
+      document.getElementById('selectedEdition').textContent = editionText;
+      document.getElementById('selectedPrice').textContent = priceText;
 
       const inquiryBtn = document.getElementById('inquiryButton');
       const subject = `Print Inquiry – ${currentPrint.title}`;
-      const body =
-        `Hi Aaron,%0D%0A%0D%0A` +
-        `I'm interested in this print:%0D%0A` +
-        `Title: ${currentPrint.title}%0D%0A` +
-        `Size: ${selectedSize.size}%0D%0A` +
-        `Finish: ${selectedFrame.label}%0D%0A` +
-        `Price shown: ${formatPrice(totalPrice)}%0D%0A%0D%0A` +
-        `Please send me more information.`;
+      const body = [
+        `Hi Aaron,`,
+        ``,
+        `I'm interested in this print:`,
+        `Title: ${currentPrint.title}`,
+        `Size: ${selectedSize.size}`,
+        `Finish: ${selectedFrame.label}`,
+        `Price shown: ${priceText}`,
+        ``,
+        `Please send me more information.`
+      ].join('\n');
 
-      inquiryBtn.href =
-        `mailto:rashid.aaron@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      inquiryBtn.href = `mailto:rashid.aaron@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      inquiryBtn.setAttribute('aria-label', `Inquire about ${currentPrint.title}, ${editionText}, ${priceText}`);
     }
 
     function renderSizeOptions(print) {
@@ -267,57 +323,72 @@
       });
     }
 
+    function showPrintError(message) {
+      const detailInner = document.querySelector('.print-detail-inner');
+      detailInner.innerHTML = `<div class="print-info"><h1 class="print-title">Print unavailable</h1><p>${message}</p><a href="/prints/" class="btn-primary">Back to Prints</a></div>`;
+    }
+
     async function loadPrint() {
       const params = new URLSearchParams(window.location.search);
       const slug = params.get('print');
 
       if (!slug) {
-        document.querySelector('.print-detail-inner').innerHTML =
-          "<p>Missing print identifier.</p>";
+        showPrintError('Missing print identifier.');
         return;
       }
 
-      const response = await fetch('/prints/prints.json');
-      const prints = await response.json();
+      try {
+        const response = await fetch('/prints/prints.json');
 
-      const print = prints.find(p => p.slug === slug);
-      if (!print) {
-        document.querySelector('.print-detail-inner').innerHTML =
-          "<p>Print not found.</p>";
-        return;
-      }
+        if (!response.ok) {
+          throw new Error('Could not load print data.');
+        }
 
-      currentPrint = print;
+        const prints = await response.json();
+        const print = prints.find(item => item.slug === slug);
 
-      // Fill content
-      document.title = print.title + " – Fine Art Print";
-      document.getElementById('printTitle').textContent = print.title;
-      document.getElementById('printCollection').textContent = print.collection;
-      document.getElementById('printDescription').textContent = print.description;
+        if (!print) {
+          showPrintError('Print not found.');
+          return;
+        }
 
-      renderImageGallery(print);
-      renderSizeOptions(print);
-      renderFrameOptions();
-      updateSelectedSummary();
+        currentPrint = print;
 
-      // NEXT / PREVIOUS
-      const index = prints.findIndex(p => p.slug === slug);
+        // Fill content
+        document.title = `${print.title} – Fine Art Print`;
+        document.getElementById('printTitle').textContent = print.title;
+        document.getElementById('printCollection').textContent = print.collection;
+        document.getElementById('printDescription').textContent = print.description;
 
-      const prevBtn = document.getElementById('prevPrint');
-      const nextBtn = document.getElementById('nextPrint');
+        renderImageGallery(print);
+        renderSizeOptions(print);
+        renderFrameOptions();
+        updateSelectedSummary();
 
-      if (index > 0) {
-        prevBtn.href = `/prints/template.html?print=${prints[index - 1].slug}`;
-        prevBtn.style.display = "inline-block";
-      }
+        // NEXT / PREVIOUS
+        const index = prints.findIndex(item => item.slug === slug);
 
-      if (index < prints.length - 1) {
-        nextBtn.href = `/prints/template.html?print=${prints[index + 1].slug}`;
-        nextBtn.style.display = "inline-block";
+        const prevBtn = document.getElementById('prevPrint');
+        const nextBtn = document.getElementById('nextPrint');
+
+        if (index > 0) {
+          prevBtn.href = `/prints/template.html?print=${prints[index - 1].slug}`;
+          prevBtn.textContent = `← Previous: ${prints[index - 1].title}`;
+          prevBtn.hidden = false;
+        }
+
+        if (index < prints.length - 1) {
+          nextBtn.href = `/prints/template.html?print=${prints[index + 1].slug}`;
+          nextBtn.textContent = `Next: ${prints[index + 1].title} →`;
+          nextBtn.hidden = false;
+        }
+      } catch (error) {
+        console.error(error);
+        showPrintError('Something went wrong while loading this print. Please return to the prints page and try again.');
       }
     }
 
-    loadPrint();
+    document.addEventListener('DOMContentLoaded', loadPrint);
   </script>
 
 </body>

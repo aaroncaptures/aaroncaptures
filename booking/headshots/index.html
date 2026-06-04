@@ -12,293 +12,313 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body data-session="headshots">
+<body id="top" data-session="headshots">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- HEADER (MATCHES PORTRAITS) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="site-header-inner">
       <div class="site-title">
         <a href="/">Aaron Captures</a>
       </div>
 
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
         &#9776;
       </button>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/collections/">Collections</a>
         <a href="/prints/">Prints</a>
-        <a href="/booking/" class="active">Booking</a>
+        <a href="/booking/" aria-current="page" class="active">Booking</a>
         <a href="#contact-footer">Contact</a>
       </nav>
     </div>
   </header>
 
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.contains('nav-menu-open');
-        navMenu.classList.toggle('nav-menu-open', !isOpen);
-        navToggle.setAttribute('aria-expanded', !isOpen);
-      });
-    }
-  </script>
-
-  <!-- BACK LINK -->
-  <div class="back-collections">
-    <a href="/booking/">← Back to Booking</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="page-hero">
-    <h1 class="page-title">Professional Headshots</h1>
-    <p class="page-subtitle">
-      Clean, modern headshots for professionals, creatives, and teams who want to make a strong first impression.
-    </p>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro">
-    <p class="intro-text">
-      A great headshot should feel natural, confident, and unmistakably you. My approach is relaxed and guided, helping you look professional without feeling stiff or over-posed.
-    </p>
-    <p class="intro-text">
-      Whether you’re updating LinkedIn, building a personal brand, or creating consistent images for your team, sessions are designed to be efficient, collaborative, and tailored to how you’ll actually use the photos.
-    </p>
-  </section>
-
-  <!-- PACKAGES -->
-  <section class="collections-section">
-    <div class="section-header">
-      <h2>Headshot Packages</h2>
-      <p>Choose the option that fits your needs.</p>
+  <main id="main-content">
+    <!-- BACK LINK -->
+    <div class="back-collections">
+      <a href="/booking/">← Back to Booking</a>
     </div>
 
-    <div class="collections-grid">
+    <!-- HERO -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <h1 class="page-title" id="page-title">Professional Headshots</h1>
+      <p class="page-subtitle">
+        Clean, modern headshots for professionals, creatives, and teams who want to make a strong first impression.
+      </p>
+    </section>
 
-      <article class="collection-card">
-        <a href="#book" class="package-button" data-package-id="headshot-essential" data-package-label="Essential Headshot">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/essential.jpg" alt="">
-          </div>
-          <h3>Essential Headshot – $175</h3>
-          <p class="collection-description">30 minutes · 1 look · 3–5 retouched images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
+    <!-- INTRO -->
+    <section class="intro" aria-label="Headshot session introduction">
+      <p class="intro-text">
+        A great headshot should feel natural, confident, and unmistakably you. My approach is relaxed and guided, helping you look professional without feeling stiff or over-posed.
+      </p>
+      <p class="intro-text">
+        Whether you’re updating LinkedIn, building a personal brand, or creating consistent images for your team, sessions are designed to be efficient, collaborative, and tailored to how you’ll actually use the photos.
+      </p>
+    </section>
 
-      <article class="collection-card">
-        <a href="#book" class="package-button" data-package-id="headshot-professional" data-package-label="Professional Headshot">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/professional.jpg" alt="">
-          </div>
-          <h3>Professional Headshot – $300</h3>
-          <p class="collection-description">60 minutes · Up to 2 looks · 8–12 retouched images</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
-
-      <article class="collection-card">
-        <a href="#book" class="package-button" data-package-id="headshot-team" data-package-label="Team / Company Headshots">
-          <div class="collection-thumb" style="background:#eee;">
-            <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/company.jpg" alt="">
-          </div>
-          <h3>Team / Company Headshots</h3>
-          <p class="collection-description">Consistent lighting · On-site or studio · Volume pricing starting at $125/person</p>
-          <p class="collection-link">Book this package →</p>
-        </a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- WHAT'S INCLUDED -->
-<section class="prints-cta">
-  <div class="prints-cta-inner">
-    <h2>What’s Included</h2>
-    <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
-      <li>Professional direction and posing guidance</li>
-      <li>Clean, natural retouching</li>
-      <li>High-resolution digital files</li>
-      <li>Online gallery for easy download</li>
-      <li>Black & white versions upon request</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ADD-ONS & EXTRAS -->
-<section class="prints-cta" style="background:#f4f4f4;">
-  <div class="prints-cta-inner">
-    <h2 style="font-weight:300;">Add-Ons & Extras</h2>
-    <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
-      <li>Extra retouched images — $15 each</li>
-      <li>Rush delivery (within 7 days) — $150</li>
-      <li>Prints & albums — starting at $150</li>
-      <li>On-site team sessions — volume pricing available</li>
-    </ul>
-  </div>
-</section>
-
-
-  <!-- FORM -->
-  <section class="prints-cta" id="book">
-    <div class="prints-cta-inner">
-      <h2 class="form-title" id="formTitle">Book Your Headshot Session</h2>
-
-      <form data-multistep action="https://formsubmit.co/rashid.aaron@yahoo.com" method="POST">
-
-        <input type="hidden" name="session_type" value="Headshots">
-        <input type="hidden" name="selected_package" value="">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_subject" value="New Headshot Booking — Aaron Captures">
-        <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
-
-        <div class="form-progress"></div>
-
-        <!-- STEP 1 -->
-        <div class="form-step">
-          <label class="float-label">
-            <input type="text" name="name" required placeholder=" ">
-            <span>Your Name</span>
-          </label>
-
-          <label class="float-label">
-            <input type="email" name="email" required placeholder=" ">
-            <span>Email Address</span>
-          </label>
-
-          <label class="float-label">
-            <input type="tel" name="phone" placeholder=" ">
-            <span>Phone (optional)</span>
-          </label>
-
-          <button type="button" class="btn-primary next-step">Next</button>
-        </div>
-
-        <!-- STEP 2 -->
-        <div class="form-step">
-          <div class="dynamic-field" data-show="headshots">
-
-            <label class="float-label">
-              <input type="text" name="industry" placeholder=" ">
-              <span>Industry / Profession</span>
-            </label>
-
-            <label class="float-label">
-              <input type="text" name="usage" placeholder=" ">
-              <span>Intended use (LinkedIn, website, press)</span>
-            </label>
-
-            <label class="float-label">
-              <input type="number" name="headshot_count" min="1" placeholder=" ">
-              <span>How many people will be photographed?</span>
-            </label>
-
-            <label class="float-label">
-              <textarea name="style_notes" rows="3" placeholder=" "></textarea>
-              <span>Style preferences (indoor, outdoor, backdrop, natural light, etc.)</span>
-            </label>
-
-          </div>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-        </div>
-
-        <!-- STEP 3 -->
-        <div class="form-step">
-          <label class="float-label">
-            <input type="date" name="preferred_date" required>
-            <span>Preferred date</span>
-          </label>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-        </div>
-
-
-        <!-- STEP 4: ADD-ONS -->
-        <div class="form-step addons-step">
-
-          <p style="margin-bottom:1rem; text-align:center;">
-            Optional add-ons to enhance your session
-          </p>
-
-          <div class="dynamic-field addon" data-show="headshots" data-addon="extra-images">
-            <label class="addon-option">
-              <input type="checkbox" name="extra_images" value="yes">
-              <span>
-                <strong>Extra retouched images</strong>
-                <em>$15 per image</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="headshots" data-addon="rush">
-            <label class="addon-option">
-              <input type="checkbox" name="rush_delivery" value="yes">
-              <span>
-                <strong>Rush delivery</strong>
-                <em>Within 7 days — $150</em>
-              </span>
-            </label>
-          </div>
-
-          <div class="dynamic-field addon" data-show="headshots" data-addon="prints">
-            <label class="addon-option">
-              <input type="checkbox" name="prints" value="yes">
-              <span>
-                <strong>Prints & albums</strong>
-                <em>Starting at $150</em>
-              </span>
-            </label>
-          </div>
-
-          <button type="button" class="btn-secondary prev-step">Back</button>
-          <button type="button" class="btn-primary next-step">Next</button>
-
-</div>
-
-
-      <!-- STEP 5 -->
-      <div class="form-step">
-        <p>Once submitted, I’ll follow up within 24–48 hours to confirm details and availability.</p>
-        <button type="button" class="btn-secondary prev-step">Back</button>
-        <button type="submit" class="btn-primary">Submit Request</button>
+    <!-- PACKAGES -->
+    <section class="collections-section" aria-labelledby="headshot-packages-title">
+      <div class="section-header">
+        <h2 id="headshot-packages-title">Headshot Packages</h2>
+        <p>Choose the option that fits your needs.</p>
       </div>
 
-    </form>
-  </div>
+      <div class="collections-grid">
+        <article class="collection-card">
+          <a href="#book" class="package-button" data-package-id="headshot-essential" data-package-label="Essential Headshot">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/essential.jpg"
+                alt="Essential professional headshot session example."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Essential Headshot – $175</h3>
+            <p class="collection-description">30 minutes · 1 look · 3–5 retouched images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-  </section>
+        <article class="collection-card">
+          <a href="#book" class="package-button" data-package-id="headshot-professional" data-package-label="Professional Headshot">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/professional.jpg"
+                alt="Professional headshot session example with a polished portrait style."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Professional Headshot – $300</h3>
+            <p class="collection-description">60 minutes · Up to 2 looks · 8–12 retouched images</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
 
-  <!-- FOOTER (MATCHES PORTRAITS) -->
+        <article class="collection-card">
+          <a href="#book" class="package-button" data-package-id="headshot-team" data-package-label="Team / Company Headshots">
+            <div class="collection-thumb" style="background:#eee;">
+              <img
+                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/company.jpg"
+                alt="Team and company headshot session example."
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <h3>Team / Company Headshots</h3>
+            <p class="collection-description">Consistent lighting · On-site or studio · Volume pricing starting at $125/person</p>
+            <p class="collection-link">Book this package →</p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="prints-cta" aria-labelledby="included-title">
+      <div class="prints-cta-inner">
+        <h2 id="included-title">What’s Included</h2>
+        <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
+          <li>Professional direction and posing guidance</li>
+          <li>Clean, natural retouching</li>
+          <li>High-resolution digital files</li>
+          <li>Online gallery for easy download</li>
+          <li>Black & white versions upon request</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ADD-ONS & EXTRAS -->
+    <section class="prints-cta" style="background:#f4f4f4;" aria-labelledby="addons-title">
+      <div class="prints-cta-inner">
+        <h2 id="addons-title" style="font-weight:300;">Add-Ons & Extras</h2>
+        <ul style="text-align:left; max-width:600px; margin:1rem auto; line-height:1.7;">
+          <li>Extra retouched images — $15 each</li>
+          <li>Rush delivery (within 7 days) — $150</li>
+          <li>Prints & albums — starting at $150</li>
+          <li>On-site team sessions — volume pricing available</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="prints-cta" id="book" aria-labelledby="formTitle">
+      <div class="prints-cta-inner">
+        <h2 class="form-title" id="formTitle">Book Your Headshot Session</h2>
+
+        <form data-multistep action="https://formsubmit.co/rashid.aaron@yahoo.com" method="POST" aria-labelledby="formTitle">
+          <input type="hidden" name="session_type" value="Headshots">
+          <input type="hidden" name="selected_package" value="">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="New Headshot Booking — Aaron Captures">
+          <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
+
+          <div class="form-progress" aria-live="polite" aria-atomic="true"></div>
+
+          <!-- STEP 1 -->
+          <div class="form-step active-step">
+            <label class="float-label">
+              <input type="text" name="name" autocomplete="name" required placeholder=" ">
+              <span>Your Name</span>
+            </label>
+
+            <label class="float-label">
+              <input type="email" name="email" autocomplete="email" required placeholder=" ">
+              <span>Email Address</span>
+            </label>
+
+            <label class="float-label">
+              <input type="tel" name="phone" autocomplete="tel" placeholder=" ">
+              <span>Phone (optional)</span>
+            </label>
+
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step">
+            <div class="dynamic-field" data-show="headshots">
+              <label class="float-label">
+                <input type="text" name="industry" autocomplete="organization-title" placeholder=" ">
+                <span>Industry / Profession</span>
+              </label>
+
+              <label class="float-label">
+                <input type="text" name="usage" placeholder=" ">
+                <span>Intended use (LinkedIn, website, press)</span>
+              </label>
+
+              <label class="float-label">
+                <input type="number" name="headshot_count" min="1" inputmode="numeric" placeholder=" ">
+                <span>How many people will be photographed?</span>
+              </label>
+
+              <label class="float-label">
+                <textarea name="style_notes" rows="3" placeholder=" "></textarea>
+                <span>Style preferences (indoor, outdoor, backdrop, natural light, etc.)</span>
+              </label>
+            </div>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step">
+            <label class="float-label">
+              <input type="date" name="preferred_date" required>
+              <span>Preferred date</span>
+            </label>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 4: ADD-ONS -->
+          <div class="form-step addons-step">
+            <p style="margin-bottom:1rem; text-align:center;">
+              Optional add-ons to enhance your session
+            </p>
+
+            <div class="dynamic-field addon" data-show="headshots" data-addon="extra-images">
+              <label class="addon-option">
+                <input type="checkbox" name="extra_images" value="yes">
+                <span>
+                  <strong>Extra retouched images</strong>
+                  <em>$15 per image</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="headshots" data-addon="rush">
+              <label class="addon-option">
+                <input type="checkbox" name="rush_delivery" value="yes">
+                <span>
+                  <strong>Rush delivery</strong>
+                  <em>Within 7 days — $150</em>
+                </span>
+              </label>
+            </div>
+
+            <div class="dynamic-field addon" data-show="headshots" data-addon="prints">
+              <label class="addon-option">
+                <input type="checkbox" name="prints" value="yes">
+                <span>
+                  <strong>Prints & albums</strong>
+                  <em>Starting at $150</em>
+                </span>
+              </label>
+            </div>
+
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="button" class="btn-primary next-step">Next</button>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="form-step">
+            <p>Once submitted, I’ll follow up within 24–48 hours to confirm details and availability.</p>
+            <button type="button" class="btn-secondary prev-step">Back</button>
+            <button type="submit" class="btn-primary">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
       <div class="footer-logo-top">
-        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo" loading="lazy" decoding="async">
       </div>
 
       <p class="footer-email"><a href="mailto:rashid.aaron@yahoo.com">rashid.aaron@yahoo.com</a></p>
 
       <p class="footer-social">
-        <a href="https://instagram.com/aaron.captures" target="_blank">Instagram</a>
+        <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
         <span>·</span>
-        <a href="https://tiktok.com/@aaron.captures" target="_blank">TikTok</a>
+        <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
         <span>·</span>
-        <a href="https://facebook.com/aaron.capture" target="_blank">Facebook</a>
+        <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
       <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
-      <a href="/" class="back-home-link">← Back to Homepage</a>
+      <a href="#top" class="back-home-link">Back to Top</a>
     </div>
   </footer>
 
-  <script src="/assets/global-forms.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
+      });
+    }
+  </script>
+
+  <script src="/assets/global-forms.js"></script>
 </body>
 </html>
