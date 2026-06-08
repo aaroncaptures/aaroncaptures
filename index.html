@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- HEADER / NAV -->
@@ -40,7 +40,6 @@
   <main id="main-content">
     <!-- HERO -->
     <section class="hero" aria-labelledby="homepage-hero-title">
-      <!-- Background slideshow -->
       <div class="hero-slideshow" aria-hidden="true">
         <div class="hero-slide is-active" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg');"></div>
         <div class="hero-slide" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg');"></div>
@@ -48,10 +47,8 @@
         <div class="hero-slide" style="background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg');"></div>
       </div>
 
-      <!-- Dark overlay for readability -->
       <div class="hero-overlay" aria-hidden="true"></div>
 
-      <!-- Text content -->
       <div class="hero-inner">
         <h1 class="hero-title" id="homepage-hero-title">Where fleeting moments become lasting art.</h1>
         <a href="/collections/" class="btn-primary">View Collections</a>
@@ -70,6 +67,40 @@
       </div>
     </section>
 
+    <!-- ABOUT CTA -->
+    <section class="about-cta" aria-labelledby="about-cta-title">
+      <div class="about-cta-inner">
+        <div class="about-cta-image">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/headshot-14.jpg"
+            alt="Portrait of Aaron, photographer behind Aaron Captures"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <div class="about-cta-copy">
+          <p class="about-cta-label">About Aaron</p>
+          <h2 id="about-cta-title">Photography rooted in atmosphere, honesty, and intention.</h2>
+          <p>
+            I’m Aaron, a Louisville-based photographer creating fine art prints and thoughtful photography
+            for people, artists, events, and small businesses. My work moves between quiet landscapes,
+            city scenes, portraits, artwork documentation, and event coverage, but the goal stays the same:
+            make images that feel clean, intentional, and worth returning to.
+          </p>
+          <p>
+            Whether you’re collecting a print for your space or booking a session, I approach each project
+            with the same focus on light, composition, and the small details that make a photograph feel honest.
+          </p>
+
+          <div class="about-cta-actions">
+            <a href="/booking/" class="btn-primary">Book a Session</a>
+            <a href="/prints/" class="btn-secondary">View Prints</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PRINTS CTA -->
     <section class="prints-cta" aria-labelledby="prints-cta-title">
       <div class="prints-cta-inner">
@@ -84,46 +115,14 @@
         </div>
 
         <div class="prints-cta-slideshow" aria-label="Framed print and room mockup slideshow">
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9-m.jpg"
-            alt="Echos of Los Angeles fine art print displayed in a room"
-            class="prints-cta-slide is-active"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-m.jpg"
-            alt="Silent Horizons fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-7-m.jpg"
-            alt="Shapes of Nature fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3-m.jpg"
-            alt="Nocturne fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2-m.jpg"
-            alt="Silent Horizons fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5-m.jpg"
-            alt="Shapes of Nature fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-2-m.jpg"
-            alt="Nocturne fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6-m.jpg"
-            alt="Echos of Los Angeles fine art print displayed in a room"
-            class="prints-cta-slide"
-          >
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9-m.jpg" alt="Echos of Los Angeles fine art print displayed in a room" class="prints-cta-slide is-active">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-9-m.jpg" alt="Silent Horizons fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-7-m.jpg" alt="Shapes of Nature fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-3-m.jpg" alt="Nocturne fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-2-m.jpg" alt="Silent Horizons fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-5-m.jpg" alt="Shapes of Nature fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-2-m.jpg" alt="Nocturne fine art print displayed in a room" class="prints-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-6-m.jpg" alt="Echos of Los Angeles fine art print displayed in a room" class="prints-cta-slide">
         </div>
       </div>
     </section>
@@ -132,26 +131,10 @@
     <section class="booking-cta" aria-labelledby="booking-cta-title">
       <div class="booking-cta-inner">
         <div class="booking-cta-slideshow" aria-label="Booking service image slideshow">
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Portraits/portrait-4.jpg"
-            alt="Portrait photography session by Aaron Captures"
-            class="booking-cta-slide is-active"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-7.jpg"
-            alt="Copy work and artwork documentation by Aaron Captures"
-            class="booking-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-7.jpg"
-            alt="Event photography by Aaron Captures"
-            class="booking-cta-slide"
-          >
-          <img
-            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/hs-3.jpg"
-            alt="Professional headshot session by Aaron Captures"
-            class="booking-cta-slide"
-          >
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Portraits/portrait-4.jpg" alt="Portrait photography session by Aaron Captures" class="booking-cta-slide is-active">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-7.jpg" alt="Copy work and artwork documentation by Aaron Captures" class="booking-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-7.jpg" alt="Event photography by Aaron Captures" class="booking-cta-slide">
+          <img src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/hs-3.jpg" alt="Professional headshot session by Aaron Captures" class="booking-cta-slide">
         </div>
 
         <div class="booking-cta-copy">
@@ -194,14 +177,12 @@
 
   <!-- NAV + HERO SLIDESHOW SCRIPT -->
   <script>
-    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
-
         navMenu.classList.toggle('nav-menu-open', !isOpen);
         navToggle.setAttribute('aria-expanded', String(!isOpen));
       });
@@ -217,7 +198,6 @@
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Hero background slideshow
     const heroSlides = document.querySelectorAll('.hero-slide');
     let currentHeroIndex = 0;
 
@@ -229,7 +209,6 @@
       }, 7000);
     }
 
-    // Prints CTA slideshow
     const printSlides = document.querySelectorAll('.prints-cta-slide');
     let currentPrintIndex = 0;
 
@@ -241,7 +220,6 @@
       }, 4500);
     }
 
-    // Booking CTA slideshow
     const bookingSlides = document.querySelectorAll('.booking-cta-slide');
     let currentBookingIndex = 0;
 
