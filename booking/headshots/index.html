@@ -57,7 +57,7 @@
     <!-- INTRO -->
     <section class="copy-work-intro" aria-label="Headshot session introduction">
       <p>
-        A strong headshot should feel polished, confident, and natural. These sessions are guided and efficient, giving you professional images to match your professional life.
+        A strong headshot should feel polished, confident, and natural. These sessions are guided and efficient, giving you professional images that match your professional life.
       </p>
     </section>
 
@@ -124,7 +124,7 @@
 
       <div class="copy-work-copy">
         <p class="copy-work-label">Headshot Photography</p>
-        <h2 id="headshots-feature-title">Professional, approachable, and usable.</h2>
+        <h2 id="headshots-feature-title">Professional, approachable, and actually usable.</h2>
         <p>
           Whether you need a quick LinkedIn update, a stronger website bio image, or consistent team headshots, I’ll guide expression, posture, lighting, and small adjustments so the final images feel confident without feeling forced.
         </p>
@@ -260,7 +260,7 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
-          <input type="hidden" name="session_type" value="Headshots">
+          <input type="hidden" name="service_type" value="Headshots">
 
           <label>
             Name <span aria-hidden="true">*</span>
@@ -273,7 +273,7 @@
           </label>
 
           <label>
-            Phone Number
+            Phone Number <span class="phone-required-note" aria-hidden="true" hidden>*</span>
             <input type="tel" name="phone" autocomplete="tel">
           </label>
 
@@ -350,6 +350,28 @@
         }
       });
     }
+
+
+    document.querySelectorAll('.copy-work-form').forEach((form) => {
+      const contactSelect = form.querySelector('select[name="preferred_contact"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const phoneRequiredNote = form.querySelector('.phone-required-note');
+
+      if (!contactSelect || !phoneInput) return;
+
+      const updatePhoneRequirement = () => {
+        const needsPhone = contactSelect.value === 'Call' || contactSelect.value === 'Text';
+        phoneInput.required = needsPhone;
+        phoneInput.setAttribute('aria-required', String(needsPhone));
+
+        if (phoneRequiredNote) {
+          phoneRequiredNote.hidden = !needsPhone;
+        }
+      };
+
+      contactSelect.addEventListener('change', updatePhoneRequirement);
+      updatePhoneRequirement();
+    });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

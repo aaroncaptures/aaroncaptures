@@ -57,7 +57,7 @@
     <!-- INTRO -->
     <section class="copy-work-intro" aria-label="Event photography introduction">
       <p>
-        Event photography is for documenting the real moments, details, atmosphere, and people that make your event worth remembering. The goal is clean, professional coverage without turning your event into a stiff photo shoot.
+        Event photography is for documenting the real moments, details, atmosphere, and people that make your event worth remembering. The goal is clean, professional coverage without that capture the feeling of your event.
       </p>
     </section>
 
@@ -274,7 +274,7 @@
           </label>
 
           <label>
-            Phone Number
+            Phone Number <span class="phone-required-note" aria-hidden="true" hidden>*</span>
             <input type="tel" name="phone" autocomplete="tel">
           </label>
 
@@ -289,29 +289,20 @@
           </label>
 
           <label>
-            Coverage Option <span aria-hidden="true">*</span>
-            <select name="coverage_option" required>
+            Service / Package Interested In <span aria-hidden="true">*</span>
+            <select name="service_package" required>
               <option value="">Select one</option>
-              <option value="Short Event Coverage — Up to 2 Hours — $400">Short Event Coverage — Up to 2 Hours — $400</option>
-              <option value="Half-Day Coverage — Up to 4 Hours — $750">Half-Day Coverage — Up to 4 Hours — $750</option>
-              <option value="Full-Day Coverage — Up to 8 Hours — $1,400">Full-Day Coverage — Up to 8 Hours — $1,400</option>
-              <option value="Not sure yet">Not sure yet</option>
+              <option value="Short Event Coverage">Short Event Coverage — Up to 2 Hours — $400</option>
+              <option value="Half-Day Coverage">Half-Day Coverage — Up to 4 Hours — $750</option>
+              <option value="Full-Day Coverage">Full-Day Coverage — Up to 8 Hours — $1,400</option>
+              <option value="Hourly Event Coverage">Hourly Event Coverage — $200/hr, 2-hour minimum</option>
+              <option value="Not Sure Yet">Not sure yet</option>
             </select>
           </label>
 
           <label>
-            Event Date or Timeframe
-            <input type="text" name="event_date" placeholder="Example: July 15, 6–9 PM">
-          </label>
-
-          <label>
-            Event Location
-            <input type="text" name="event_location" placeholder="Venue name, city, or address if known">
-          </label>
-
-          <label>
             Anything helpful to know?
-            <textarea name="event_details" placeholder="Tell me about the event type, estimated guest count, schedule, must-have moments, or anything else that matters."></textarea>
+            <textarea name="project_details" placeholder="Tell me the event type, possible date and time, location, estimated guest count, must-have moments, or anything else that matters."></textarea>
           </label>
 
           <button type="submit" class="btn-primary">Send Inquiry</button>
@@ -361,6 +352,28 @@
         }
       });
     }
+
+
+    document.querySelectorAll('.copy-work-form').forEach((form) => {
+      const contactSelect = form.querySelector('select[name="preferred_contact"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const phoneRequiredNote = form.querySelector('.phone-required-note');
+
+      if (!contactSelect || !phoneInput) return;
+
+      const updatePhoneRequirement = () => {
+        const needsPhone = contactSelect.value === 'Call' || contactSelect.value === 'Text';
+        phoneInput.required = needsPhone;
+        phoneInput.setAttribute('aria-required', String(needsPhone));
+
+        if (phoneRequiredNote) {
+          phoneRequiredNote.hidden = !needsPhone;
+        }
+      };
+
+      contactSelect.addEventListener('change', updatePhoneRequirement);
+      updatePhoneRequirement();
+    });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

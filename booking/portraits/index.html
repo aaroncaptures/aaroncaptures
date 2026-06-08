@@ -57,7 +57,7 @@
     <!-- INTRO -->
     <section class="copy-work-intro" aria-label="Portrait session introduction">
       <p>
-        Portrait sessions are built to feel easy, natural, and guided. Whether you need updated portraits, family photos, senior images, or something more personal, the goal is to create photographs that feel polished without feeling stiff.
+        Portrait sessions are built to feel easy, natural, and guided. Whether you need updated portraits, family photos, senior images, or something more personal, the goal is to create photographs that feel authentic.
       </p>
     </section>
 
@@ -278,7 +278,7 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
-          <input type="hidden" name="session_type" value="Portraits">
+          <input type="hidden" name="service_type" value="Portraits">
 
           <label>
             Name <span aria-hidden="true">*</span>
@@ -291,7 +291,7 @@
           </label>
 
           <label>
-            Phone Number
+            Phone Number <span class="phone-required-note" aria-hidden="true" hidden>*</span>
             <input type="tel" name="phone" autocomplete="tel">
           </label>
 
@@ -371,6 +371,28 @@
         }
       });
     }
+
+
+    document.querySelectorAll('.copy-work-form').forEach((form) => {
+      const contactSelect = form.querySelector('select[name="preferred_contact"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const phoneRequiredNote = form.querySelector('.phone-required-note');
+
+      if (!contactSelect || !phoneInput) return;
+
+      const updatePhoneRequirement = () => {
+        const needsPhone = contactSelect.value === 'Call' || contactSelect.value === 'Text';
+        phoneInput.required = needsPhone;
+        phoneInput.setAttribute('aria-required', String(needsPhone));
+
+        if (phoneRequiredNote) {
+          phoneRequiredNote.hidden = !needsPhone;
+        }
+      };
+
+      contactSelect.addEventListener('change', updatePhoneRequirement);
+      updatePhoneRequirement();
+    });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
