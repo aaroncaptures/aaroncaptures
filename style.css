@@ -2780,3 +2780,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .copy-work-included-list li {
   margin: 0.35rem 0;
 }
+
+/* =========================================
+   COPY WORK — INCLUDED LIST CLEANUP FIX
+   Targets the actual pricing-note list used in /booking/copy-work/
+   ========================================= */
+
+.copy-work-pricing-note .copy-work-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.copy-work-pricing-note .copy-work-list li {
+  margin: 0.35rem 0;
+}
+
+.copy-work-pricing-note .copy-work-list li::marker {
+  content: "";
+}
