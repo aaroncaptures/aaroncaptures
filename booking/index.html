@@ -43,98 +43,158 @@
   <main id="main-content">
 
     <!-- HERO -->
-    <section class="page-hero" aria-labelledby="booking-title">
+    <section class="page-hero booking-page-hero" aria-labelledby="booking-title">
+      <p class="booking-page-eyebrow">Aaron Captures</p>
       <h1 class="page-title" id="booking-title">Booking</h1>
       <p class="page-subtitle">
-        Professional photography experiences designed around people, stories, and connection.
+        Photography for people, artwork, events, and businesses in the Louisville area.
       </p>
     </section>
 
     <!-- INTRO -->
-    <section class="intro" style="padding-top:2rem; text-align:center;" aria-label="Booking introduction">
-      <p class="intro-text" style="max-width:750px; margin:auto;">
-        Choose the type of session you’re looking for. Each page includes detailed pricing, package options, and a booking form.
+    <section class="booking-page-intro" aria-label="Booking introduction">
+      <p>
+        Choose the service that fits what you need photographed. Each option leads to a focused page with details,
+        pricing, and a form built around that type of session.
       </p>
     </section>
 
-    <!-- SERVICE GRID -->
-    <section class="collections-section" style="padding-top:2rem;" aria-labelledby="booking-services-title">
+    <!-- BOOKING SERVICE ROWS -->
+    <section class="booking-service-rows" aria-labelledby="booking-services-title">
       <div class="section-header sr-only">
         <h2 id="booking-services-title">Photography booking options</h2>
       </div>
 
-      <div class="collections-grid" style="max-width:1100px;">
+      <!-- PORTRAITS -->
+      <article class="booking-service-row">
+        <div class="booking-service-media booking-service-slideshow" aria-label="Portrait photography examples">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Portraits/portrait-4.jpg"
+            alt="Portrait session by Aaron Captures"
+            class="booking-service-slide is-active"
+            loading="lazy"
+            decoding="async"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/portraits-landing.jpg"
+            alt="Outdoor portrait photography example"
+            class="booking-service-slide"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
-        <!-- PORTRAITS -->
-        <article class="collection-card">
-          <a href="/booking/portraits/">
-            <div class="collection-thumb">
-              <img
-                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Portraits/portraits-landing.jpg"
-                alt="Portrait session example outdoors."
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-            <h3>Portraits</h3>
-            <p class="collection-description">
-              Individual, family, senior, and lifestyle portraits.
-            </p>
-            <p class="collection-link">View Packages →</p>
-          </a>
-        </article>
+        <div class="booking-service-copy">
+          <p class="booking-service-label">Portrait Sessions</p>
+          <h2>Portraits</h2>
+          <p>
+            Individual portraits, family sessions, senior photos, and lifestyle images with a relaxed,
+            natural approach.
+          </p>
+          <a href="/booking/portraits/" class="btn-primary">View Portraits</a>
+        </div>
+      </article>
 
-        <!-- HEADSHOTS -->
-        <article class="collection-card">
-          <a href="/booking/headshots/">
-            <div class="collection-thumb">
-              <img
-                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/headshot-landing-1.jpg"
-                alt="Professional headshot session example."
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-            <h3>Professional Headshots</h3>
-            <p class="collection-description">
-              Clean, confident images for business or creative branding.
-            </p>
-            <p class="collection-link">View Packages →</p>
-          </a>
-        </article>
+      <!-- COPY WORK -->
+      <article class="booking-service-row booking-service-row-reverse">
+        <div class="booking-service-media booking-service-slideshow" aria-label="Copy work and artwork documentation examples">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-8.jpg"
+            alt="Artwork documentation by Aaron Captures"
+            class="booking-service-slide is-active"
+            loading="lazy"
+            decoding="async"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-1.jpg"
+            alt="Copy work photography for flat artwork"
+            class="booking-service-slide"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
 
-        <!-- EVENTS -->
-        <article class="collection-card">
-          <a href="/booking/events/">
-            <div class="collection-thumb">
-              <img
-                src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Events/portraits.jpg"
-                alt="Event photography example."
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-            <h3>Events</h3>
-            <p class="collection-description">
-              Coverage for gatherings, galleries, launches, and more.
-            </p>
-            <p class="collection-link">View Packages →</p>
-          </a>
-        </article>
+        <div class="booking-service-copy">
+          <p class="booking-service-label">Artwork Documentation</p>
+          <h2>Copy Work</h2>
+          <p>
+            Clean, color-conscious documentation for paintings, drawings, prints, framed artwork,
+            archives, galleries, artists, and makers.
+          </p>
+          <a href="/booking/copy-work/" class="btn-primary">View Copy Work</a>
+        </div>
+      </article>
 
-      </div>
+      <!-- EVENTS -->
+      <article class="booking-service-row">
+        <div class="booking-service-media booking-service-slideshow" aria-label="Event photography examples">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-7.jpg"
+            alt="Event photography by Aaron Captures"
+            class="booking-service-slide is-active"
+            loading="lazy"
+            decoding="async"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Events/portraits.jpg"
+            alt="Candid event photography example"
+            class="booking-service-slide"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <div class="booking-service-copy">
+          <p class="booking-service-label">Event Coverage</p>
+          <h2>Events</h2>
+          <p>
+            Photography for gatherings, gallery openings, launches, reunions, performances,
+            community events, and milestone celebrations.
+          </p>
+          <a href="/booking/events/" class="btn-primary">View Events</a>
+        </div>
+      </article>
+
+      <!-- HEADSHOTS -->
+      <article class="booking-service-row booking-service-row-reverse">
+        <div class="booking-service-media booking-service-slideshow" aria-label="Professional headshot examples">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/hs-3.jpg"
+            alt="Professional headshot session by Aaron Captures"
+            class="booking-service-slide is-active"
+            loading="lazy"
+            decoding="async"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Sessions/Headshots/headshot-landing-1.jpg"
+            alt="Business headshot photography example"
+            class="booking-service-slide"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+
+        <div class="booking-service-copy">
+          <p class="booking-service-label">Professional Images</p>
+          <h2>Headshots</h2>
+          <p>
+            Clean, confident images for LinkedIn, company profiles, teams, creatives, and small businesses.
+          </p>
+          <a href="/booking/headshots/" class="btn-primary">View Headshots</a>
+        </div>
+      </article>
     </section>
 
     <!-- CTA -->
-    <section class="prints-cta" style="padding-top:3rem;" aria-labelledby="booking-help-title">
-      <div class="prints-cta-inner">
-        <div class="prints-cta-copy" style="max-width:700px; margin:0 auto; text-align:center;">
-          <h2 id="booking-help-title" style="font-weight:300;">Not sure which session is right for you?</h2>
-          <p style="max-width:700px; margin:0 auto 1.5rem;">
-            Reach out and I’ll happily guide you toward the perfect fit.
-          </p>
-          <a href="#contact-footer" class="btn-primary">Get in Touch</a>
-        </div>
+    <section class="booking-help-cta" aria-labelledby="booking-help-title">
+      <div class="booking-help-inner">
+        <p class="booking-service-label">Not sure where to start?</p>
+        <h2 id="booking-help-title">Tell me what you need photographed.</h2>
+        <p>
+          If your project does not fit neatly into one category, reach out and I’ll point you toward
+          the best option.
+        </p>
+        <a href="#contact-footer" class="btn-secondary">Get in Touch</a>
       </div>
     </section>
 
@@ -152,9 +212,9 @@
 
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
@@ -180,6 +240,23 @@
           navMenu.classList.remove('nav-menu-open');
           navToggle.setAttribute('aria-expanded', 'false');
           navToggle.focus();
+        }
+      });
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      document.querySelectorAll('.booking-service-slideshow').forEach((slideshow, slideshowIndex) => {
+        const slides = slideshow.querySelectorAll('.booking-service-slide');
+        let currentSlide = 0;
+
+        if (slides.length > 1) {
+          setInterval(() => {
+            slides[currentSlide].classList.remove('is-active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('is-active');
+          }, 5200 + (slideshowIndex * 350));
         }
       });
     }
