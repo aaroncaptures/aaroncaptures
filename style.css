@@ -2833,3 +2833,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: none !important;
   }
 }
+
+
+/* =========================================
+   PORTRAIT BOOKING FEATURE IMAGE RATIO
+   Keeps the Portraits page slideshow in a vertical portrait crop
+   without changing Copy Work or Events slideshows.
+   ========================================= */
+
+.portrait-feature-image {
+  aspect-ratio: 4 / 5;
+  max-width: 560px;
+  justify-self: center;
+}
+
+@media (max-width: 800px) {
+  .portrait-feature-image {
+    width: 100%;
+    max-width: 560px;
+  }
+}
