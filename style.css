@@ -2635,28 +2635,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    ========================================= */
 
 .about-cta {
-  padding: 5rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   background: #fafafa;
+  text-align: center;
 }
 
 .about-cta-inner {
-  max-width: 1200px;
+  max-width: 820px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
   align-items: center;
+  justify-items: center;
 }
 
 .about-cta-image {
-  width: 100%;
-  max-width: 420px;
-  justify-self: center;
+  width: min(100%, 280px);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #e9e7e2;
   border-radius: 14px;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.09);
 }
 
 .about-cta-image img {
@@ -2666,7 +2666,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .about-cta-copy {
-  max-width: 680px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .about-cta-label {
@@ -2678,23 +2679,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .about-cta h2 {
-  font-size: 2.2rem;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+  font-size: 2.05rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 1.18;
-  margin: 0 0 1rem;
 }
 
 .about-cta p {
+  max-width: 680px;
+  margin: 0 auto 1.15rem;
   font-size: 1.05rem;
   line-height: 1.7;
-  margin: 0 0 1.15rem;
   color: #444;
 }
 
 .about-cta-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.85rem;
   margin-top: 1.5rem;
 }
@@ -2704,27 +2708,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 4rem 1.25rem;
   }
 
-  .about-cta-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .about-cta-copy {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .about-cta-actions {
-    justify-content: center;
-  }
-
   .about-cta-image {
-    max-width: 520px;
+    width: min(100%, 260px);
   }
 }
 
 @media (max-width: 600px) {
+  .about-cta {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .about-cta-image {
+    width: min(100%, 230px);
+  }
+
   .about-cta h2 {
     font-size: 1.75rem;
   }
