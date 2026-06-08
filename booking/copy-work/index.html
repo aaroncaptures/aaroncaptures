@@ -255,6 +255,8 @@
           <input type="hidden" name="_subject" value="New Copy Work Inquiry | Aaron Captures">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
+          <input type="hidden" name="service_type" value="Copy Work">
 
           <label>
             Name <span aria-hidden="true">*</span>
@@ -267,7 +269,7 @@
           </label>
 
           <label>
-            Phone Number
+            Phone Number <span class="phone-required-note" aria-hidden="true" hidden>*</span>
             <input type="tel" name="phone" autocomplete="tel">
           </label>
 
@@ -282,23 +284,19 @@
           </label>
 
           <label>
-            Approximate Number of Pieces <span aria-hidden="true">*</span>
-            <input type="text" name="number_of_pieces" placeholder="Example: 6 paintings, 12 drawings, etc." required>
-          </label>
-
-          <label>
-            Artwork Type
-            <input type="text" name="artwork_type" placeholder="Example: oil paintings, drawings, prints, framed work">
-          </label>
-
-          <label>
-            Preferred Date or Deadline
-            <input type="text" name="deadline" placeholder="Example: Needed before July 15">
+            Service / Package Interested In <span aria-hidden="true">*</span>
+            <select name="service_package" required>
+              <option value="">Select one</option>
+              <option value="Up to 10 Pieces">Up to 10 Pieces — $400</option>
+              <option value="11–20 Pieces">11–20 Pieces — $575</option>
+              <option value="21–30 Pieces">21–30 Pieces — $750</option>
+              <option value="Not Sure Yet">Not sure yet</option>
+            </select>
           </label>
 
           <label>
             Anything helpful to know?
-            <textarea name="project_details" placeholder="Tell me about sizes, surfaces, framing, file needs, location, or anything else that matters."></textarea>
+            <textarea name="project_details" placeholder="Tell me what type of artwork you have, approximate number of pieces, sizes, deadline, file needs, location, or anything else that matters."></textarea>
           </label>
 
           <button type="submit" class="btn-primary">Send Inquiry</button>
@@ -348,6 +346,28 @@
         }
       });
     }
+
+
+    document.querySelectorAll('.copy-work-form').forEach((form) => {
+      const contactSelect = form.querySelector('select[name="preferred_contact"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const phoneRequiredNote = form.querySelector('.phone-required-note');
+
+      if (!contactSelect || !phoneInput) return;
+
+      const updatePhoneRequirement = () => {
+        const needsPhone = contactSelect.value === 'Call' || contactSelect.value === 'Text';
+        phoneInput.required = needsPhone;
+        phoneInput.setAttribute('aria-required', String(needsPhone));
+
+        if (phoneRequiredNote) {
+          phoneRequiredNote.hidden = !needsPhone;
+        }
+      };
+
+      contactSelect.addEventListener('change', updatePhoneRequirement);
+      updatePhoneRequirement();
+    });
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
