@@ -432,7 +432,7 @@ input[type="radio"] {
 
 
 /* =========================================
-   BOOKING CTA – HOMEPAGE
+   BOOKING CTA – HOMEPAGE FIX
    ========================================= */
 
 .booking-cta {
@@ -498,6 +498,37 @@ input[type="radio"] {
 .booking-cta-slide.is-active {
   opacity: 1;
   transform: scale(1);
+}
+
+@media (max-width: 800px) {
+  .booking-cta {
+    padding: 4rem 1.25rem;
+  }
+
+  .booking-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .booking-cta-copy {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking-cta-slideshow {
+    aspect-ratio: 4 / 5;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-cta-slide {
+    transition: none !important;
+    transform: none !important;
+  }
+}
 }
 
 /* =========================================
