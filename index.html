@@ -128,15 +128,41 @@
       </div>
     </section>
 
-    <!-- BOOKING SECTION -->
-    <section class="sessions-section" aria-labelledby="booking-title">
-      <div class="sessions-inner">
-        <h2 id="booking-title">Book a Photography Session</h2>
-        <p>
-          Aaron offers a limited number of portrait, event, and business sessions in the
-          Louisville area. Availability is selective to prioritize fine art work.
-        </p>
-        <a href="/booking/" class="btn-secondary">View Booking</a>
+    <!-- BOOKING CTA -->
+    <section class="booking-cta" aria-labelledby="booking-cta-title">
+      <div class="booking-cta-inner">
+        <div class="booking-cta-slideshow" aria-label="Booking service image slideshow">
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Portraits/portrait-4.jpg"
+            alt="Portrait photography session by Aaron Captures"
+            class="booking-cta-slide is-active"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/hs-3.jpg"
+            alt="Copy work and artwork documentation by Aaron Captures"
+            class="booking-cta-slide"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-7.jpg"
+            alt="Event photography by Aaron Captures"
+            class="booking-cta-slide"
+          >
+          <img
+            src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Headshots/hs-3.jpg"
+            alt="Professional headshot session by Aaron Captures"
+            class="booking-cta-slide"
+          >
+        </div>
+
+        <div class="booking-cta-copy">
+          <p class="booking-cta-label">Booking</p>
+          <h2 id="booking-cta-title">Book a Photography Session</h2>
+          <p>
+            Portraits, copy work, events, and headshots for people, artists, and businesses
+            in the Louisville area.
+          </p>
+          <a href="/booking/" class="btn-secondary">View Booking</a>
+        </div>
       </div>
     </section>
   </main>
@@ -213,6 +239,18 @@
         currentPrintIndex = (currentPrintIndex + 1) % printSlides.length;
         printSlides[currentPrintIndex].classList.add('is-active');
       }, 4500);
+    }
+
+    // Booking CTA slideshow
+    const bookingSlides = document.querySelectorAll('.booking-cta-slide');
+    let currentBookingIndex = 0;
+
+    if (!reduceMotion && bookingSlides.length > 1) {
+      setInterval(() => {
+        bookingSlides[currentBookingIndex].classList.remove('is-active');
+        currentBookingIndex = (currentBookingIndex + 1) % bookingSlides.length;
+        bookingSlides[currentBookingIndex].classList.add('is-active');
+      }, 5000);
     }
   </script>
 </body>
