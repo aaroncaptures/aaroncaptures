@@ -59,11 +59,61 @@
 
     <!-- FEATURE -->
     <section class="copy-work-feature" aria-labelledby="copy-work-feature-title">
-      <div class="copy-work-image">
+      <div class="copy-work-image booking-feature-slideshow" aria-label="Copy work artwork documentation examples">
         <img
           src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-8.jpg"
-          alt="Artwork documentation setup for copy work photography by Aaron Captures"
+          alt="Copy work artwork documentation example 8"
+          class="booking-feature-slide is-active"
           loading="eager"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-1.jpg"
+          alt="Copy work artwork documentation example 1"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-2.jpg"
+          alt="Copy work artwork documentation example 2"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-3.jpg"
+          alt="Copy work artwork documentation example 3"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-4.jpg"
+          alt="Copy work artwork documentation example 4"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-5.jpg"
+          alt="Copy work artwork documentation example 5"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-6.jpg"
+          alt="Copy work artwork documentation example 6"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Copy%20Work/cw-7.jpg"
+          alt="Copy work artwork documentation example 7"
+          class="booking-feature-slide"
+          loading="lazy"
           decoding="async"
         >
       </div>
@@ -295,6 +345,23 @@
           navMenu.classList.remove('nav-menu-open');
           navToggle.setAttribute('aria-expanded', 'false');
           navToggle.focus();
+        }
+      });
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      document.querySelectorAll('.booking-feature-slideshow').forEach((slideshow, slideshowIndex) => {
+        const slides = slideshow.querySelectorAll('.booking-feature-slide');
+        let currentSlide = 0;
+
+        if (slides.length > 1) {
+          setInterval(() => {
+            slides[currentSlide].classList.remove('is-active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('is-active');
+          }, 4800 + (slideshowIndex * 300));
         }
       });
     }

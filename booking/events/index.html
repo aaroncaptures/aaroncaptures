@@ -63,11 +63,61 @@
 
     <!-- FEATURE -->
     <section class="copy-work-feature" aria-labelledby="events-feature-title">
-      <div class="copy-work-image">
+      <div class="copy-work-image booking-feature-slideshow" aria-label="Event photography coverage examples">
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-4.jpg"
+          alt="Event photography coverage example 7"
+          class="booking-feature-slide is-active"
+          loading="eager"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-24.jpg"
+          alt="Event photography coverage example 1"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-10.jpg"
+          alt="Event photography coverage example 2"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-3.jpg"
+          alt="Event photography coverage example 3"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-5.jpg"
+          alt="Event photography coverage example 4"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
         <img
           src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-7.jpg"
-          alt="Event photography coverage by Aaron Captures"
-          loading="eager"
+          alt="Event photography coverage example 5"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-17.jpg"
+          alt="Event photography coverage example 6"
+          class="booking-feature-slide"
+          loading="lazy"
+          decoding="async"
+        >
+        <img
+          src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/booking/Events/events-22.jpg"
+          alt="Event photography coverage example 8"
+          class="booking-feature-slide"
+          loading="lazy"
           decoding="async"
         >
       </div>
@@ -308,6 +358,23 @@
           navMenu.classList.remove('nav-menu-open');
           navToggle.setAttribute('aria-expanded', 'false');
           navToggle.focus();
+        }
+      });
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      document.querySelectorAll('.booking-feature-slideshow').forEach((slideshow, slideshowIndex) => {
+        const slides = slideshow.querySelectorAll('.booking-feature-slide');
+        let currentSlide = 0;
+
+        if (slides.length > 1) {
+          setInterval(() => {
+            slides[currentSlide].classList.remove('is-active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('is-active');
+          }, 4800 + (slideshowIndex * 300));
         }
       });
     }
