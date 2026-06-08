@@ -2763,3 +2763,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 1.25rem;
   }
 }
+
+/* =========================================
+   COPY WORK — INCLUDED LIST CLEANUP
+   ========================================= */
+
+.copy-work-included-list,
+.copy-work-list.copy-work-included-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.copy-work-included-list li {
+  margin: 0.35rem 0;
+}
