@@ -2320,16 +2320,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
 }
 
+/* Keep every booking row consistent: photos left, text right. */
 .booking-service-row-reverse {
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
 }
 
 .booking-service-row-reverse .booking-service-media {
-  order: 2;
+  order: 1;
 }
 
 .booking-service-row-reverse .booking-service-copy {
-  order: 1;
+  order: 2;
 }
 
 .booking-service-media {
