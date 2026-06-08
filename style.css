@@ -2743,3 +2743,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-align: center;
   }
 }
+
+
+/* =========================================
+   ABOUT CTA — NO BUTTON POLISH
+   Keeps the homepage About section focused on trust-building.
+   ========================================= */
+
+.about-cta {
+  padding-bottom: 4rem;
+}
+
+.about-cta-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-cta-actions {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .about-cta {
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-cta {
+    padding-bottom: 3.25rem;
+  }
+}
