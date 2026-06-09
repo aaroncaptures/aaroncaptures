@@ -3192,3 +3192,11 @@ form.contact-form {
     text-align: center;
   }
 }
+
+/* PRINTS HERO EYEBROW CENTER FIX */
+.prints-hero .prints-page-eyebrow,
+.prints-hero .page-eyebrow {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
