@@ -2773,3 +2773,161 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-bottom: 3.25rem;
   }
 }
+
+
+/* =========================================
+   CONTACT PAGE
+   ========================================= */
+
+.contact-page-hero {
+  padding-bottom: 1.5rem;
+}
+
+.contact-form-section {
+  padding: 1rem 1.5rem 5rem;
+  background: #fafafa;
+}
+
+.contact-form-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.contact-form .phone-required-note {
+  color: #8a2f2f;
+}
+
+@media (max-width: 800px) {
+  .contact-form-section {
+    padding: 0 1.25rem 4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-form-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* =========================================
+   BOOKING DETAIL MOBILE FIX
+   Fixes feature slideshows and form layout on mobile webviews
+   Add this at the VERY BOTTOM of style.css
+   ========================================= */
+
+/* Make every booking feature slideshow contain its absolute-positioned slides */
+.booking-feature-slideshow {
+  position: relative !important;
+  overflow: hidden !important;
+  display: block !important;
+  isolation: isolate;
+}
+
+/* Prevent slideshow images from stacking through the page */
+.booking-feature-slideshow > .booking-feature-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  opacity: 0 !important;
+  transform: scale(1.025);
+  transition: opacity 1.2s ease, transform 6s ease;
+  z-index: 0;
+}
+
+/* Only the active slideshow image should be visible */
+.booking-feature-slideshow > .booking-feature-slide.is-active {
+  opacity: 1 !important;
+  transform: scale(1);
+}
+
+/* Keep feature copy from overlapping the slideshow */
+.copy-work-copy {
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop/tablet default: copy work and events use landscape */
+.copy-work-image.booking-feature-slideshow {
+  aspect-ratio: 3 / 2;
+}
+
+/* Portraits and headshots use portrait ratio */
+.copy-work-image.booking-feature-slideshow.portrait-feature-image {
+  aspect-ratio: 4 / 5;
+}
+
+/* Mobile booking layout correction */
+@media (max-width: 800px) {
+  .copy-work-feature {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    align-items: start !important;
+  }
+
+  .copy-work-image.booking-feature-slideshow {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+    aspect-ratio: 3 / 2 !important;
+  }
+
+  .copy-work-image.booking-feature-slideshow.portrait-feature-image {
+    max-width: 520px !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .copy-work-copy {
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .copy-work-form {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .copy-work-form label,
+  .copy-work-form label:has(textarea),
+  .copy-work-form button {
+    grid-column: 1 / -1 !important;
+  }
+
+  .copy-work-form label {
+    display: grid !important;
+    gap: 0.45rem !important;
+  }
+
+  .copy-work-form input,
+  .copy-work-form select,
+  .copy-work-form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  .copy-work-form button {
+    width: 100% !important;
+    justify-self: stretch !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .copy-work-image.booking-feature-slideshow.portrait-feature-image {
+    max-width: 100% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-feature-slideshow > .booking-feature-slide {
+    transition: none !important;
+    transform: none !important;
+  }
+}
