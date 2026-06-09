@@ -1,2979 +1,219 @@
 /* =========================================
-   GLOBAL BASE
+   BOOKING DETAIL + COLLECTION CTA RESTORE
+   Restores desktop layout for booking detail pages and forces the
+   collection bottom CTA into a centered card.
+   Add this at the VERY BOTTOM of style.css.
    ========================================= */
 
-body {
-  margin: 0;
-  font-family: "bc-alphapipe", sans-serif;
-  background: #fafafa;
-  color: #222;
-  line-height: 1.5;
-}
+/* ---------- Collection bottom CTA restore ---------- */
 
-/* Basic elements */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  color: inherit;
-}
-
-
-/* =========================================
-   ACCESSIBILITY FOUNDATION
-   ========================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.skip-link {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 999999;
-  transform: translateY(-150%);
-  background: #111;
-  color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.skip-link:focus,
-.skip-link:focus-visible {
-  transform: translateY(0);
-}
-
-:focus {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 3px solid #111;
-  outline-offset: 4px;
-}
-
-.site-footer :focus-visible,
-.hero :focus-visible,
-.prints-hero :focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-}
-
-button,
-select,
-input,
-textarea {
-  font: inherit;
-}
-
-button,
-a,
-select,
-input[type="checkbox"],
-input[type="radio"] {
-  touch-action: manipulation;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-.nav-menu a[aria-current="page"],
-.nav-menu a.active {
-  opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 0.35em;
-}
-
-/* =========================================
-   HEADER / NAV
-   ========================================= */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #fff;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.site-header-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.site-title a {
-  font-weight: 300;
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  color: #111;
-  white-space: nowrap;
-}
-
-/* Desktop navigation */
-.nav-menu {
-  display: flex;
-  flex-direction: row;
-  gap: 2.2rem;
-  background: none;
-  position: static;
-  padding: 0;
-  box-shadow: none;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #111;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  transition: opacity 0.2s ease;
-  font-weight: 300;
-}
-
-.nav-menu a:hover {
-  opacity: 0.6;
-}
-
-.nav-menu a.active {
-  opacity: 0.85;
-}
-
-/* Mobile nav toggle */
-.nav-toggle {
-  display: none;
-  font-size: 2rem;
-  line-height: 1;
-  background: none;
-  border: none;
-  color: #111;
-  cursor: pointer;
-  padding: 0.25rem;
-}
-
-/* =========================================
-   HERO – HOMEPAGE
-   ========================================= */
-
-.hero {
-  position: relative;
-  min-height: 65vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  background: #111;
-  overflow: hidden;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-title {
-  font-size: 2.8rem;
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  color: #fff;
-}
-
-/* Background slideshow */
-.hero-slideshow {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-.hero-slide.is-active {
-  opacity: 1;
-}
-
-/* Dark overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.32);
-  z-index: 1;
-}
-
-/* Buttons */
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-}
-
-.btn-primary {
-  background: #111;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.btn-secondary {
-  border-color: #111;
-  background: none;
-  color: #111;
-}
-
-.btn-secondary:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* =========================================
-   INTRO
-   ========================================= */
-
-.intro {
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-
-.intro-label {
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.intro-text {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-/* =========================================
-   HOMEPAGE – COLLECTIONS
-   ========================================= */
-
-.collections-section {
-  padding: 4rem 1.5rem;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.section-header h2 {
-  font-weight: 300;
-  font-size: 2rem;
-  margin-bottom: 0.25rem;
-}
-
-.section-header p {
-  opacity: 0.8;
-}
-
-.collections-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-}
-
-.collection-card a {
-  text-decoration: none;
-  color: #111;
-  display: block;
-}
-
-.collection-thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.collection-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collection-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.3rem;
-  font-weight: 300;
-}
-
-.collection-description {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.collection-link {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-/* =========================================
-   PRINTS CTA – HOMEPAGE
-   ========================================= */
-
-.prints-cta {
-  background: #f4f4f4;
-  padding: 5rem 1.5rem;
-}
-
-.prints-cta-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: 4rem;
-  align-items: center;
-}
-
-.prints-cta-copy {
-  max-width: 560px;
-}
-
-.prints-cta-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 0 0 0.85rem;
-  opacity: 0.7;
-}
-
-.prints-cta h2 {
-  font-size: 2.2rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  margin: 0 0 1rem;
-}
-
-.prints-cta p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.prints-cta-slideshow {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  background: #e9e7e2;
-  border-radius: 14px;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12);
-}
-
-.prints-cta-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.025);
-  transition: opacity 1.2s ease, transform 6s ease;
-}
-
-.prints-cta-slide.is-active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-
-/* =========================================
-   BOOKING CTA – HOMEPAGE FIX
-   ========================================= */
-
-.booking-cta {
-  padding: 5rem 1.5rem;
-  background: #fafafa;
-}
-
-.booking-cta-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
-  gap: 4rem;
-  align-items: center;
-}
-
-.booking-cta-copy {
-  max-width: 560px;
-}
-
-.booking-cta-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 0 0 0.85rem;
-  opacity: 0.7;
-}
-
-.booking-cta h2 {
-  font-size: 2.2rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  margin: 0 0 1rem;
-}
-
-.booking-cta p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.booking-cta-slideshow {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  background: #e9e7e2;
-  border-radius: 14px;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.1);
-}
-
-.booking-cta-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.025);
-  transition: opacity 1.2s ease, transform 6s ease;
-}
-
-.booking-cta-slide.is-active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-@media (max-width: 800px) {
-  .booking-cta {
-    padding: 4rem 1.25rem;
-  }
-
-  .booking-cta-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .booking-cta-copy {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .booking-cta-slideshow {
-    aspect-ratio: 4 / 5;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .booking-cta-slide {
-    transition: none !important;
-    transform: none !important;
-  }
-}
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-.site-footer {
-  padding: 3rem 1.5rem;
-  background: #111;
-  color: #fff;
-  text-align: center;
-}
-
-.footer-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.footer-logo-top img {
-  max-width: 140px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 1.5rem;
-  opacity: 0.95;
-}
-
-.footer-email a,
-.footer-social a,
-.back-home-link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.footer-social a {
-  margin: 0 0.5rem;
-}
-
-.footer-copy {
-  opacity: 0.9;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-.back-home-link {
-  display: inline-block;
-  margin-top: 1rem;
-  opacity: 0.9;
-}
-
-/* =========================================
-   COLLECTIONS LANDING PAGE
-   ========================================= */
-
-.page-hero {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.page-title {
-  font-size: 2.6rem;
-  font-weight: 300;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.75;
-}
-
-.collections-page .collections-grid {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.collections-page .collection-card h2 {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin: 0.5rem 0 0.25rem;
-}
-
-.collections-page .collection-card p {
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* =========================================
-   COLLECTION DETAIL PAGES
-   ========================================= */
-
-.collection-heading {
-  text-align: center;
-  max-width: 900px;
-  margin: 3rem auto 1rem;
-  padding: 0 1rem;
-}
-
-.collection-heading h1 {
-  font-weight: 300;
-  font-size: 2.4rem;
-  letter-spacing: 0.04em;
-  margin: 0;
-}
-
-/* Back to collections link */
-.back-collections {
-  max-width: 1100px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-}
-
-.back-collections a {
-  font-size: 0.95rem;
-  text-decoration: none;
-  color: #555;
-}
-
-.back-collections a:hover {
-  opacity: 0.7;
-}
-
-/* Aspect-ratio gallery cards */
-.gallery {
-  max-width: 1100px;
-  margin: 2.5rem auto 3rem;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.gallery a {
-  position: relative;
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #111;
-}
-
-/* 3:2-ish card */
-.gallery a::before {
-  content: "";
-  display: block;
-  padding-bottom: 66.6667%;
-}
-
-.gallery img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  cursor: pointer;
-}
-
-.gallery a:hover img {
-  transform: scale(1.03);
-  opacity: 0.95;
-}
-
-/* Lightbox overlay */
-.lightbox-overlay[hidden] {
-  display: none !important;
-}
-
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
-  padding: 2rem;
-}
-
-.lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-.lightbox-close {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.35);
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-/* =========================================
-   PRINTS PAGE – HERO & GRID
-   ========================================= */
-
-.prints-hero {
-  position: relative;
-  width: 100%;
-  min-height: 420px;
-  background-image: url('https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4.5rem 1.5rem 3rem;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.prints-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.prints-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  text-align: center;
-  color: #fff;
-}
-
-.prints-hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.03em;
-  font-weight: 300;
-}
-
-.prints-hero p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  max-width: 760px;
-  margin: 0 auto 1.5rem;
-}
-
-.prints-hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-/* Filter buttons */
-.hero-btn {
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  background: transparent;
-  cursor: pointer;
-  font-family: "bc-alphapipe", sans-serif;
-  transition: background 0.25s ease, transform 0.2s ease, color 0.25s ease;
-}
-
-.hero-btn.primary {
-  background: #fff;
-  color: #000;
-  font-weight: 500;
-}
-
-.hero-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.hero-btn.primary:hover {
-  background: #eee;
-}
-
-/* Prints grid */
-.prints-grid-section {
-  padding: 40px 20px 80px;
-}
-
-.prints-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.print-card {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition:
-    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-
-.print-card.hidden {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  pointer-events: none;
-}
-
-.print-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.print-thumb img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.print-thumb img:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
-}
-
-.print-title {
-  font-size: 20px;
-  margin-top: 10px;
-  font-weight: 200;
-}
-
-.print-collection {
-  font-size: 14px;
-  color: #888;
-}
-
-.print-link {
-  font-size: 14px;
-  color: #333;
-  margin-top: 5px;
-  display: inline-block;
-}
-
-/* =========================================
-   PRINT DETAIL PAGE
-   ========================================= */
-
-.print-detail {
-  padding: 80px 20px;
-}
-
-.print-detail-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.print-image-wrapper {
-  width: 100%;
-}
-
-.print-detail-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.print-info {
-  padding-top: 20px;
-}
-
-.print-title {
-  font-family: "bc-alphapipe", sans-serif;
-  font-weight: 200;
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.print-collection-label {
-  color: #777;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.print-description {
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.print-sizes h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-
-.print-sizes ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.print-sizes li {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.purchase-btn {
-  margin-top: 20px;
-  display: inline-block;
-}
-
-.back-prints-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-
-/* Print detail top back link */
-.print-detail-back {
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding: 0 20px;
-}
-
-.print-detail-back .back-prints-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0;
-  color: #333;
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.print-detail-back .back-prints-link:hover {
-  opacity: 0.7;
-}
-
-.print-detail {
-  padding-top: 36px;
-}
-
-@media (max-width: 600px) {
-  .print-detail-back {
-    margin-top: 1.5rem;
-    padding: 0 1.25rem;
-  }
-
-  .print-detail {
-    padding-top: 28px;
-  }
-}
-
-/* Next / Previous nav */
-.print-nav {
-  display: flex;
-  gap: 12px;
-  margin-top: 35px;
-}
-
-.print-nav-btn {
-  padding: 8px 16px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  font-size: 14px;
-  text-decoration: none;
-  color: #333;
-  background: #fff;
-  transition: background 0.2s ease;
-}
-
-.print-nav-btn:hover {
-  background: #f0f0f0;
-}
-
-.nav-back {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  text-decoration: none;
-  color: #333;
-}
-
-
-/* =========================================
-   REDUCED MOTION SUPPORT
-   ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .hero-slide,
-  .prints-cta-slide,
-  .booking-cta-slide,
-  .print-card,
-  .gallery img {
-    transition: none !important;
-    transform: none !important;
-  }
-}
-
-/* =========================================
-   RESPONSIVE ADJUSTMENTS
-   ========================================= */
-
-/* Desktop two-column collections */
-@media (min-width: 800px) {
-  .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .collections-page .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Tablet & down */
-@media (max-width: 880px) {
-  .print-detail-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .print-image-wrapper {
-    order: 1;
-  }
-
-  .print-info {
-    order: 2;
-  }
-}
-
-/* Mobile (nav, hero, grids) */
-@media (max-width: 800px) {
-  .site-header {
-    padding: 0.75rem 1.25rem;
-  }
-
-  .site-header-inner {
-    max-width: 100%;
-  }
-
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    position: absolute;
-    top: 60px;
-    right: 1.25rem;
-    background: #fff;
-    padding: 1.25rem 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .nav-menu.nav-menu-open {
-    display: flex;
-  }
-
-  .hero-title {
-    font-size: 2.1rem;
-  }
-
-  .hero {
-    padding: 4rem 1.25rem 3.5rem;
-  }
-
-  .prints-cta {
-    padding: 4rem 1.25rem;
-  }
-
-  .prints-cta-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .prints-cta-copy {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .prints-cta-slideshow {
-    aspect-ratio: 4 / 5;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  .booking-cta {
-    padding: 4rem 1.25rem;
-  }
-
-  .booking-cta-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .booking-cta-copy {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .booking-cta-slideshow {
-    aspect-ratio: 4 / 5;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-}
-
-
-/* Small mobile refinements */
-@media (max-width: 600px) {
-  .intro,
-  .collections-section,
-  .prints-cta,
-  .booking-cta {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .gallery {
-    margin: 2rem auto 2.5rem;
-    gap: 1.25rem;
-  }
-
-  .prints-hero {
-    min-height: 360px;
-    padding-top: 5.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .prints-hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .prints-hero p {
-    font-size: 0.98rem;
-    line-height: 1.45;
-  }
-
-  .prints-hero-buttons {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .hero-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .prints-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 0 4px;
-  }
-
-  .print-title {
-    font-size: 1.1rem;
-    margin-top: 10px;
-  }
-
-  .print-collection {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-  }
-
-  .print-link {
-    font-size: 0.85rem;
-  }
-}
-
-/* --- MOBILE FIX FOR PRINTS HERO BUTTONS --- */
-@media (max-width: 600px) {
-
-  /* Prevent background from visually “stretching” wider than viewport */
-  .prints-hero {
-    overflow: hidden;
-  }
-
-  /* Button container should not stretch full width */
-  .prints-hero-buttons {
-    width: 100%;
-    max-width: 340px;     /* controls clean centering */
-    margin: 1.2rem auto 0;
-    padding: 0 10px;      /* breathing room inside the viewport */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* Each button stays within the container, not full screen width */
-  .prints-hero-buttons a,
-  .prints-hero-buttons button {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 28px;
-    padding: 12px 16px;
-    box-sizing: border-box;
-  }
-}
-
-
-/* =========================================
-   FORM ENHANCEMENTS — FLOATING LABELS + STEPS + VALIDATION
-   ========================================= */
-
-/* Floating label container */
-.float-label {
-  position: relative;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-/* Inputs & textareas & selects */
-.float-label input,
-.float-label textarea,
-.float-label select {
-  width: 100%;
-  padding: 0.9rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: #fff;
-  color: #111;
-  outline: none;
-  transition:
-    border 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
-}
-
-/* Label text */
-.float-label span {
-  position: absolute;
-  left: 0.75rem;
-  top: 0.95rem;
-  color: #666;
-  font-size: 1rem;
-  pointer-events: none;
-  transition: all 0.25s ease;
-  background: #fff;
-  padding: 0 0.25rem;
-}
-
-/* Multi-step form transitions */
-.form-step {
-  display: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.form-step.active-step {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Dynamic field fade-in */
-.dynamic-field {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.dynamic-field.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Progress indicator (minimal text style) */
-.form-progress {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 1rem;
-}
-
-/* Next/Back buttons spacing */
-.next-step,
-.prev-step {
-  margin-top: 1rem;
-}
-
-/* Mobile: buttons full-width */
-@media (max-width: 600px) {
-  .next-step,
-  .prev-step {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ==========================
-   Luxe Validation States
-   ========================== */
-
-/* Error + success wrapper states */
-.float-label.field-error input,
-.float-label.field-error textarea,
-.float-label.field-error select {
-  border-color: #c76363 !important;
-  box-shadow: 0 0 0 1px rgba(199, 99, 99, 0.25);
-}
-
-.float-label.field-success input,
-.float-label.field-success textarea,
-.float-label.field-success select {
-  border-color: #d4c18a !important; /* Antique gold */
-  box-shadow: 0 0 0 1px rgba(212, 193, 138, 0.22);
-}
-
-/* Luxe checkmark for success */
-.float-label.field-success::after {
-  content: "✓";
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.9rem;
-  color: #d4c18a;
-}
-
-/* Error messages */
-.error-message {
-  font-size: 0.85rem;
-  color: #c76363;
-  margin-top: 0.25rem;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.error-message.visible {
-  opacity: 1;
-}
-
-/* Gentle shake for blocked steps */
-@keyframes field-shake {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(-4px); }
-  40%  { transform: translateX(4px); }
-  60%  { transform: translateX(-3px); }
-  80%  { transform: translateX(3px); }
-  100% { transform: translateX(0); }
-}
-
-.float-label.shake {
-  animation: field-shake 0.25s ease;
-}
-
-/* Larger date picker styling */
-.float-label input[type="date"] {
-  padding: 1rem 0.75rem;
-  font-size: 1rem;
-  height: 52px;
-}
-
-.float-label input[type="date"]::-webkit-calendar-picker-indicator {
-  transform: scale(1.3);
-  margin-right: 4px;
-}
-
-.addon {
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.addon:not(.visible) {
-  opacity: 0;
-  transform: translateY(6px);
-}
-
-/* =========================
-   FLOATING LABEL SYSTEM
-========================= */
-
-
-.float-label span {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.9rem;
-  color: #777;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background: #fff;
-  padding: 0 0.25rem;
-}
-
-/* FLOAT when focused OR has value */
-.float-label input:focus + span,
-.float-label input:not(:placeholder-shown) + span,
-.float-label textarea:focus + span,
-.float-label textarea:not(:placeholder-shown) + span,
-.float-label select:focus + span,
-.float-label select:not([value=""]) + span {
-  top: 0.35rem;
-  font-size: 0.7rem;
-  color: #000;
-}
-
-.form-step.addons-step {
-  opacity: 1 !important;
-  pointer-events: auto;
-}
-
-input[type="date"] {
-  font-size: 1rem;
-  padding: 1rem 0.75rem;
-  min-height: 3.25rem;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  transform: scale(1.25);
-  cursor: pointer;
-}
-
-/* Add-on checkbox layout */
-.addon-option {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.addon-option:hover {
-  border-color: #000;
-}
-
-.addon-option input {
-  margin-top: 0.25rem;
-  transform: scale(1.2);
-}
-
-.addon-option span {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.addon-option em {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* Selected state */
-.addon-option input:checked + span {
-  font-weight: 500;
-}
-
-
-
-
-/* =========================================
-   PRINT DETAIL – GALLERY + PURCHASE OPTIONS
-   ========================================= */
-
-.print-gallery {
-  width: 100%;
-}
-
-.print-image-wrapper {
-  width: 100%;
-  margin-bottom: 14px;
-}
-
-.print-detail-image {
-  width: 100%;
-  max-height: 72vh;
-  border-radius: 8px;
-  object-fit: contain;
-  background: #f1f1f1;
-}
-
-.print-thumbnails {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 12px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.print-thumbnail {
-  flex: 0 0 96px;
-  width: 96px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 8px;
-  padding: 5px;
-  cursor: pointer;
-  text-align: center;
-  font-family: "bc-alphapipe", sans-serif;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.print-thumbnail:hover {
-  transform: translateY(-1px);
-  border-color: #999;
-}
-
-.print-thumbnail.active {
-  border-color: #111;
-  box-shadow: 0 0 0 1px #111;
-}
-
-.print-thumbnail img {
-  width: 100%;
-  height: 62px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 4px;
-}
-
-.print-thumbnail span {
-  display: block;
-  font-size: 0.72rem;
-  color: #333;
-  line-height: 1.1;
-}
-
-.print-options {
-  margin-bottom: 22px;
-}
-
-.print-select-label {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-
-.print-select {
-  width: 100%;
-  max-width: 420px;
-  min-height: 48px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  background: #fff;
-  color: #111;
-  padding: 0 14px;
-  font-family: "bc-alphapipe", sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.print-select:focus {
-  outline: none;
-  border-color: #111;
-  box-shadow: 0 0 0 1px #111;
-}
-
-.selected-print-summary {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: 18px 0;
-  margin: 12px 0 22px;
-}
-
-.selected-print-summary p {
-  margin: 0;
-}
-
-.selected-price {
-  font-size: 2rem;
-  font-weight: 300;
-  margin-top: 4px !important;
-}
-
-@media (max-width: 880px) {
-  .print-detail-image {
-    max-height: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .print-thumbnail {
-    flex-basis: 82px;
-    width: 82px;
-  }
-
-  .print-thumbnail img {
-    height: 54px;
-  }
-
-  .print-select {
-    max-width: 100%;
-  }
-
-  .selected-price {
-    font-size: 1.65rem;
-  }
-}
-
-
-/* =========================================
-   COLLECTION DETAIL — EDITORIAL ARTWORK LIST
-   ========================================= */
-
-.collection-intro {
-  max-width: 760px;
-  margin: 0 auto 1.5rem;
-  padding: 0 1.25rem;
-  text-align: center;
-  color: #444;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.collection-artworks {
-  width: 100%;
-  max-width: 960px;
-  margin: 3rem auto 5rem;
-  padding: 0 1.25rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4.5rem;
-}
-
-.collection-artwork {
-  margin: 0;
-}
-
-.collection-artwork-button {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-.collection-artwork-button img {
-  width: auto;
-  max-width: 100%;
-  max-height: 72vh;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  background: #eee;
-  object-fit: contain;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
-}
-
-.collection-artwork-button:hover img {
-  transform: translateY(-2px);
-  opacity: 0.96;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12);
-}
-
-.collection-artwork-title {
-  margin: 1rem 0 0.25rem;
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.025em;
-  color: #111;
-}
-
-.collection-artwork-action {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.lightbox-content {
-  width: min(1100px, 94vw);
-  max-height: 92vh;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1rem;
-  align-items: start;
-}
-
-.lightbox-content img {
-  justify-self: center;
-}
-
-.lightbox-caption {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #fff;
-  text-align: center;
-}
-
-.lightbox-caption h2 {
-  margin: 0 0 0.35rem;
-  font-size: 1.6rem;
-  font-weight: 300;
-  letter-spacing: 0.025em;
-}
-
-.lightbox-caption p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.86);
-}
-
-@media (max-width: 700px) {
-  .collection-heading {
-    margin-top: 2.25rem;
-  }
-
-  .collection-artworks {
-    gap: 3.25rem;
-    margin-top: 2.25rem;
-    margin-bottom: 4rem;
-  }
-
-  .collection-artwork-title {
-    font-size: 1.3rem;
-  }
-
-  .collection-artwork-button img {
-    max-height: 68vh;
-  }
-
-  .lightbox-overlay {
-    padding: 4.5rem 1rem 1.25rem;
-  }
-
-  .lightbox-caption h2 {
-    font-size: 1.35rem;
-  }
-}
-
-/* =========================================
-   LIGHTBOX GALLERY NAVIGATION ARROWS
-   ========================================= */
-
-.lightbox-nav {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000000;
-  width: 46px;
-  height: 76px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.28);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-.lightbox-nav:hover {
-  background: rgba(0, 0, 0, 0.48);
-  border-color: rgba(255, 255, 255, 0.9);
-}
-
-.lightbox-nav:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-}
-
-.lightbox-nav-prev {
-  left: 1.25rem;
-}
-
-.lightbox-nav-next {
-  right: 1.25rem;
-}
-
-.lightbox-nav svg {
-  width: 18px;
-  height: 34px;
-  display: block;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.lightbox-count {
-  margin-top: 0.55rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.68);
-}
-
-@media (max-width: 700px) {
-  .lightbox-nav {
-    width: 40px;
-    height: 58px;
-  }
-
-  .lightbox-nav-prev {
-    left: 0.75rem;
-  }
-
-  .lightbox-nav-next {
-    right: 0.75rem;
-  }
-
-  .lightbox-nav svg {
-    width: 15px;
-    height: 28px;
-  }
-}
-
-/* =========================================
-   LIGHTBOX PORTRAIT IMAGE CAPTION FIX
-   Keeps vertical images from covering/cutting off captions
-   ========================================= */
-
-.lightbox-overlay {
-  align-items: flex-start;
-  overflow-y: auto;
-}
-
-.lightbox-content {
-  min-height: 0;
-  padding: 2rem 0;
-}
-
-.lightbox-content img {
-  max-width: min(90vw, 1100px);
-  max-height: calc(92vh - 190px);
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.lightbox-caption {
-  padding: 0 1rem 1rem;
-}
-
-@media (max-width: 700px) {
-  .lightbox-overlay {
-    align-items: flex-start;
-    overflow-y: auto;
-  }
-
-  .lightbox-content {
-    padding: 1rem 0 2rem;
-    gap: 0.85rem;
-  }
-
-  .lightbox-content img {
-    max-width: 92vw;
-    max-height: calc(92vh - 210px);
-  }
-
-  .lightbox-caption {
-    padding: 0 0.25rem 1rem;
-  }
-}
-
-
-/* =========================================
-   FORM VALIDATION ACCESSIBILITY FIX
-   ========================================= */
-
-.form-required-hint {
-  position: static !important;
-  display: inline !important;
-  transform: none !important;
-  padding: 0 !important;
-  margin-left: 0.2rem;
-  background: transparent !important;
-  color: #8a2f2f !important;
-  font-size: 0.72rem !important;
-  pointer-events: none;
-}
-
-.form-step-alert {
-  width: 100%;
-  margin: 0 0 1.25rem;
-  padding: 0.85rem 1rem;
-  border: 1px solid #c76363;
-  border-radius: 10px;
-  background: #fff7f7;
-  color: #8a2f2f;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.form-step-alert[hidden] {
-  display: none !important;
-}
-
-.float-label.field-error input,
-.float-label.field-error textarea,
-.float-label.field-error select {
-  border-color: #c76363 !important;
-  box-shadow: 0 0 0 2px rgba(199, 99, 99, 0.22);
-}
-
-.error-message.visible {
-  display: block;
-  opacity: 1;
-}
-
-.error-message {
-  display: none;
-  width: 100%;
-  color: #8a2f2f;
-  margin: 0.35rem 0 0;
-  line-height: 1.4;
-}
-
-
-/* =========================================
-   CART DRAWER – PRINT SHOP
-   ========================================= */
-
-.cart-open-button {
-  appearance: none;
-  border: 1px solid #111;
-  border-radius: 999px;
-  background: transparent;
-  color: #111;
-  padding: 0.45rem 0.9rem;
-  font-family: "bc-alphapipe", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-}
-
-.cart-open-button:hover {
-  background: #111;
-  color: #fff;
-}
-
-.cart-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.35rem;
-  min-height: 1.35rem;
-  margin-left: 0.35rem;
-  padding: 0 0.35rem;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
-  font-size: 0.78rem;
-  line-height: 1;
-}
-
-.cart-open-button:hover .cart-count {
-  background: #fff;
-  color: #111;
-}
-
-.cart-drawer[hidden] {
-  display: none !important;
-}
-
-.cart-drawer {
-  position: fixed;
-  inset: 0;
-  z-index: 999998;
-}
-
-.cart-drawer-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.46);
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.cart-drawer-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(100%, 440px);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #fafafa;
-  color: #111;
-  box-shadow: -18px 0 44px rgba(0, 0, 0, 0.18);
-  transform: translateX(100%);
-  transition: transform 0.18s ease;
-}
-
-.cart-drawer.is-open .cart-drawer-overlay {
-  opacity: 1;
-}
-
-.cart-drawer.is-open .cart-drawer-panel {
-  transform: translateX(0);
-}
-
-.cart-is-open {
-  overflow: hidden;
-}
-
-.cart-drawer-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  border-bottom: 1px solid #e5e5e5;
-  background: #fff;
-}
-
-.cart-eyebrow {
-  margin: 0 0 0.35rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  opacity: 0.68;
-}
-
-.cart-drawer-header h2 {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-}
-
-.cart-close-button {
-  width: 42px;
-  height: 42px;
-  border: 1px solid #cfcfcf;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-size: 1.9rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.cart-close-button:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.25rem 1.5rem;
-}
-
-.cart-empty {
-  padding: 2rem 0;
-  color: #555;
-  line-height: 1.6;
-}
-
-.cart-empty p {
-  margin: 0 0 0.75rem;
-}
-
-.cart-item {
-  display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid #e4e4e4;
-}
-
-.cart-item-image {
-  width: 92px;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #eee;
-}
-
-.cart-item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cart-item-details h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1.05rem;
-  font-weight: 300;
-  letter-spacing: 0.01em;
-}
-
-.cart-item-details p {
-  margin: 0 0 0.35rem;
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.35;
-}
-
-.cart-item-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.75rem;
-}
-
-.cart-quantity-input,
-.print-quantity-input {
-  width: 5.25rem;
-  min-height: 2.45rem;
-  border: 1px solid #cfcfcf;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  padding: 0.35rem 0.75rem;
-  text-align: center;
-}
-
-.cart-remove-button {
-  border: 0;
-  background: transparent;
-  color: #555;
-  padding: 0.35rem 0;
-  text-decoration: underline;
-  text-underline-offset: 0.28em;
-  cursor: pointer;
-}
-
-.cart-remove-button:hover {
-  color: #111;
-}
-
-.cart-drawer-footer {
-  padding: 1.35rem 1.5rem 1.5rem;
-  border-top: 1px solid #e5e5e5;
-  background: #fff;
-}
-
-.cart-subtotal-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.05rem;
-}
-
-.cart-subtotal-row strong {
-  font-weight: 400;
-}
-
-.cart-note,
-.cart-checkout-note {
-  margin: 0.75rem 0 0;
-  color: #666;
-  font-size: 0.86rem;
-  line-height: 1.45;
-}
-
-.cart-checkout-button {
-  width: 100%;
-  margin-top: 1rem;
-  border: 0;
-}
-
-.cart-checkout-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
-}
-
-.print-quantity-option {
-  max-width: 180px;
-}
-
-@media (max-width: 768px) {
-  .nav-menu .cart-open-button {
-    width: fit-content;
-    margin-top: 0.25rem;
-  }
-
-  .cart-drawer-panel {
-    width: min(100%, 390px);
-  }
-
-  .cart-drawer-header,
-  .cart-items,
-  .cart-drawer-footer {
-    padding-left: 1.15rem;
-    padding-right: 1.15rem;
-  }
-
-  .cart-item {
-    grid-template-columns: 78px minmax(0, 1fr);
-  }
-
-  .cart-item-image {
-    width: 78px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cart-drawer-overlay,
-  .cart-drawer-panel {
-    transition: none;
-  }
-}
-
-/* =========================================
-   BOOKING LANDING PAGE – SERVICE ROWS
-   ========================================= */
-
-.booking-page-hero {
-  padding-bottom: 1.5rem;
-}
-
-.booking-page-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.68;
-}
-
-.booking-page-intro {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1.5rem 3rem;
-  text-align: center;
-}
-
-.booking-page-intro p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-.booking-service-rows {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem 5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4.5rem;
-}
-
-.booking-service-row {
-  display: grid;
-  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
-  gap: 4rem;
-  align-items: center;
-}
-
-/* Keep every booking row consistent: photos left, text right. */
-.booking-service-row-reverse {
-  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr);
-}
-
-.booking-service-row-reverse .booking-service-media {
-  order: 1;
-}
-
-.booking-service-row-reverse .booking-service-copy {
-  order: 2;
-}
-
-.booking-service-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  background: #e9e7e2;
-  border-radius: 14px;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.1);
-}
-
-.booking-service-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.025);
-  transition: opacity 1.2s ease, transform 6s ease;
-}
-
-.booking-service-slide.is-active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.booking-service-copy {
-  max-width: 560px;
-}
-
-.booking-service-label {
-  margin: 0 0 0.85rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.68;
-}
-
-.booking-service-copy h2,
-.booking-help-inner h2 {
-  margin: 0 0 1rem;
-  font-size: 2.2rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-}
-
-.booking-service-copy p,
-.booking-help-inner p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.booking-service-copy p {
-  margin: 0 0 1.5rem;
-}
-
-.booking-help-cta {
-  padding: 4.5rem 1.5rem;
-  background: #f4f4f4;
-  text-align: center;
-}
-
-.booking-help-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.booking-help-inner p {
-  max-width: 680px;
-  margin: 0 auto 1.5rem;
-}
-
-@media (max-width: 800px) {
-  .booking-page-intro {
-    padding-bottom: 2.5rem;
-  }
-
-  .booking-service-rows {
-    padding: 0 1.25rem 4rem;
-    gap: 3.5rem;
-  }
-
-  .booking-service-row,
-  .booking-service-row-reverse {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-
-  .booking-service-row-reverse .booking-service-media,
-  .booking-service-row-reverse .booking-service-copy {
-    order: initial;
-  }
-
-  .booking-service-copy {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .booking-service-media {
-    aspect-ratio: 4 / 5;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  .booking-service-copy h2,
-  .booking-help-inner h2 {
-    font-size: 1.95rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .booking-help-cta {
-    padding: 4rem 1.25rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .booking-service-slide {
-    transition: none !important;
-    transform: none !important;
-  }
-}
-
-/* =========================================
-   BOOKING DETAIL — MOBILE POLISH PASS
-   Keeps booking pages consistent on phones without changing desktop layouts.
-   ========================================= */
-
-@media (max-width: 800px) {
-  .back-collections {
-    margin-top: 1.35rem;
-    padding: 0 1.25rem;
-  }
-
-  .page-hero.copy-work-hero {
-    padding: 3.25rem 1.25rem 1.4rem;
-  }
-
-  .copy-work-intro {
-    padding: 0 1.25rem 2.35rem;
-  }
-
-  .copy-work-feature {
-    padding: 0 1.25rem 3.75rem;
-    gap: 1.6rem;
-  }
-
-  /* Copy Work and Events should stay landscape. */
-  .copy-work-image {
-    aspect-ratio: 3 / 2;
-    width: 100%;
-    max-width: 560px;
-    margin: 0 auto;
-    border-radius: 12px;
-  }
-
-  /* Portraits and Headshots stay vertical. */
-  .copy-work-image.portrait-feature-image {
-    aspect-ratio: 4 / 5;
-    max-width: 520px;
-  }
-
-  .copy-work-copy {
-    max-width: 680px;
-  }
-
-  .copy-work-section,
-  .copy-work-form-section {
-    padding: 3.75rem 1.25rem;
-  }
-
-  .copy-work-section-header,
-  .copy-work-form-header {
-    margin-bottom: 2rem;
-  }
-
-  .copy-work-grid,
-  .copy-work-process {
-    gap: 1.25rem;
-  }
-
-  .copy-work-form input,
-  .copy-work-form select,
-  .copy-work-form textarea {
-    min-height: 48px;
-  }
-}
-
-@media (max-width: 600px) {
-  .back-collections a {
-    font-size: 0.9rem;
-  }
-
-  .booking-page-eyebrow,
-  .copy-work-label,
-  .copy-work-card-label {
-    font-size: 0.76rem;
-    letter-spacing: 0.18em;
-  }
-
-  .page-title {
-    font-size: 2.05rem;
-    line-height: 1.12;
-  }
-
-  .page-subtitle,
-  .copy-work-intro p,
-  .copy-work-copy p,
-  .copy-work-section-header p,
-  .copy-work-form-header p,
-  .copy-work-card p,
-  .copy-work-process-item p,
-  .copy-work-note {
-    font-size: 1rem;
-    line-height: 1.62;
-  }
-
-  .copy-work-copy h2,
-  .copy-work-section-header h2,
-  .copy-work-form-header h2 {
-    font-size: 1.75rem;
-    line-height: 1.18;
-  }
-
-  .copy-work-copy .btn-primary {
-    width: 100%;
-    max-width: 340px;
-    text-align: center;
-  }
-
-  .copy-work-card,
-  .copy-work-process-item {
-    border-radius: 12px;
-    padding: 1.25rem;
-  }
-
-  .copy-work-card h3,
-  .copy-work-process-item h3 {
-    font-size: 1.22rem;
-  }
-
-  .copy-work-price {
-    font-size: 1.32rem !important;
-  }
-
-  .copy-work-pricing-note {
-    margin-top: 1.65rem;
-    padding: 0 0.25rem;
-  }
-
-  .copy-work-form-header {
-    margin-bottom: 1.5rem;
-  }
-
-  .copy-work-form {
-    gap: 1rem;
-    border-radius: 12px;
-    padding: 1.15rem;
-  }
-
-  .copy-work-form label {
-    font-size: 0.92rem;
-  }
-
-  /* 16px prevents iOS Safari from zooming into form fields. */
-  .copy-work-form input,
-  .copy-work-form select,
-  .copy-work-form textarea {
-    font-size: 16px;
-    padding: 0.85rem;
-  }
-
-  .copy-work-form textarea {
-    min-height: 128px;
-  }
-}
-
-@media (max-width: 420px) {
-  .copy-work-section,
-  .copy-work-form-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .copy-work-feature,
-  .copy-work-intro,
-  .page-hero.copy-work-hero {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .copy-work-image.portrait-feature-image {
-    max-width: 100%;
-  }
-}
-
-/* =========================================
-   ABOUT CTA – HOMEPAGE
-   ========================================= */
-
-.about-cta {
-  padding: 4.5rem 1.5rem;
-  background: #fafafa;
-  text-align: center;
-}
-
-.about-cta-inner {
-  max-width: 820px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.75rem;
-  align-items: center;
-  justify-items: center;
-}
-
-.about-cta-image {
-  width: min(100%, 280px);
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #e9e7e2;
-  border-radius: 14px;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.09);
-}
-
-.about-cta-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-cta-copy {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.about-cta-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 0 0 0.85rem;
-  opacity: 0.7;
-}
-
-.about-cta h2 {
-  max-width: 680px;
-  margin: 0 auto 1rem;
-  font-size: 2.05rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  line-height: 1.18;
-}
-
-.about-cta p {
-  max-width: 680px;
-  margin: 0 auto 1.15rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-.about-cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.85rem;
-  margin-top: 1.5rem;
-}
-
-@media (max-width: 800px) {
-  .about-cta {
-    padding: 4rem 1.25rem;
-  }
-
-  .about-cta-image {
-    width: min(100%, 260px);
-  }
-}
-
-@media (max-width: 600px) {
-  .about-cta {
-    padding: 3.75rem 1.25rem;
-  }
-
-  .about-cta-image {
-    width: min(100%, 230px);
-  }
-
-  .about-cta h2 {
-    font-size: 1.75rem;
-  }
-
-  .about-cta p {
-    font-size: 1rem;
-    line-height: 1.62;
-  }
-
-  .about-cta-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-cta-actions .btn-primary,
-  .about-cta-actions .btn-secondary {
-    width: 100%;
-    max-width: 340px;
-    text-align: center;
-  }
-}
-
-
-/* =========================================
-   ABOUT CTA — NO BUTTON POLISH
-   Keeps the homepage About section focused on trust-building.
-   ========================================= */
-
-.about-cta {
-  padding-bottom: 4rem;
-}
-
-.about-cta-copy p:last-child {
-  margin-bottom: 0;
-}
-
-.about-cta-actions {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .about-cta {
-    padding-bottom: 3.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-cta {
-    padding-bottom: 3.25rem;
-  }
-}
-
-
-/* =========================================
-   CONTACT PAGE
-   ========================================= */
-
-.contact-page-hero {
-  padding-bottom: 1.5rem;
-}
-
-.contact-form-section {
-  padding: 1rem 1.5rem 5rem;
-  background: #fafafa;
-}
-
-.contact-form-inner {
-  max-width: 820px;
-  margin: 0 auto;
-}
-
-.contact-form .phone-required-note {
-  color: #8a2f2f;
-}
-
-@media (max-width: 800px) {
-  .contact-form-section {
-    padding: 0 1.25rem 4rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .contact-form-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-/* =========================================
-   BOOKING DETAIL MOBILE FIX
-   Fixes feature slideshows and form layout on mobile webviews
-   Add this at the VERY BOTTOM of style.css
-   ========================================= */
-
-/* Make every booking feature slideshow contain its absolute-positioned slides */
-.booking-feature-slideshow {
-  position: relative !important;
-  overflow: hidden !important;
+.collection-bottom-cta {
   display: block !important;
-  isolation: isolate;
+  width: min(100% - 2.5rem, 820px) !important;
+  max-width: 820px !important;
+  margin: -1rem auto 5rem !important;
+  padding: 3rem 1.5rem !important;
+  text-align: center !important;
+  background: #f4f4f4 !important;
+  border-radius: 16px !important;
 }
 
-/* Prevent slideshow images from stacking through the page */
-.booking-feature-slideshow > .booking-feature-slide {
-  position: absolute !important;
-  inset: 0 !important;
+.collection-bottom-cta .page-eyebrow {
+  margin: 0 0 0.85rem !important;
+  max-width: none !important;
+  text-align: center !important;
+}
+
+.collection-bottom-cta h2 {
+  max-width: 680px !important;
+  margin: 0 auto 1rem !important;
+  font-size: 2rem !important;
+  line-height: 1.18 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.02em !important;
+  color: #111 !important;
+  text-align: center !important;
+}
+
+.collection-bottom-cta p:not(.page-eyebrow) {
+  max-width: 640px !important;
+  margin: 0 auto 1.5rem !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
+  text-align: center !important;
+}
+
+/* ---------- Booking detail desktop layout restore ---------- */
+
+.copy-work-intro {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem 3.5rem !important;
+  text-align: center !important;
+}
+
+.copy-work-intro p {
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
+}
+
+.copy-work-feature {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem 5rem !important;
+  display: grid !important;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(0, 0.9fr) !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+.copy-work-image {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 3 / 2 !important;
+  overflow: hidden !important;
+  background: #e9e7e2 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.1) !important;
+}
+
+.copy-work-image img,
+.copy-work-image .booking-feature-slide {
   width: 100% !important;
   height: 100% !important;
-  max-width: none !important;
   object-fit: cover !important;
-  opacity: 0 !important;
-  transform: scale(1.025);
-  transition: opacity 1.2s ease, transform 6s ease;
-  z-index: 0;
 }
 
-/* Only the active slideshow image should be visible */
-.booking-feature-slideshow > .booking-feature-slide.is-active {
-  opacity: 1 !important;
-  transform: scale(1);
+.copy-work-image.portrait-feature-image {
+  aspect-ratio: 4 / 5 !important;
+  max-width: 560px !important;
+  justify-self: center !important;
 }
 
-/* Keep feature copy from overlapping the slideshow */
 .copy-work-copy {
-  position: relative;
-  z-index: 1;
+  max-width: 560px !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-/* Desktop/tablet default: copy work and events use landscape */
-.copy-work-image.booking-feature-slideshow {
-  aspect-ratio: 3 / 2;
+.copy-work-label,
+.copy-work-card-label {
+  margin: 0 0 0.85rem !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  opacity: 0.68 !important;
 }
 
-/* Portraits and headshots use portrait ratio */
-.copy-work-image.booking-feature-slideshow.portrait-feature-image {
-  aspect-ratio: 4 / 5;
+.copy-work-copy h2,
+.copy-work-section-header h2,
+.copy-work-form-header h2 {
+  margin: 0 0 1rem !important;
+  font-size: 2.2rem !important;
+  line-height: 1.18 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.02em !important;
 }
 
-/* Mobile booking layout correction */
-@media (max-width: 800px) {
-  .copy-work-feature {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1.75rem !important;
-    align-items: start !important;
-  }
-
-  .copy-work-image.booking-feature-slideshow {
-    width: 100% !important;
-    max-width: 560px !important;
-    margin: 0 auto !important;
-    aspect-ratio: 3 / 2 !important;
-  }
-
-  .copy-work-image.booking-feature-slideshow.portrait-feature-image {
-    max-width: 520px !important;
-    aspect-ratio: 4 / 5 !important;
-  }
-
-  .copy-work-copy {
-    max-width: 700px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .copy-work-form {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
-
-  .copy-work-form label,
-  .copy-work-form label:has(textarea),
-  .copy-work-form button {
-    grid-column: 1 / -1 !important;
-  }
-
-  .copy-work-form label {
-    display: grid !important;
-    gap: 0.45rem !important;
-  }
-
-  .copy-work-form input,
-  .copy-work-form select,
-  .copy-work-form textarea {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 16px !important;
-  }
-
-  .copy-work-form button {
-    width: 100% !important;
-    justify-self: stretch !important;
-    text-align: center !important;
-  }
+.copy-work-copy p,
+.copy-work-section-header p,
+.copy-work-form-header p,
+.copy-work-card p,
+.copy-work-process-item p,
+.copy-work-note {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
 }
 
-@media (max-width: 420px) {
-  .copy-work-image.booking-feature-slideshow.portrait-feature-image {
-    max-width: 100% !important;
-  }
+.copy-work-copy p {
+  margin: 0 0 1.5rem !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .booking-feature-slideshow > .booking-feature-slide {
-    transition: none !important;
-    transform: none !important;
-  }
+.copy-work-section,
+.copy-work-form-section {
+  padding: 5rem 1.5rem !important;
 }
 
-/* =========================================
-   CONTACT PAGE FORM LAYOUT FIX
-   Keeps the contact form clean on desktop and mobile.
-   Add this at the VERY BOTTOM of style.css
-   ========================================= */
-
-.contact-form-section {
-  padding: 4.5rem 1.5rem 5rem;
-  background: #fafafa;
+.copy-work-section {
+  background: #f4f4f4 !important;
 }
 
-.contact-form-inner {
-  max-width: 820px;
-  margin: 0 auto;
+.copy-work-form-section {
+  background: #fafafa !important;
 }
 
-.contact-form-header {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  text-align: left;
+.copy-work-section-header,
+.copy-work-form-header {
+  max-width: 760px !important;
+  margin: 0 auto 2.5rem !important;
+  text-align: center !important;
 }
 
-.contact-form-header .copy-work-card-label {
-  margin-bottom: 0.85rem;
+.copy-work-grid,
+.copy-work-process {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1.5rem !important;
 }
 
-.contact-form-header h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+.copy-work-process {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 
-.contact-form-header p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
+.copy-work-card,
+.copy-work-process-item {
+  padding: 1.5rem !important;
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.045) !important;
 }
 
-.contact-form,
-form.contact-form {
+.copy-work-card h3,
+.copy-work-process-item h3 {
+  margin: 0 0 0.75rem !important;
+  font-size: 1.3rem !important;
+  line-height: 1.25 !important;
+}
+
+.copy-work-price {
+  margin: 0.25rem 0 0.8rem !important;
+  font-size: 1.45rem !important;
+  font-weight: 300 !important;
+  color: #111 !important;
+}
+
+.copy-work-pricing-note {
+  max-width: 780px !important;
+  margin: 2rem auto 0 !important;
+  text-align: center !important;
+}
+
+.copy-work-pricing-note .copy-work-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 1rem auto 0 !important;
+  max-width: 720px !important;
+  text-align: center !important;
+}
+
+.copy-work-pricing-note .copy-work-list li {
+  margin: 0.35rem 0 !important;
+}
+
+.copy-work-pricing-note .copy-work-list li::marker {
+  content: "" !important;
+}
+
+.copy-work-form {
+  max-width: 820px !important;
+  margin: 0 auto !important;
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 1.25rem !important;
@@ -2984,7 +224,7 @@ form.contact-form {
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.07) !important;
 }
 
-.contact-form label {
+.copy-work-form label {
   display: grid !important;
   grid-template-columns: 1fr !important;
   gap: 0.45rem !important;
@@ -2994,9 +234,9 @@ form.contact-form {
   line-height: 1.4 !important;
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+.copy-work-form input,
+.copy-work-form select,
+.copy-work-form textarea {
   width: 100% !important;
   max-width: 100% !important;
   min-height: 48px !important;
@@ -3010,52 +250,69 @@ form.contact-form {
   line-height: 1.4 !important;
 }
 
-.contact-form textarea {
+.copy-work-form textarea {
   min-height: 150px !important;
   resize: vertical !important;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: #111 !important;
-  box-shadow: 0 0 0 1px #111 !important;
-  outline: none !important;
-}
-
-.contact-form label:has(textarea),
-.contact-form button {
+.copy-work-form label:has(textarea),
+.copy-work-form button {
   grid-column: 1 / -1 !important;
 }
 
-.contact-form button {
+.copy-work-form button {
   width: fit-content !important;
   justify-self: start !important;
   border: 0 !important;
 }
 
+@media (max-width: 950px) {
+  .copy-work-grid,
+  .copy-work-process {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
 @media (max-width: 800px) {
-  .contact-form-section {
-    padding: 4rem 1.25rem;
+  .collection-bottom-cta {
+    width: auto !important;
+    margin: -0.5rem 1.25rem 4rem !important;
+    padding: 2.5rem 1.25rem !important;
   }
 
-  .contact-form-header {
-    text-align: center;
+  .collection-bottom-cta h2 {
+    font-size: 1.75rem !important;
   }
 
-  .contact-form,
-  form.contact-form {
+  .copy-work-feature {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    padding: 0 1.25rem 4rem !important;
+  }
+
+  .copy-work-copy {
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .copy-work-grid,
+  .copy-work-process {
+    grid-template-columns: 1fr !important;
+  }
+
+  .copy-work-form {
     grid-template-columns: 1fr !important;
     padding: 1.5rem !important;
   }
 
-  .contact-form label,
-  .contact-form label:has(textarea),
-  .contact-form button {
+  .copy-work-form label,
+  .copy-work-form label:has(textarea),
+  .copy-work-form button {
     grid-column: 1 / -1 !important;
   }
 
-  .contact-form button {
+  .copy-work-form button {
     width: 100% !important;
     justify-self: stretch !important;
     text-align: center !important;
@@ -3063,60 +320,31 @@ form.contact-form {
 }
 
 @media (max-width: 600px) {
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    font-size: 16px !important;
-  }
-
-  .contact-form,
-  form.contact-form {
-    padding: 1.15rem !important;
+  .collection-bottom-cta {
     border-radius: 12px !important;
   }
-}
 
+  .collection-bottom-cta .btn-primary,
+  .copy-work-copy .btn-primary {
+    width: 100% !important;
+    max-width: 340px !important;
+    text-align: center !important;
+  }
 
-/* =========================================
-   PRINTS HERO EYEBROW ALIGNMENT FIX
-   Keeps the Fine Art Shop eyebrow centered inside the Prints hero.
-   ========================================= */
+  .copy-work-section,
+  .copy-work-form-section {
+    padding: 3.75rem 1.25rem !important;
+  }
 
-.prints-hero .prints-page-eyebrow,
-.prints-hero p.prints-page-eyebrow {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 auto 0.85rem !important;
-  padding: 0 !important;
-  text-align: center !important;
-}
+  .copy-work-copy h2,
+  .copy-work-section-header h2,
+  .copy-work-form-header h2 {
+    font-size: 1.75rem !important;
+  }
 
-/* =========================================
-   PRINT DETAIL — PURCHASE INQUIRY LINK
-   Adds a lower-pressure contact path beneath Add to Cart.
-   ========================================= */
-
-.print-purchase-help {
-  max-width: 420px;
-  margin: 1rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #555;
-}
-
-.print-purchase-help a {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 0.28em;
-}
-
-.print-purchase-help a:hover {
-  opacity: 0.68;
-}
-
-@media (max-width: 880px) {
-  .print-purchase-help {
-    max-width: 100%;
+  .copy-work-form input,
+  .copy-work-form select,
+  .copy-work-form textarea {
+    font-size: 16px !important;
   }
 }
