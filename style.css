@@ -3077,86 +3077,23 @@ form.contact-form {
 }
 
 /* =========================================
-   CONTACT PAGE MESSAGE FIELD SPAN FIX
-   Add this at the VERY BOTTOM of style.css
+   PRINTS PAGE — STANDARD HERO POLISH
+   Keeps the image hero, but aligns the typography with the shared interior hero system.
    ========================================= */
 
-/* Make the message field take the full bottom row */
-.contact-form label:has(textarea),
-.contact-form textarea,
-.contact-form .message-field,
-.contact-form .contact-message-field {
-  grid-column: 1 / -1 !important;
+.prints-hero-standard {
+  min-height: 460px;
+  padding: 5rem 1.5rem 3.25rem;
 }
 
-/* Keep the message box from getting squeezed */
-.contact-form textarea {
-  width: 100% !important;
-  min-height: 160px !important;
-  display: block !important;
-}
-
-/* Keep the send button below the message box */
-.contact-form button {
-  grid-column: 1 / -1 !important;
-  justify-self: start !important;
-}
-
-@media (max-width: 800px) {
-  .contact-form button {
-    width: 100% !important;
-    justify-self: stretch !important;
-  }
-}
-
-/* =========================================
-   STANDARD INTERIOR PAGE HERO
-   Shared hero style for interior pages.
-   Add this at the VERY BOTTOM of style.css
-   ========================================= */
-
-.standard-page-hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4.5rem 1.5rem 2.75rem;
-  text-align: center;
-}
-
-.page-eyebrow {
+.prints-hero .prints-page-eyebrow,
+.prints-hero .page-eyebrow {
   margin: 0 0 0.85rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #666;
-}
-
-.standard-page-hero .page-title,
-.page-hero.standard-page-hero .page-title {
-  margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.25rem);
-  line-height: 1.08;
-  font-weight: 300;
-  letter-spacing: 0.03em;
-  color: #111;
-}
-
-.standard-page-hero .page-subtitle,
-.page-hero.standard-page-hero .page-subtitle {
-  max-width: 720px;
-  margin: 1rem auto 0;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: #444;
+  color: rgba(255, 255, 255, 0.82);
   opacity: 1;
 }
 
-/* Collection detail pages can use this same hero without the old separate intro spacing */
-.collection-heading.standard-page-hero {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.collection-heading.standard-page-hero h1 {
+.prints-hero-standard h1 {
   margin: 0;
   font-size: clamp(2.2rem, 4vw, 3.25rem);
   line-height: 1.08;
@@ -3164,49 +3101,33 @@ form.contact-form {
   letter-spacing: 0.03em;
 }
 
-.collection-heading.standard-page-hero .collection-intro,
-.standard-page-hero .collection-intro {
-  max-width: 720px;
-  margin: 1rem auto 0;
-  padding: 0;
+.prints-hero-standard .prints-hero-intro {
+  max-width: 760px;
+  margin: 1rem auto 1.75rem;
   font-size: 1.08rem;
   line-height: 1.7;
-  color: #444;
-  text-align: center;
-}
-
-/* Reduce extra spacing when old intro paragraphs are removed/replaced */
-.standard-page-hero + .back-collections {
-  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 @media (max-width: 800px) {
-  .standard-page-hero {
-    padding: 3.75rem 1.25rem 2.25rem;
+  .prints-hero-standard {
+    min-height: 430px;
+    padding: 4.25rem 1.25rem 3rem;
   }
 
-  .page-eyebrow {
-    font-size: 0.76rem;
-    letter-spacing: 0.18em;
-  }
-
-  .standard-page-hero .page-subtitle,
-  .page-hero.standard-page-hero .page-subtitle,
-  .collection-heading.standard-page-hero .collection-intro,
-  .standard-page-hero .collection-intro {
+  .prints-hero-standard .prints-hero-intro {
     font-size: 1rem;
     line-height: 1.62;
   }
 }
 
 @media (max-width: 600px) {
-  .standard-page-hero {
-    padding: 3.25rem 1rem 2rem;
+  .prints-hero-standard {
+    min-height: 400px;
+    padding: 3.75rem 1rem 2.75rem;
   }
 
-  .standard-page-hero .page-title,
-  .page-hero.standard-page-hero .page-title,
-  .collection-heading.standard-page-hero h1 {
+  .prints-hero-standard h1 {
     font-size: 2.05rem;
     line-height: 1.12;
   }
