@@ -3076,127 +3076,18 @@ form.contact-form {
   }
 }
 
-/* =========================================
-   PRINTS PAGE — STANDARD HERO POLISH
-   Keeps the image hero, but aligns the typography with the shared interior hero system.
-   ========================================= */
-
-.prints-hero-standard {
-  min-height: 460px;
-  padding: 5rem 1.5rem 3.25rem;
-}
-
-.prints-hero .prints-page-eyebrow,
-.prints-hero .page-eyebrow {
-  margin: 0 0 0.85rem;
-  color: rgba(255, 255, 255, 0.82);
-  opacity: 1;
-}
-
-.prints-hero-standard h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.25rem);
-  line-height: 1.08;
-  font-weight: 300;
-  letter-spacing: 0.03em;
-}
-
-.prints-hero-standard .prints-hero-intro {
-  max-width: 760px;
-  margin: 1rem auto 1.75rem;
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-@media (max-width: 800px) {
-  .prints-hero-standard {
-    min-height: 430px;
-    padding: 4.25rem 1.25rem 3rem;
-  }
-
-  .prints-hero-standard .prints-hero-intro {
-    font-size: 1rem;
-    line-height: 1.62;
-  }
-}
-
-@media (max-width: 600px) {
-  .prints-hero-standard {
-    min-height: 400px;
-    padding: 3.75rem 1rem 2.75rem;
-  }
-
-  .prints-hero-standard h1 {
-    font-size: 2.05rem;
-    line-height: 1.12;
-  }
-}
 
 /* =========================================
-   COLLECTION DETAIL — BOTTOM PRINT CTA
-   Adds a consistent next step after each collection.
+   PRINTS HERO EYEBROW ALIGNMENT FIX
+   Keeps the Fine Art Shop eyebrow centered inside the Prints hero.
    ========================================= */
 
-.collection-bottom-cta {
-  max-width: 820px;
-  margin: -1rem auto 5rem;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  background: #f4f4f4;
-  border-radius: 16px;
-}
-
-.collection-bottom-cta h2 {
-  max-width: 680px;
-  margin: 0 auto 1rem;
-  font-size: 2rem;
-  line-height: 1.18;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  color: #111;
-}
-
-.collection-bottom-cta p:not(.page-eyebrow) {
-  max-width: 640px;
-  margin: 0 auto 1.5rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-@media (max-width: 800px) {
-  .collection-bottom-cta {
-    margin: -0.5rem 1.25rem 4rem;
-    padding: 2.5rem 1.25rem;
-  }
-
-  .collection-bottom-cta h2 {
-    font-size: 1.75rem;
-  }
-
-  .collection-bottom-cta p:not(.page-eyebrow) {
-    font-size: 1rem;
-    line-height: 1.62;
-  }
-}
-
-@media (max-width: 600px) {
-  .collection-bottom-cta {
-    border-radius: 12px;
-  }
-
-  .collection-bottom-cta .btn-primary {
-    width: 100%;
-    max-width: 340px;
-    text-align: center;
-  }
-}
-
-/* PRINTS HERO EYEBROW CENTER FIX */
 .prints-hero .prints-page-eyebrow,
-.prints-hero .page-eyebrow {
-  display: block;
-  width: 100%;
-  text-align: center;
+.prints-hero p.prints-page-eyebrow {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto 0.85rem !important;
+  padding: 0 !important;
+  text-align: center !important;
 }
