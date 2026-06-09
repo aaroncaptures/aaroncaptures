@@ -3091,3 +3091,32 @@ form.contact-form {
   padding: 0 !important;
   text-align: center !important;
 }
+
+/* =========================================
+   PRINT DETAIL — PURCHASE INQUIRY LINK
+   Adds a lower-pressure contact path beneath Add to Cart.
+   ========================================= */
+
+.print-purchase-help {
+  max-width: 420px;
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #555;
+}
+
+.print-purchase-help a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+.print-purchase-help a:hover {
+  opacity: 0.68;
+}
+
+@media (max-width: 880px) {
+  .print-purchase-help {
+    max-width: 100%;
+  }
+}

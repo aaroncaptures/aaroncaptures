@@ -100,6 +100,11 @@
             Add to Cart
           </button>
 
+          <p class="print-purchase-help">
+            Have a question before purchasing?
+            <a id="printInquiryLink" href="/contact/">Send a print inquiry.</a>
+          </p>
+
           <p id="addToCartStatus" class="sr-only" aria-live="polite"></p>
 
           <!-- NEXT / PREVIOUS BUTTONS -->
@@ -429,6 +434,11 @@
         document.getElementById('printTitle').textContent = print.title;
         document.getElementById('printCollection').textContent = print.collection;
         document.getElementById('printDescription').textContent = print.description;
+
+        const printInquiryLink = document.getElementById('printInquiryLink');
+        if (printInquiryLink) {
+          printInquiryLink.href = `/contact/?subject=${encodeURIComponent(`Print inquiry: ${print.title}`)}`;
+        }
 
         renderImageGallery(print);
         renderSizeOptions(print);
