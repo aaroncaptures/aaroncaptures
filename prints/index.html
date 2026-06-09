@@ -166,7 +166,7 @@
       return card;
     }
 
-    async function loadPrints() {
+    async function loadPrints(initialFilter = 'all') {
       const grid = document.querySelector('.prints-grid');
       if (!grid) return;
 
@@ -183,7 +183,11 @@
           grid.appendChild(createPrintCard(print));
         });
 
-        revealCards(Array.from(document.querySelectorAll('.print-card')));
+        if (initialFilter && initialFilter !== 'all') {
+          filterPrints(initialFilter);
+        } else {
+          revealCards(Array.from(document.querySelectorAll('.print-card')));
+        }
       } catch (error) {
         grid.innerHTML = '<p>Prints could not be loaded. Please refresh the page or contact Aaron directly.</p>';
       }
@@ -232,24 +236,53 @@
       }, delay);
     }
 
+    function getInitialPrintFilter() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('collection') || 'all';
+    }
+
+    function setActiveFilterButton(collection) {
+      const buttons = document.querySelectorAll('.hero-btn');
+      const targetFilter = collection || 'all';
+
+      buttons.forEach((button) => {
+        const isActive = button.dataset.filter === targetFilter;
+
+        button.classList.toggle('primary', isActive);
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function updatePrintFilterUrl(collection) {
+      const url = new URL(window.location.href);
+
+      if (!collection || collection === 'all') {
+        url.searchParams.delete('collection');
+      } else {
+        url.searchParams.set('collection', collection);
+      }
+
+      window.history.replaceState({}, '', url);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const buttons = document.querySelectorAll('.hero-btn');
+      const initialFilter = getInitialPrintFilter();
+
+      setActiveFilterButton(initialFilter);
 
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
-          buttons.forEach((otherButton) => {
-            otherButton.classList.remove('primary', 'active');
-            otherButton.setAttribute('aria-pressed', 'false');
-          });
+          const selectedFilter = button.dataset.filter;
 
-          button.classList.add('primary', 'active');
-          button.setAttribute('aria-pressed', 'true');
-
-          filterPrints(button.dataset.filter);
+          setActiveFilterButton(selectedFilter);
+          updatePrintFilterUrl(selectedFilter);
+          filterPrints(selectedFilter);
         });
       });
 
-      loadPrints();
+      loadPrints(initialFilter);
     });
   </script>
 </body>

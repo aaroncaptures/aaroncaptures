@@ -3132,3 +3132,63 @@ form.contact-form {
     line-height: 1.12;
   }
 }
+
+/* =========================================
+   COLLECTION DETAIL — BOTTOM PRINT CTA
+   Adds a consistent next step after each collection.
+   ========================================= */
+
+.collection-bottom-cta {
+  max-width: 820px;
+  margin: -1rem auto 5rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: #f4f4f4;
+  border-radius: 16px;
+}
+
+.collection-bottom-cta h2 {
+  max-width: 680px;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  line-height: 1.18;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #111;
+}
+
+.collection-bottom-cta p:not(.page-eyebrow) {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+@media (max-width: 800px) {
+  .collection-bottom-cta {
+    margin: -0.5rem 1.25rem 4rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .collection-bottom-cta h2 {
+    font-size: 1.75rem;
+  }
+
+  .collection-bottom-cta p:not(.page-eyebrow) {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-bottom-cta {
+    border-radius: 12px;
+  }
+
+  .collection-bottom-cta .btn-primary {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+}
