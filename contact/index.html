@@ -64,6 +64,7 @@
           <input type="hidden" name="_subject" value="New Contact Message | Aaron Captures">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="inquiry_context" id="inquiryContext" value="">
           <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
           <input type="hidden" name="form_type" value="General Contact">
 
@@ -180,5 +181,53 @@
       updatePhoneRequirement();
     });
   </script>
+  <script>
+    // Pre-fill contact form context when arriving from print inquiry links.
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const subject = params.get('subject');
+
+      if (!subject) return;
+
+      const subjectInput = document.querySelector('input[name="_subject"]');
+      const inquiryContext = document.getElementById('inquiryContext');
+      const messageField = document.querySelector('textarea[name="message"]');
+      const serviceSelect =
+        document.querySelector('select[name="service"]') ||
+        document.querySelector('select[name="inquiry_type"]') ||
+        document.querySelector('select[name="project_type"]') ||
+        document.querySelector('select');
+
+      const cleanSubject = subject.trim();
+
+      if (subjectInput) {
+        subjectInput.value = `Aaron Captures Contact: ${cleanSubject}`;
+      }
+
+      if (inquiryContext) {
+        inquiryContext.value = cleanSubject;
+      }
+
+      if (messageField && !messageField.value.trim()) {
+        const printTitle = cleanSubject.replace(/^print inquiry:\s*/i, '').trim();
+
+        messageField.value = printTitle
+          ? `I'm interested in ${printTitle} and had a question before purchasing.`
+          : `I'm interested in a print and had a question before purchasing.`;
+      }
+
+      if (serviceSelect) {
+        const options = Array.from(serviceSelect.options);
+        const printOption = options.find((option) =>
+          /print/i.test(option.textContent) || /print/i.test(option.value)
+        );
+
+        if (printOption) {
+          serviceSelect.value = printOption.value;
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>
