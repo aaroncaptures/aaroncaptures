@@ -2931,3 +2931,147 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     transform: none !important;
   }
 }
+
+/* =========================================
+   CONTACT PAGE FORM LAYOUT FIX
+   Keeps the contact form clean on desktop and mobile.
+   Add this at the VERY BOTTOM of style.css
+   ========================================= */
+
+.contact-form-section {
+  padding: 4.5rem 1.5rem 5rem;
+  background: #fafafa;
+}
+
+.contact-form-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.contact-form-header {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+.contact-form-header .copy-work-card-label {
+  margin-bottom: 0.85rem;
+}
+
+.contact-form-header h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.contact-form-header p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.contact-form,
+form.contact-form {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.25rem !important;
+  padding: 2rem !important;
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.07) !important;
+}
+
+.contact-form label {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0.45rem !important;
+  align-items: start !important;
+  color: #333 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 48px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: #111 !important;
+  padding: 0.85rem 0.9rem !important;
+  font-family: "bc-alphapipe", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+
+.contact-form textarea {
+  min-height: 150px !important;
+  resize: vertical !important;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #111 !important;
+  box-shadow: 0 0 0 1px #111 !important;
+  outline: none !important;
+}
+
+.contact-form label:has(textarea),
+.contact-form button {
+  grid-column: 1 / -1 !important;
+}
+
+.contact-form button {
+  width: fit-content !important;
+  justify-self: start !important;
+  border: 0 !important;
+}
+
+@media (max-width: 800px) {
+  .contact-form-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .contact-form-header {
+    text-align: center;
+  }
+
+  .contact-form,
+  form.contact-form {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem !important;
+  }
+
+  .contact-form label,
+  .contact-form label:has(textarea),
+  .contact-form button {
+    grid-column: 1 / -1 !important;
+  }
+
+  .contact-form button {
+    width: 100% !important;
+    justify-self: stretch !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 16px !important;
+  }
+
+  .contact-form,
+  form.contact-form {
+    padding: 1.15rem !important;
+    border-radius: 12px !important;
+  }
+}
