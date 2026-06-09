@@ -3075,3 +3075,36 @@ form.contact-form {
     border-radius: 12px !important;
   }
 }
+
+/* =========================================
+   CONTACT PAGE MESSAGE FIELD SPAN FIX
+   Add this at the VERY BOTTOM of style.css
+   ========================================= */
+
+/* Make the message field take the full bottom row */
+.contact-form label:has(textarea),
+.contact-form textarea,
+.contact-form .message-field,
+.contact-form .contact-message-field {
+  grid-column: 1 / -1 !important;
+}
+
+/* Keep the message box from getting squeezed */
+.contact-form textarea {
+  width: 100% !important;
+  min-height: 160px !important;
+  display: block !important;
+}
+
+/* Keep the send button below the message box */
+.contact-form button {
+  grid-column: 1 / -1 !important;
+  justify-self: start !important;
+}
+
+@media (max-width: 800px) {
+  .contact-form button {
+    width: 100% !important;
+    justify-self: stretch !important;
+  }
+}
