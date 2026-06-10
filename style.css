@@ -144,6 +144,7 @@ input[type="radio"] {
 .nav-menu {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 2.2rem;
   background: none;
   position: static;
@@ -2005,6 +2006,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: #111;
   color: #fff;
 }
+.cart-open-button:focus-visible {
+  background: #111;
+  color: #fff;
+}
+
+.cart-open-button:focus-visible .cart-count {
+  background: #fff;
+  color: #111;
+}
+
 
 .cart-count {
   display: inline-flex;
@@ -2241,7 +2252,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   max-width: 180px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .nav-menu .cart-open-button {
     width: fit-content;
     margin-top: 0.25rem;
