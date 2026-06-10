@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collections – Aaron Captures</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fine Art Prints – Aaron Captures</title>
+
+  <!-- Fonts + Main Styles -->
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body id="top">
@@ -30,8 +32,8 @@
 
       <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/collections/" aria-current="page">Collections</a>
-        <a href="/prints/">Prints</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/" aria-current="page" class="active">Prints</a>
         <a href="/booking/">Booking</a>
         <a href="/contact/">Contact</a>
       </nav>
@@ -39,87 +41,41 @@
   </header>
 
   <main id="main-content">
-    <!-- PAGE HERO -->
-    <section class="page-hero standard-page-hero" aria-labelledby="collections-title">
-      <p class="page-eyebrow">Aaron Captures</p>
-      <h1 class="page-title" id="collections-title">Collections</h1>
-      <p class="page-subtitle">A curated selection of fine art photography shaped by quiet landscapes, night skies, natural forms, and city light.</p>
+    <!-- HERO SECTION -->
+    <section class="prints-hero prints-hero-standard" aria-labelledby="prints-page-title">
+      <div class="prints-hero-overlay" aria-hidden="true"></div>
+      <div class="prints-hero-content">
+        <p class="page-eyebrow prints-page-eyebrow">Fine Art Shop</p>
+        <h1 id="prints-page-title">Limited Edition Prints</h1>
+        <p class="prints-hero-intro">
+          Limited edition photographs created from quiet landscapes, night skies, natural forms, and city light. Each piece is signed, numbered, printed on archival materials, and available with optional framing.
+        </p>
+
+        <div class="prints-hero-buttons" aria-label="Filter prints by collection">
+          <button type="button" class="hero-btn primary active" data-filter="all" aria-pressed="true">Shop All Prints</button>
+          <button type="button" class="hero-btn" data-filter="Silent Horizons" aria-pressed="false">Silent Horizons</button>
+          <button type="button" class="hero-btn" data-filter="Nocturne" aria-pressed="false">Nocturne</button>
+          <button type="button" class="hero-btn" data-filter="Shapes of Nature" aria-pressed="false">Shapes of Nature</button>
+          <button type="button" class="hero-btn" data-filter="Echos of Los Angeles" aria-pressed="false">Echos of Los Angeles</button>
+        </div>
+
+        <p id="printsFilterStatus" class="sr-only" aria-live="polite">Showing all prints.</p>
+      </div>
     </section>
 
-    <!-- COLLECTION GRID -->
-    <section class="collections-page" aria-labelledby="collections-grid-title">
-      <h2 id="collections-grid-title" class="sr-only">Fine art photography collections</h2>
-
-      <div class="collections-grid">
-        <!-- Silent Horizons -->
-        <a href="/collections/silent-horizons/" class="collection-card">
-          <div class="collection-thumb">
-            <img
-              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg"
-              alt="Mountain lake beneath a quiet alpine sky from the Silent Horizons collection."
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <h2>Silent Horizons</h2>
-          <p>Solitude only found by being one with nature.</p>
-        </a>
-
-        <!-- Nocturne -->
-        <a href="/collections/nocturne/" class="collection-card">
-          <div class="collection-thumb">
-            <img
-              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg"
-              alt="Desert arch beneath a star-filled night sky from the Nocturne collection."
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <h2>Nocturne</h2>
-          <p>Night landscapes shaped by space and stillness.</p>
-        </a>
-
-        <!-- Shapes of Nature -->
-        <a href="/collections/shapes-of-nature/" class="collection-card">
-          <div class="collection-thumb">
-            <img
-              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-6.jpg"
-              alt="Close-up fern pattern from the Shapes of Nature collection."
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <h2>Shapes of Nature</h2>
-          <p>Patterns and forms found in the natural world.</p>
-        </a>
-
-        <!-- Echos of Los Angeles -->
-        <a href="/collections/echos-of-los-angeles/" class="collection-card">
-          <div class="collection-thumb">
-            <img
-              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg"
-              alt="Los Angeles skyline glowing beneath a hazy sunset from the Echos of Los Angeles collection."
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <h2>Echos of Los Angeles</h2>
-          <p>Cityscapes after the noise fades.</p>
-        </a>
-      </div>
+    <!-- PRINT GRID -->
+    <section class="prints-grid-section" aria-labelledby="prints-grid-title">
+      <h2 id="prints-grid-title" class="sr-only">Available fine art prints</h2>
+      <div class="prints-grid" aria-live="polite"></div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
+
       <div class="footer-logo-top">
-        <img
-          src="/assets/aaron-captures-logo.jpg"
-          alt="Aaron Captures logo"
-          loading="lazy"
-          decoding="async"
-        >
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
       </div>
 
       <p class="footer-email">
@@ -134,12 +90,16 @@
         <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
-      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <p class="footer-copy">
+        © 2025 Aaron Captures. All Rights Reserved.
+      </p>
+
       <a href="#top" class="back-home-link">Back to Top</a>
+
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- NAV + PRINT FILTER SCRIPT -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -160,7 +120,170 @@
         }
       });
     }
+
+    function getPrintAltText(print) {
+      return print.alt?.original || `${print.title} fine art print from the ${print.collection} collection.`;
+    }
+
+    function createPrintCard(print) {
+      const card = document.createElement('article');
+      card.className = 'print-card hidden';
+      card.dataset.collection = print.collection;
+
+      const link = document.createElement('a');
+      link.href = `/prints/template.html?print=${encodeURIComponent(print.slug)}`;
+      link.setAttribute('aria-label', `View ${print.title} from the ${print.collection} collection`);
+
+      const thumb = document.createElement('div');
+      thumb.className = 'print-thumb';
+
+      const image = document.createElement('img');
+      image.src = print.image;
+      image.alt = getPrintAltText(print);
+      image.loading = 'lazy';
+      image.decoding = 'async';
+
+      const title = document.createElement('h3');
+      title.className = 'print-title';
+      title.textContent = print.title;
+
+      const collection = document.createElement('p');
+      collection.className = 'print-collection';
+      collection.textContent = print.collection;
+
+      const viewLinkText = document.createElement('span');
+      viewLinkText.className = 'print-link';
+      viewLinkText.setAttribute('aria-hidden', 'true');
+      viewLinkText.textContent = 'View Print →';
+
+      thumb.appendChild(image);
+      link.appendChild(thumb);
+      link.appendChild(title);
+      link.appendChild(collection);
+      link.appendChild(viewLinkText);
+      card.appendChild(link);
+
+      return card;
+    }
+
+    async function loadPrints(initialFilter = 'all') {
+      const grid = document.querySelector('.prints-grid');
+      if (!grid) return;
+
+      try {
+        const response = await fetch('/prints/prints.json');
+
+        if (!response.ok) {
+          throw new Error('Unable to load prints.');
+        }
+
+        const prints = await response.json();
+
+        prints.forEach((print) => {
+          grid.appendChild(createPrintCard(print));
+        });
+
+        if (initialFilter && initialFilter !== 'all') {
+          filterPrints(initialFilter);
+        } else {
+          revealCards(Array.from(document.querySelectorAll('.print-card')));
+        }
+      } catch (error) {
+        grid.innerHTML = '<p>Prints could not be loaded. Please refresh the page or contact Aaron directly.</p>';
+      }
+    }
+
+    function revealCards(cards) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      cards.forEach((card, index) => {
+        const delay = reduceMotion ? 0 : index * 90;
+
+        setTimeout(() => {
+          card.classList.remove('hidden');
+        }, delay);
+      });
+    }
+
+    function filterPrints(collection) {
+      const cards = Array.from(document.querySelectorAll('.print-card'));
+      const status = document.getElementById('printsFilterStatus');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      cards.forEach((card) => card.classList.add('hidden'));
+
+      const delay = reduceMotion ? 0 : 320;
+
+      setTimeout(() => {
+        const visibleCards = [];
+
+        cards.forEach((card) => {
+          const shouldShow = collection === 'all' || card.dataset.collection === collection;
+          card.style.display = shouldShow ? 'block' : 'none';
+
+          if (shouldShow) {
+            visibleCards.push(card);
+          }
+        });
+
+        revealCards(visibleCards);
+
+        if (status) {
+          status.textContent = collection === 'all'
+            ? `Showing all prints. ${visibleCards.length} prints available.`
+            : `Showing ${collection} prints. ${visibleCards.length} prints available.`;
+        }
+      }, delay);
+    }
+
+    function getInitialPrintFilter() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('collection') || 'all';
+    }
+
+    function setActiveFilterButton(collection) {
+      const buttons = document.querySelectorAll('.hero-btn');
+      const targetFilter = collection || 'all';
+
+      buttons.forEach((button) => {
+        const isActive = button.dataset.filter === targetFilter;
+
+        button.classList.toggle('primary', isActive);
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function updatePrintFilterUrl(collection) {
+      const url = new URL(window.location.href);
+
+      if (!collection || collection === 'all') {
+        url.searchParams.delete('collection');
+      } else {
+        url.searchParams.set('collection', collection);
+      }
+
+      window.history.replaceState({}, '', url);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.hero-btn');
+      const initialFilter = getInitialPrintFilter();
+
+      setActiveFilterButton(initialFilter);
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedFilter = button.dataset.filter;
+
+          setActiveFilterButton(selectedFilter);
+          updatePrintFilterUrl(selectedFilter);
+          filterPrints(selectedFilter);
+        });
+      });
+
+      loadPrints(initialFilter);
+    });
   </script>
-  <script src="/assets/cart.js"></script>
 </body>
 </html>
