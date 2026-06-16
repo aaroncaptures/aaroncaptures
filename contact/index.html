@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Aaron Captures</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections – Aaron Captures</title>
 
-  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '919478017830204');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css">
 </head>
 
 <body id="top">
+
+  <!-- Meta Pixel Noscript -->
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=919478017830204&ev=PageView&noscript=1"
+      alt=""
+    >
+  </noscript>
+  <!-- End Meta Pixel Noscript -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- HEADER -->
@@ -31,89 +64,82 @@
 
       <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/collections/">Collections</a>
+        <a href="/collections/" aria-current="page">Collections</a>
         <a href="/prints/">Prints</a>
         <a href="/booking/">Booking</a>
-        <a href="/contact/" aria-current="page" class="active">Contact</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- HERO -->
-    <section class="page-hero standard-page-hero contact-page-hero" aria-labelledby="contact-title">
+    <!-- PAGE HERO -->
+    <section class="page-hero standard-page-hero" aria-labelledby="collections-title">
       <p class="page-eyebrow">Aaron Captures</p>
-      <h1 class="page-title" id="contact-title">Contact</h1>
-      <p class="page-subtitle">
-        Have a question, project idea, print inquiry, or session request? Send a message and I’ll follow up.
-      </p>
+      <h1 class="page-title" id="collections-title">Collections</h1>
+      <p class="page-subtitle">A curated selection of fine art photography shaped by quiet landscapes, night skies, natural forms, and city light.</p>
     </section>
 
-    <!-- CONTACT FORM -->
-    <section class="contact-form-section" aria-labelledby="contact-form-title">
-      <div class="contact-form-inner">
-        <div class="copy-work-form-header">
-          <p class="copy-work-card-label">Message</p>
-          <h2 id="contact-form-title">Send a Message</h2>
-          <p>
-            Share the basics below. If you are ready to book a specific service, you can also use the focused forms on the booking pages.
-          </p>
-        </div>
+    <!-- COLLECTION GRID -->
+    <section class="collections-page" aria-labelledby="collections-grid-title">
+      <h2 id="collections-grid-title" class="sr-only">Fine art photography collections</h2>
 
-        <form class="copy-work-form contact-form" action="https://formsubmit.co/rashid.aaron@yahoo.com" method="POST">
-          <input type="hidden" name="_subject" value="New Contact Message | Aaron Captures">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="inquiry_context" id="inquiryContext" value="">
-          <input type="hidden" name="_next" value="https://aaroncaptures.com/booking/thank-you.html">
-          <input type="hidden" name="form_type" value="General Contact">
+      <div class="collections-grid">
+        <!-- Silent Horizons -->
+        <a href="/collections/silent-horizons/" class="collection-card">
+          <div class="collection-thumb">
+            <img
+              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/silent-horizons/silent-horizons-1.jpg"
+              alt="Mountain lake beneath a quiet alpine sky from the Silent Horizons collection."
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <h2>Silent Horizons</h2>
+          <p>Solitude only found by being one with nature.</p>
+        </a>
 
-          <label>
-            Name <span aria-hidden="true">*</span>
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
+        <!-- Nocturne -->
+        <a href="/collections/nocturne/" class="collection-card">
+          <div class="collection-thumb">
+            <img
+              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/nocturne/nocturne-1.jpg"
+              alt="Desert arch beneath a star-filled night sky from the Nocturne collection."
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <h2>Nocturne</h2>
+          <p>Night landscapes shaped by space and stillness.</p>
+        </a>
 
-          <label>
-            Email <span aria-hidden="true">*</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
+        <!-- Shapes of Nature -->
+        <a href="/collections/shapes-of-nature/" class="collection-card">
+          <div class="collection-thumb">
+            <img
+              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/shapes-of-nature/son-6.jpg"
+              alt="Close-up fern pattern from the Shapes of Nature collection."
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <h2>Shapes of Nature</h2>
+          <p>Patterns and forms found in the natural world.</p>
+        </a>
 
-          <label>
-            Phone Number <span class="phone-required-note" hidden aria-hidden="true">*</span>
-            <input type="tel" name="phone" autocomplete="tel">
-          </label>
-
-          <label>
-            Preferred Method of Contact <span aria-hidden="true">*</span>
-            <select name="preferred_contact" required>
-              <option value="">Select one</option>
-              <option value="Call">Call</option>
-              <option value="Text">Text</option>
-              <option value="Email">Email</option>
-            </select>
-          </label>
-
-          <label>
-            What is this about? <span aria-hidden="true">*</span>
-            <select name="inquiry_type" required>
-              <option value="">Select one</option>
-              <option value="Fine Art Prints">Fine Art Prints</option>
-              <option value="Booking / Photography Session">Booking / Photography Session</option>
-              <option value="Copy Work / Artwork Documentation">Copy Work / Artwork Documentation</option>
-              <option value="Events">Events</option>
-              <option value="Portraits or Headshots">Portraits or Headshots</option>
-              <option value="General Question">General Question</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-
-          <label>
-            Message <span aria-hidden="true">*</span>
-            <textarea name="message" required placeholder="Tell me what you need, what you are curious about, or how I can help."></textarea>
-          </label>
-
-          <button type="submit" class="btn-primary">Send Message</button>
-        </form>
+        <!-- Echos of Los Angeles -->
+        <a href="/collections/echos-of-los-angeles/" class="collection-card">
+          <div class="collection-thumb">
+            <img
+              src="https://pub-9350e7cd567d44f5b7e5391abc141068.r2.dev/Print%20Page/echos-of-los-angeles/echo-9.jpg"
+              alt="Los Angeles skyline glowing beneath a hazy sunset from the Echos of Los Angeles collection."
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <h2>Echos of Los Angeles</h2>
+          <p>Cityscapes after the noise fades.</p>
+        </a>
       </div>
     </section>
   </main>
@@ -122,7 +148,12 @@
   <footer class="site-footer" id="contact-footer">
     <div class="footer-inner">
       <div class="footer-logo-top">
-        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+        <img
+          src="/assets/aaron-captures-logo.jpg"
+          alt="Aaron Captures logo"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
 
       <p class="footer-email">
@@ -131,9 +162,9 @@
 
       <p class="footer-social">
         <a href="https://instagram.com/aaron.captures" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span aria-hidden="true">·</span>
+        <span>·</span>
         <a href="https://tiktok.com/@aaron.captures" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <span aria-hidden="true">·</span>
+        <span>·</span>
         <a href="https://facebook.com/aaron.capture" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
 
@@ -142,6 +173,7 @@
     </div>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -149,6 +181,7 @@
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('nav-menu-open');
+
         navMenu.classList.toggle('nav-menu-open', !isOpen);
         navToggle.setAttribute('aria-expanded', String(!isOpen));
       });
@@ -161,75 +194,6 @@
         }
       });
     }
-
-    document.querySelectorAll('form.copy-work-form').forEach((form) => {
-      const contactSelect = form.querySelector('select[name="preferred_contact"]');
-      const phoneInput = form.querySelector('input[name="phone"]');
-      const phoneRequiredNote = form.querySelector('.phone-required-note');
-
-      if (!contactSelect || !phoneInput) return;
-
-      const updatePhoneRequirement = () => {
-        const needsPhone = contactSelect.value === 'Call' || contactSelect.value === 'Text';
-        phoneInput.required = needsPhone;
-
-        if (phoneRequiredNote) {
-          phoneRequiredNote.hidden = !needsPhone;
-          phoneRequiredNote.setAttribute('aria-hidden', String(!needsPhone));
-        }
-      };
-
-      contactSelect.addEventListener('change', updatePhoneRequirement);
-      updatePhoneRequirement();
-    });
   </script>
-  <script>
-    // Pre-fill contact form context when arriving from print inquiry links.
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const subject = params.get('subject');
-
-      if (!subject) return;
-
-      const subjectInput = document.querySelector('input[name="_subject"]');
-      const inquiryContext = document.getElementById('inquiryContext');
-      const messageField = document.querySelector('textarea[name="message"]');
-      const serviceSelect =
-        document.querySelector('select[name="service"]') ||
-        document.querySelector('select[name="inquiry_type"]') ||
-        document.querySelector('select[name="project_type"]') ||
-        document.querySelector('select');
-
-      const cleanSubject = subject.trim();
-
-      if (subjectInput) {
-        subjectInput.value = `Aaron Captures Contact: ${cleanSubject}`;
-      }
-
-      if (inquiryContext) {
-        inquiryContext.value = cleanSubject;
-      }
-
-      if (messageField && !messageField.value.trim()) {
-        const printTitle = cleanSubject.replace(/^print inquiry:\s*/i, '').trim();
-
-        messageField.value = printTitle
-          ? `I'm interested in ${printTitle} and had a question before purchasing.`
-          : `I'm interested in a print and had a question before purchasing.`;
-      }
-
-      if (serviceSelect) {
-        const options = Array.from(serviceSelect.options);
-        const printOption = options.find((option) =>
-          /print/i.test(option.textContent) || /print/i.test(option.value)
-        );
-
-        if (printOption) {
-          serviceSelect.value = printOption.value;
-        }
-      }
-    });
-  </script>
-
 </body>
 </html>
