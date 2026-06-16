@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Checkout Test – Aaron Captures</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/ynk4toa.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-title">
+        <a href="/">Aaron Captures</a>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
+        &#9776;
+      </button>
+
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/collections/">Collections</a>
+        <a href="/prints/">Prints</a>
+        <a href="/booking/">Booking</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero standard-page-hero" aria-labelledby="test-title">
+      <p class="page-eyebrow">Internal Test</p>
+      <h1 class="page-title" id="test-title">Stripe Checkout Test</h1>
+      <p class="page-subtitle">
+        This hidden page adds a temporary $1 item to the cart so you can test live Stripe checkout, tax, receipt, success page, and cart clearing.
+      </p>
+      <p class="page-subtitle">
+        Do not link this page publicly. Delete it after the test passes.
+      </p>
+
+      <button id="addTestItem" class="btn-primary" type="button">Add $1 Test Item to Cart</button>
+      <p id="testStatus" class="page-subtitle" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-top">
+        <img src="/assets/aaron-captures-logo.jpg" alt="Aaron Captures logo">
+      </div>
+      <p class="footer-email"><a href="/contact/">Questions or inquiries? Contact Aaron</a></p>
+      <p class="footer-copy">© 2025 Aaron Captures. All Rights Reserved.</p>
+      <a href="#top" class="back-home-link">Back to Top</a>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('nav-menu-open');
+        navMenu.classList.toggle('nav-menu-open', !isOpen);
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+          navMenu.classList.remove('nav-menu-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
+      });
+    }
+  </script>
+
+  <script src="/assets/cart.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.getElementById('addTestItem');
+      const status = document.getElementById('testStatus');
+
+      button.addEventListener('click', () => {
+        if (!window.AaronCart || typeof window.AaronCart.addItem !== 'function') {
+          status.textContent = 'Cart could not be loaded. Refresh and try again.';
+          return;
+        }
+
+        window.AaronCart.addItem({
+          slug: 'stripe-checkout-test',
+          title: 'Stripe Checkout Test Item',
+          collection: 'Internal Test',
+          image: '',
+          size: 'Test Item',
+          edition: 1,
+          finish: 'Unframed',
+          basePrice: 1,
+          frameAddOn: 0,
+          unitPrice: 1,
+          quantity: 1
+        });
+
+        status.textContent = 'The $1 test item was added. Open the cart and continue to checkout.';
+      });
+    });
+  </script>
+</body>
+</html>
